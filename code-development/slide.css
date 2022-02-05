@@ -1,0 +1,202 @@
+body {
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	place-items: center;
+}
+
+.slider-wrapper {
+	width: 50vw;
+	position: relative;
+	height: 300px;
+	display: flex;
+	flex-direction: row;
+	overflow: hidden;
+	/* overflow-y: scroll; */
+	/* overflow-y: visible; */
+	border: 1px solid black;
+}
+
+.slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* width: 100%;
+	height: 100%; */
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
+}
+/* 
+.slide.active {
+	opacity: 1;
+	transform: translateX(0);
+}
+.slide.last {
+	transform: translateX(-100%);
+}
+.slide.next {
+	transform: translateX(100%);
+}
+
+.slide-btn {
+	position: absolute;
+	font-size: 1rem;
+	color: black;
+	z-index: 99;
+}
+.next-btn {
+	top: 50%;
+	left: -1rem;
+}
+.prev-btn {
+	top: 50%;
+	right: -1rem;
+}
+
+.container1 {
+	position: relative;
+} */
+
+.slide-full {
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* width: 100%;
+	height: 100%; */
+	opacity: 0;
+	transition: all 0.5s ease-in-out;
+}
+
+.slider-wrapper-full {
+	width: 100vw;
+	position: relative;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+	overflow: hidden;
+	/* overflow-y: scroll; */
+	/* overflow-y: visible; */
+	border: 1px solid black;
+}
+
+.slide-full.active {
+	opacity: 1;
+	transform: translateX(0);
+}
+.slide-full.last {
+	transform: translateX(-100%);
+}
+.slide-full.next {
+	transform: translateX(100%);
+}
+
+/*//////////////////*/
+#places-card-carousel {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 5rem;
+}
+/* .places-card-carousel {
+	padding: 3rem 0;
+} */
+
+#places-card-carousel .slide-btn {
+	background: transparent;
+	border: none;
+	position: absolute;
+	font-size: 3rem;
+	color: black;
+	cursor: pointer;
+	z-index: 999;
+}
+#places-card-carousel .slide-btn:disabled {
+	color: red;
+}
+/* #places-card-carousel .slide-btn i {
+} */
+#places-card-carousel .next-btn {
+	top: 50%;
+	left: 2rem;
+}
+#places-card-carousel .prev-btn {
+	top: 50%;
+	right: 2rem;
+}
+
+.places-wrapper {
+	position: relative;
+	/* overflow-x: hidden; */
+	/* flex-wrap: wrap; */
+	width: 85%;
+	/* width: 75%; */
+	height: 80%;
+	display: flex;
+	will-change: contents;
+	gap: 4rem;
+	/* border: 2px solid black; */
+}
+.hide-slide {
+	opacity: 0;
+}
+.place-card {
+	/* flex-shrink: 0; */
+
+	position: absolute;
+
+	left: 0;
+	/* width: 24.5%; ok */
+	width: 23.5%;
+	height: 100%;
+	background: khaki;
+	transition: all 0.3s ease-in-out;
+}
+
+.place-card:hover {
+	transform: scale(1.1);
+	border: 1px solid rgba(134, 42, 6, 0.7);
+	z-index: 99;
+}
+/*
+.place-card.active {
+	left: 0;
+}
+.place-card.last {
+	right: 0;
+}
+.place-card.next {
+	transform: translateX(0);
+}
+*/
+.place-card .country-name {
+	position: absolute;
+	top: 0;
+	padding: 0.1rem 1.5rem;
+	background-color: rgba(134, 42, 6, 0.7);
+	letter-spacing: 2px;
+	color: white;
+}
+
+.place-card .country-title {
+	width: 75%;
+	margin-top: 5rem;
+	text-align: center;
+	font-size: 1.25rem;
+	font-weight: bold;
+	color: white;
+	letter-spacing: 2px;
+	text-shadow: 0 1px 2px #373737;
+}
+
+.place-card .underline {
+	position: absolute;
+	bottom: 15%;
+	width: 50%;
+	height: 0.2rem;
+	background: rgba(134, 42, 6, 0.7);
+	border-radius: 5rem;
+}
