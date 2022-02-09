@@ -15,7 +15,7 @@
 </head>
 <body>
     <!--************ HEADER SECTION ************-->
-    <header class="header-wrapper">
+    <header class="header-wrapper" id="header-wrapper" data-scroll = "100">
         <!-- HERO and NAVBAR-->
         <section class="hero">
             <nav class="navbar">
@@ -35,10 +35,11 @@
                 </ul>
             </nav>
         <!-- main title -->
-            <!-- <div class="main-title-wrapper"> </div> -->
-                <h1 class="main-title"><span id="main-title-1"></span> <span id="main-title-2"></span></h1>
+         <!-- <div class="main-title-wrapper"> </div> -->
+         <h1 class="main-title"><span id="main-title-1"></span> <span id="main-title-2"></span></h1>
         <!-- end of main title -->
-        <!-- end travel objects -->
+        
+        <!-- travel objects -->
         <img class="bussola" src="images/bussola.png" alt="old bussola">
         <img class="pen" src="images/pen.png" alt="old hand writing">
         <!-- end of travel objects -->
@@ -70,7 +71,7 @@
     <!--************ end of HEADER SECTION ************-->
 
     <!--************ PLACES SECTION ************-->
-    <section class="places-section">
+    <section class="places-section" data-scroll = 100 id="places-cards">
         <div class="general-wrapper" id="places-card-carousel">
             <!-- carousel next & prev btns -->
             <button class="slide-btn prev-btn"><i
@@ -86,42 +87,38 @@
 
 
     <!-- MAIN SECTION -->
-    <main class="main-wrapper">
-        <section class="image-gallery">
+<main class="main-wrapper" data-scroll="100" >
+    <section class="central-wrapper section-wrapper gallery" id="gallery">
+        <!-- <article class="image-gallery">
+            <img src="" alt="">
+        </article> -->
+    </section>
+    
+    <section id="gallery-full-carousel-wrapper">
+        <button id="close-gallery">
+            <i class="fas fa-th-large"></i>
+        </button>
+        <!-- insert by js  -->
+    </section>
+   
+    <section class="section-wrapper" id="journal">
+        <div class="journal-header">
+            <h1 class="journal-banner-title">Journey Jornal</h1>
+        <p class="journal-banner-text">When words say more then pictures</p></div>
+        <section class="journal-wrapper" id="journal-wrapper">
             
         </section>
-        <section class="journal">
-            <article class="main-image">
-                <img src="" alt="">
-            </article>
-            <article class="journal-text-wrapper"></article>
-        </section>
-    </main>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>Copyrigth &copy; CodeErgoSum - <span id="current-year"></span> </p>
+</footer>
+
+<!-- <button><i class="fas fa-bicycle bike-to-top-btn"></i></button> -->
 
 
 
-<!-- <div class="container">
-    <div class="wall wall-1" id="wall-1">
-        <a href="#wall-3">Voltar</a>
-        <h1>carrosel numero - 1</h1>
-        <a href="#wall-2">Avançar</a>
-    </div>
-
-    <div class="wall wall-2" id="wall-2">
-        <a href="#wall-1">Voltar</a>
-        <h1>carrosel numero - 2</h1>
-        <a href="#wall-3">Avançar</a>
-    </div>
-
-    <div class="wall wall-3" id="wall-3">
-        <a href="#wall-2">Voltar</a>
-        <h1>carrosel numero - 3</h1>
-        <a href="#wall-1">Avançar</a>
-    </div>
-</div>
-
-
-<script>window.location = "#wall-1";</script> -->
 <script src="./src/app.js" type="module"></script>
 </body>
 </html>

@@ -1,14 +1,11 @@
 
 
 export class CarouselGenerator {
-    constructor(sliderId, slidesData, interval=0){
+    constructor(sliderId, slidesArray, interval=0){
         this.sliderContainer = document.getElementById(sliderId)
-        this.slides = slidesData
-        this.slideCarousel; //???????
+        this.slides = slidesArray
         this.slidesDom; // created when slidesChangeOnClick || slidesChangeOnScroll are called
-        this.slidesDisplayNumber = 1
-        this.slideIndex = 0
-        this.slideGroupId = 0
+
         this.slider // create at renderSlides() - inner Container
         this.slideCSS // passed in renderSlides()
         
@@ -19,17 +16,17 @@ export class CarouselGenerator {
         this.slideChangeType = "infinite" // default || "linear"
         this.slideLinearValue = 100; // default
         this.hasBtn = false
-        this.sliderAction;
         this.slidesDisplayNumber = 1 // number of slides displayed on carousel per time : can be 1; 2; 3; 4; 5
         this.slideIndex = 0
+        
         this.counter = 0    
         //if no interval or ZERO is passed the automatic change is disable
-        
+        this.automatic = (interval === 0) ? false: true
     }
     //render slides without next buttons: change occur by click on image
     renderSlides = (slideCarousel, slideCSS) =>{
         this.slideCSS = slideCSS
-        this.slideCarousel = //???????
+
         this.slider = document.createElement('div')
         this.slider.classList.add(slideCarousel)
         this.sliderContainer.appendChild(this.slider)
@@ -309,7 +306,7 @@ export class SliderCarousel {
 
         this.counter = 0    
         //if no interval or ZERO is passed the automatic change is disable
-        this.automatic = (interval == 0) ? false: true
+        
     }
     //render slides without next buttons: change occur by click on image
     renderSlides = (slideCarousel, slideCSS) =>{
