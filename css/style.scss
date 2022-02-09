@@ -248,6 +248,9 @@ img {
 		color: $color-primary-300;
 		z-index: 99;
 		transition: $transition-500;
+		&:hover {
+			transform: scale(1.2);
+		}
 	}
 	.prev-btn {
 		top: 50%;
@@ -259,6 +262,9 @@ img {
 	.next-btn {
 		top: 50%;
 		left: -2.25rem;
+		&:disabled {
+			color: $color-primary-500;
+		}
 	}
 }
 .places-wrapper {
@@ -285,7 +291,8 @@ img {
 	transition: all 0.3s ease-in-out;
 
 	&:hover {
-		transform: scale(1.1);
+		transform: scale(1.025);
+		// transform: scale(1.1);
 		border: 1px solid $color-primary-500;
 		z-index: 99;
 	}
@@ -358,6 +365,8 @@ img {
 	background-color: $color-primary-600;
 	position: absolute;
 	display: flex;
+	flex-direction: column-reverse;
+
 	top: 0;
 	left: 0;
 	// transform: translateY(0);
@@ -367,10 +376,9 @@ img {
 
 	z-index: -99;
 	transition: all 0.5s ease-in-out;
-	#close-gallery {
-		// position: absolute;
-		bottom: 5vh;
-		right: 5%;
+	#close-gallery-btn {
+		align-self: flex-end;
+		margin-right: 5vw;
 		color: $color-light-100;
 		font-size: 5rem;
 		background: transparent;
@@ -441,29 +449,10 @@ img {
 	margin: 5rem 0;
 	min-width: 100vh;
 	min-height: 100vh;
-	// -webkit-clip-path: polygon(
-	// 	56% 2%,
-	// 	81% 2%,
-	// 	100% 5%,
-	// 	100% 63%,
-	// 	100% 100%,
-	// 	0 100%,
-	// 	0 3%,
-	// 	20% 5%,
-	// 	35% 4%
-	// );
-	// clip-path: polygon(
-	// 	56% 2%,
-	// 	81% 2%,
-	// 	100% 5%,
-	// 	100% 63%,
-	// 	100% 100%,
-	// 	0 100%,
-	// 	0 3%,
-	// 	20% 5%,
-	// 	35% 4%
-	// );
-	// box-shadow: -3px -3px 100px rgb(2, 48, 78);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	.journal-text-wrapper:nth-child(odd) {
 		.journal-image {
 			float: left !important;
@@ -476,6 +465,32 @@ img {
 			float: right !important;
 			margin-left: 1rem;
 			// margin-bottom: 1rem;
+		}
+	}
+	#journal-pages {
+		margin-top: 2rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 1.5rem;
+
+		[data-page] {
+			display: grid;
+			place-items: center;
+			width: 2rem;
+			height: 2rem;
+			border-radius: 50%;
+			color: $color-dark-500;
+			font-size: 2rem;
+			line-height: 1.1;
+			margin: 0 auto;
+			cursor: pointer;
+			transition: $transition-500;
+			&:hover {
+				background-color: $color-light-200;
+				color: $color-primary-300;
+			}
 		}
 	}
 }

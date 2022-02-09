@@ -2,7 +2,7 @@ import { dataTravel } from "./dataGallery/placesCard.js"
 
 export function renderGallery(dataToRenderId = 0){
     const gallery = document.querySelector('#gallery')
-      console.log(dataTravel);
+    //   console.log(dataTravel);
 
 // console.log(dataTravel);
     Object.values(dataTravel).forEach((item) =>{

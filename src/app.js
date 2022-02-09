@@ -46,10 +46,7 @@ const carouselPlacesCards = carouselPlacesCard.slider.children;
             // console.log(slide.dataset.id);
             renderJournal(slide.dataset.id)
             renderGallery(slide.dataset.id)
-
         }
-        
-
     })
 });
 
