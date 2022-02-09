@@ -39,7 +39,7 @@ const gallery = document.getElementById(`${rootElementId}`)
             document.body.classList.add('stop-scrolling')
             
             //add event listener to close btn
-            const closeGalleryBtn = document.querySelector('#close-gallery')
+            const closeGalleryBtn = document.querySelector('#close-gallery-btn')
             closeGalleryBtn.addEventListener('click', (e)=>{
                 //recover window scrolling normal behaviour
                 document.body.classList.remove('stop-scrolling')

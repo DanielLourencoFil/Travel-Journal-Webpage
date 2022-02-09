@@ -61,7 +61,7 @@ export class CarouselGenerator {
             
 
             return `
-             <article class="${!this.hasBtn && "onSlide"} ${this.slideCSS} ${position} ${hideSlide}" data-id="${slide.id}">
+             <article class="${!this.hasBtn? "onSlide": ''} ${this.slideCSS} ${position} ${hideSlide}" data-id="${slide.id}">
                 <p class="country-name">${slide.place}</p>
                 <h2 class="country-title">${slide.title}</h2>
                 <div class="underline"></div>
@@ -203,18 +203,19 @@ sliderActionInfinite = (target) =>{
         let numberOfSlidesToShow = this.slidesDisplayNumber
         
         // add css classes for fading effect
-
+        // console.log(numberOfSlidesToShow);
 
         if(e.parentElement.classList.contains('next-btn')){
             this.counter++
-            this.counter < numberOfSlidesToShow && this.counter >= 0 ? e.parentElement.disabled = false : e.parentElement.disabled = true
+
+            this.counter <= numberOfSlidesToShow && this.counter > 0 ? e.parentElement.disabled = false : e.parentElement.disabled = true
             this.slidesDom[0].disabled = false
-            if(this.counter < 0) this.counter = 0
+            if(this.counter > 4) this.counter = 5
         } 
         if(e.parentElement.classList.contains('prev-btn')) {
             this.counter--
 
-            this.counter < numberOfSlidesToShow && this.counter >= 0? e.parentElement.disabled = false : e.parentElement.disabled = true
+            this.counter <= numberOfSlidesToShow && this.counter >= 0? e.parentElement.disabled = false : e.parentElement.disabled = true
             this.slidesDom[1].disabled = false
             if(this.counter < 0) this.counter = 0
         }
@@ -234,7 +235,7 @@ sliderActionInfinite = (target) =>{
            slide.style.transform = `translateX(-${(this.counter*108.5)}%)  `
 
            slide.addEventListener('mouseover', ()=>{
-             slide.style.transform = `translateX(-${(this.counter*108.5)}%) scale(1.1)  `   
+             slide.style.transform = `translateX(-${(this.counter*108.5)}%) scale(1.025)  `   
             })
            slide.addEventListener('mouseout', ()=>{
              slide.style.transform = `translateX(-${(this.counter*108.5)}%) scale(1)  `   
@@ -320,9 +321,9 @@ export class SliderCarousel {
         this.sliderContainer.appendChild(this.slider)
 
         this.slider = this.sliderContainer.querySelector(`.${slideCarousel}`)
-        console.log(this.slideIndex);
-        console.log(this.automatic);
-        console.log(this.interval);
+        // console.log(this.slideIndex);
+        // console.log(this.automatic);
+        // console.log(this.interval);
         Object.values(this.slides).forEach(item=>{
             if(item.id == this.slideGroupId){
             // console.log(item.gallery);
@@ -332,7 +333,7 @@ export class SliderCarousel {
             let position = "next"
             let hideSlide = ''
             if(this.slideIndex == 0){
-                console.log(item.gallery.length);
+                // console.log(item.gallery.length);
                 if(index == 0) position = "active"
                 if(index == item.gallery.length-1) position = "last"
                 // if(index == this.slides.length-1) position = "last"
@@ -366,7 +367,7 @@ export class SliderCarousel {
         }
 ///////////////////////
         if(this.automatic){
-            console.log(this.automatic);
+            // console.log(this.automatic);
             setInterval(()=>{
                 this.sliderActionInfinite(this.sliderContainer)
             },this.interval)
@@ -491,7 +492,7 @@ sliderActionInfinite = (target) =>{
             this.counter++
             this.counter < numberOfSlidesToShow && this.counter >= 0 ? e.parentElement.disabled = false : e.parentElement.disabled = true
             this.slidesDom[0].disabled = false
-            if(this.counter < 0) this.counter = 0
+            if(this.counter > 4) this.counter = 5
         } 
         if(e.parentElement.classList.contains('prev-btn')) {
             this.counter--
