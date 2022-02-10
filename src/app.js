@@ -60,5 +60,5 @@ typingEffect()
 backToTopBtn()
 getFullYear()
 
-// scrollFullSection() // needs fix
+
 

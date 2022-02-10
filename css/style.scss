@@ -20,6 +20,26 @@ $box-shadow-500: 0 -5px 15px -5px $color-dark-500;
 $transition-500: all 0.3s ease-in-out;
 
 // ********* GENERAL ********* //
+html {
+	scroll-behavior: smooth;
+}
+.scroll-wrapper {
+	position: relative;
+	scroll-snap-type: y mandatory;
+	overflow-y: scroll;
+	height: 100vh;
+	scroll-snap-align: start;
+}
+.scroll-section {
+	scroll-snap-align: start;
+	scroll-snap-type: y mandatory;
+}
+.center-wrapper {
+	width: 85vw;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
 li {
 	font-size: 1.25rem;
 }
@@ -36,13 +56,10 @@ img {
 	// height: auto;
 	display: block;
 }
-.central-wrapper {
-	width: 85vw;
-	max-width: 1200px;
-	margin: 0 auto;
-}
+
 // ********* HEADER ********* //
 .header-wrapper {
+	position: relative;
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
@@ -219,6 +236,67 @@ img {
 }
 // ********* end of HEADER ********* //
 
+// ********* ABOUT US ********* //
+.about-main-wrapper {
+	width: 100vw;
+	min-height: 100vh;
+	// max-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	.close-btn {
+		margin-left: auto;
+		margin-right: 3rem;
+		font-size: 2rem;
+		transition: $transition-500;
+		will-change: contents;
+		cursor: pointer;
+		&:hover {
+			color: $color-primary-300;
+			transform: rotate(-180deg) scale(1.2);
+		}
+	}
+}
+.about-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: 4rem;
+	.about-us {
+		display: flex;
+		flex-direction: row;
+		gap: 2rem;
+		// justify-content: center;
+		// align-items: center;
+		.about-info {
+			.about-title {
+				font-size: 1.85rem;
+				margin-bottom: 2rem;
+			}
+			.about-name {
+				font-size: 1.5rem;
+				margin-bottom: 1rem;
+			}
+			.about-text {
+				text-align: justify;
+			}
+			.social-icons {
+				font-size: 1.5rem;
+				text-align: center;
+				margin-top: 1.5rem;
+				color: goldenrod;
+			}
+		}
+		.about-person-image {
+			// height: auto !important;
+			height: 35vh;
+		}
+	}
+}
+// ********* end of ABOUT US ********* //
+
 // ********* CAROUSEL COUNTRIES MENU CARDS ********* //
 .places-section {
 	overflow-x: hidden;
@@ -335,10 +413,19 @@ img {
 	position: relative;
 	width: 100vw;
 	min-height: 100vh;
-	// background-color: $color-light-200;
-	//gallery general view
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 6rem;
+	//=== gallery general view
+	.main-section-title {
+		font-size: 3.5rem;
+		margin-top: 3rem;
+		letter-spacing: $letter-spacing-200;
+	}
 	.gallery {
-		padding: 5rem 0;
+		padding: 3rem 0;
 		// position: relative;
 		width: 80vw;
 		display: grid;
@@ -353,7 +440,7 @@ img {
 				cursor: pointer;
 				border: 5px solid $color-primary-100;
 				transform: scale(1.15);
-				z-index: 98;
+				z-index: 50;
 			}
 		}
 	}
@@ -450,12 +537,9 @@ img {
 // ********* end of GALLERY  IMAGES ********* //
 
 // ********* JOURNAL ********* //
-
-// ********* end of JOURNAL ********* //
 #journal {
-	margin: 5rem 0;
-	min-width: 100vh;
-	min-height: 100vh;
+	width: 100vw;
+	padding-bottom: 3rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -575,6 +659,7 @@ img {
 		}
 	}
 }
+// ********* end of JOURNAL ********* //
 
 // ********* FOOTER ********* //
 .footer {
