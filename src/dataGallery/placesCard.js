@@ -1,46 +1,106 @@
 export const placesCardsData = [
     {
-        img: "./images/DSC_0195.JPG",
-        place: "MÉXICO",
-        title: "Tοda jornada tem um começo!"
+        gallery:{
+            img: "./images/DSC_0195.JPG",
+            place: "MÉXICO",
+            title: "Tοda jornada tem um começo!"
+        },
     },
-    {
+    {   
+        gallery:{
+
+        },
         img: "./images/DSC_0185.JPG",
         place: "CENTRAL AMERICA",
         title: "On the road to the Jungle"
     },
-    {
+    {   gallery:{
+
         img: "./images/DSC_0196.JPG",
         place: "COLOMBIA",
         title: "Almost like Home"
     },
-    {
+    },
+    {   gallery:{
+
         img: "./images/DSC_0200.JPG",
         place: "ECUADOR",
         title: "Game changer"
     },
-    {
+    },
+    {   gallery:{
+
         img: "./images/DSC_0195.JPG",
         place: "MÉXICO",
         title: "Tοda jornada tem um começo!"
     },
-    {
+    },
+    {   gallery:{
+
         img: "./images/DSC_0185.JPG",
         place: "CENTRAL AMERICA",
         title: "On the road to the Jungle"
     },
-    {
+    },
+    {   gallery:{
+
         img: "./images/DSC_0196.JPG",
         place: "COLOMBIA",
         title: "Almost like Home"
     },
-    {
+    },
+    {   gallery:{
+
         img: "./images/DSC_0200.JPG",
         place: "ECUADOR",
         title: "Game changer"
+    },
     },
     
 ]
+// export const placesCardsData = [
+//     {
+//         img: "./images/DSC_0195.JPG",
+//         place: "MÉXICO",
+//         title: "Tοda jornada tem um começo!"
+//     },
+//     {
+//         img: "./images/DSC_0185.JPG",
+//         place: "CENTRAL AMERICA",
+//         title: "On the road to the Jungle"
+//     },
+//     {
+//         img: "./images/DSC_0196.JPG",
+//         place: "COLOMBIA",
+//         title: "Almost like Home"
+//     },
+//     {
+//         img: "./images/DSC_0200.JPG",
+//         place: "ECUADOR",
+//         title: "Game changer"
+//     },
+//     {
+//         img: "./images/DSC_0195.JPG",
+//         place: "MÉXICO",
+//         title: "Tοda jornada tem um começo!"
+//     },
+//     {
+//         img: "./images/DSC_0185.JPG",
+//         place: "CENTRAL AMERICA",
+//         title: "On the road to the Jungle"
+//     },
+//     {
+//         img: "./images/DSC_0196.JPG",
+//         place: "COLOMBIA",
+//         title: "Almost like Home"
+//     },
+//     {
+//         img: "./images/DSC_0200.JPG",
+//         place: "ECUADOR",
+//         title: "Game changer"
+//     },
+    
+// ]
 export const photosHero1 = [
     {
         id: 0,
@@ -162,6 +222,7 @@ export const dataTravel = [
         id: 0,
         place: "México",
         title: "Every journey has a beggining",
+        img: "",
         gallery: [
             {
             img: "./images/DSC_0029.JPG",

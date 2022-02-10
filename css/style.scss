@@ -397,7 +397,7 @@ img {
 		transition: $transition-500;
 
 		.full-carousel-image {
-			background-color: palegreen;
+			// background-color: palegreen;
 			position: absolute;
 			opacity: 0;
 			top: 2.5vh;
@@ -408,13 +408,20 @@ img {
 
 			transition: all 0.5s linear;
 		}
+		.photo-number {
+			font-size: 6rem;
+			color: antiquewhite;
+			position: relative;
+			bottom: 50vh;
+			left: 50vw;
+		}
 		.next {
-			transform: translatex(-100%);
+			transform: translatex(100%);
 			border-left: 3px solid white;
 			border-right: 3px solid white;
 		}
 		.last {
-			transform: translateX(100%);
+			transform: translateX(-100%);
 			border-left: 3px solid white;
 			border-right: 3px solid white;
 		}
