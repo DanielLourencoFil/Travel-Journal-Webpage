@@ -1,4 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Freehand&family=Gochi+Hand&family=Libre+Baskerville&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-wrapper {
+  position: relative;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+.scroll-section {
+  scroll-snap-align: start;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+
+.center-wrapper {
+  width: 85vw;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 li {
   font-size: 1.25rem;
 }
@@ -17,13 +42,8 @@ img {
   display: block;
 }
 
-.central-wrapper {
-  width: 85vw;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .header-wrapper {
+  position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -256,6 +276,93 @@ img {
           box-shadow: 0 -5px 15px -5px #373737;
 }
 
+.about-main-wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about-main-wrapper .close-btn {
+  margin-left: auto;
+  margin-right: 3rem;
+  font-size: 2rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  will-change: contents;
+  cursor: pointer;
+}
+
+.about-main-wrapper .close-btn:hover {
+  color: orangered;
+  -webkit-transform: rotate(-180deg) scale(1.2);
+          transform: rotate(-180deg) scale(1.2);
+}
+
+.about-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 4rem;
+}
+
+.about-wrapper .about-us {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 2rem;
+}
+
+.about-wrapper .about-us .about-info .about-title {
+  font-size: 1.85rem;
+  margin-bottom: 2rem;
+}
+
+.about-wrapper .about-us .about-info .about-name {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-wrapper .about-us .about-info .about-text {
+  text-align: justify;
+}
+
+.about-wrapper .about-us .about-info .social-icons {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  color: goldenrod;
+}
+
+.about-wrapper .about-us .about-person-image {
+  height: 35vh;
+}
+
 .places-section {
   overflow-x: hidden;
   width: 100vw;
@@ -397,10 +504,30 @@ img {
   position: relative;
   width: 100vw;
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 6rem;
+}
+
+.main-wrapper .main-section-title {
+  font-size: 3.5rem;
+  margin-top: 3rem;
+  letter-spacing: 2px;
 }
 
 .main-wrapper .gallery {
-  padding: 5rem 0;
+  padding: 3rem 0;
   width: 80vw;
   display: -ms-grid;
   display: grid;
@@ -422,7 +549,7 @@ img {
   border: 5px solid #dadd19;
   -webkit-transform: scale(1.15);
           transform: scale(1.15);
-  z-index: 98;
+  z-index: 50;
 }
 
 #gallery-full-carousel-wrapper {
@@ -528,9 +655,8 @@ img {
 }
 
 #journal {
-  margin: 5rem 0;
-  min-width: 100vh;
-  min-height: 100vh;
+  width: 100vw;
+  padding-bottom: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

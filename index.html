@@ -14,110 +14,187 @@
     <link rel="stylesheet" href="./css/minireset.css">
 </head>
 <body>
-    <!--************ HEADER SECTION ************-->
-    <header class="header-wrapper" id="header-wrapper" data-scroll = "100">
-        <!-- HERO and NAVBAR-->
-        <section class="hero">
-            <nav class="navbar">
-                <ul class="nav-links">
-                    <li class="nav-link">
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="#">Places</a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="contact.html">Contact</a>
-                    </li>
-                    <!-- <li class="nav-link about-link">
-                        <a href="about.html">About</a>
-                    </li> -->
-                </ul>
-            </nav>
-        <!-- main title -->
-         <!-- <div class="main-title-wrapper"> </div> -->
-         <h1 class="main-title"><span id="main-title-1"></span> <span id="main-title-2"></span></h1>
-        <!-- end of main title -->
-        
-        <!-- travel objects -->
-        <img class="bussola" src="images/bussola.png" alt="old bussola">
-        <img class="pen" src="images/pen.png" alt="old hand writing">
-        <!-- end of travel objects -->
+    <div class="scroll-wrapper">
+        <!--************ HEADER SECTION ************-->
+        <header class="header-wrapper scroll-section" id="header-wrapper" data-scroll = "100">
+            <!-- HERO and NAVBAR-->
+            <section class="hero">
+                <nav class="navbar">
+                    <ul class="nav-links">
+                        <li class="nav-link">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#">Places</a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="contact.html">Contact</a>
+                        </li>
+                        <!-- <li class="nav-link about-link">
+                            <a href="about.html">About</a>
+                        </li> -->
+                    </ul>
+                </nav>
+            <!-- main title -->
+            <!-- <div class="main-title-wrapper"> </div> -->
+            <h1 class="main-title"><span id="main-title-1"></span> <span id="main-title-2"></span></h1>
+            <!-- end of main title -->
+            
+            <!-- travel objects -->
+            <img class="bussola" src="images/bussola.png" alt="old bussola">
+            <img class="pen" src="images/pen.png" alt="old hand writing">
+            <!-- end of travel objects -->
 
-        <!-- end of HERO and NAVBAR -->
-        </section>
-        <!-- small SLIDER -->
-        <section class="hero-slider-wrapper" id="hero-slider-wrapper">
-            <!-- images injected by JS -->
-            <!-- <img src="" alt=""> -->
-        </section>
-        <!-- end of small SLIDER -->
+            <!-- end of HERO and NAVBAR -->
+            </section>
+            <!-- small SLIDER -->
+            <section class="hero-slider-wrapper" id="hero-slider-wrapper">
+                <!-- images injected by JS -->
+                <!-- <img src="" alt=""> -->
+            </section>
+            <!-- end of small SLIDER -->
 
-        <!-- PICTURE -->
-        <section class="hero-picture-wrapper">
-            <img src="" alt="">
-            <div class="nav-link about-link">
-                <a href="about.html">About</a>
+            <!-- PICTURE -->
+            <section class="hero-picture-wrapper">
+                <img src="" alt="">
+                <div class="nav-link about-link">
+                    <a href="about.html">About</a>
+                </div>
+            </section>
+            <!-- end of PICTURE -->
+
+            <!-- CARD -->
+            <section class="hero-card-wrapper">
+                <img src="" alt="">
+            </section>
+            <!-- end of CARD -->
+        </header>
+
+        <!--************ PLACES SECTION ************-->
+        <section class="places-section scroll-section" data-scroll = 100 id="places-cards">
+            <div class="general-wrapper center-wrapper" id="places-card-carousel">
+                <!-- carousel next & prev btns -->
+                <button class="slide-btn prev-btn"><i
+                        class="fas fa-chevron-right "></i></button>
+                <button class="slide-btn next-btn"><i class="fas fa-chevron-left "></i></button>
+                    <!--cards inject by js  -->
+                
             </div>
         </section>
-        <!-- end of PICTURE -->
 
-        <!-- CARD -->
-        <section class="hero-card-wrapper">
-            <img src="" alt="">
+        <!--************ ABOUT SECTION ************-->
+        <section class="about-main-wrapper scroll-section">
+            <i class="fa-solid fa-xmark close-btn"></i>
+            <div class="about-wrapper center-wrapper">
+                <article class="about-us person-1">
+                    <img src="./images/DSC_0083 (2).JPG" alt=""
+                        class="about-person-image">
+                    <div class="about-info">
+                        <h1 class="about-title">Just a ordinary guy...</h1>
+                        <h2 class="about-name">Daniel</h2>
+                        <p class="about-text">Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Similique earum consectetur, iste facilis
+                            cumque aliquam molestias, mollitia laboriosam enim
+                            voluptatibus aut quia natus culpa soluta libero? Ad eius
+                            esse assumenda reprehenderit quasi suscipit ab modi! Sit
+                            ipsam eveniet, maiores accusamus eius reprehenderit est
+                            quaerat exercitationem dolorem, sapiente obcaecati
+                            perspiciatis consequuntur?</p>
+                        <p class="about-text">Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Molestias quas doloribus quae odio?
+                            Impedit repudiandae temporibus unde incidunt? Voluptate,
+                            voluptas. Voluptas at error ut, veniam sit sunt! Quidem
+                            quibusdam quas vitae fuga voluptates blanditiis accusamus
+                            aut odit mollitia doloremque accusantium ab veniam maxime
+                            illum omnis, eos maiores porro ratione totam incidunt quo
+                            in. Aspernatur corporis voluptas, eum blanditiis cumque
+                            repellendus?</p>
+                        <p class="about-text">Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Error ratione cumque aut! Ad minus illo
+                            cum, nisi quo placeat rem in. Exercitationem, doloribus
+                            velit possimus ratione obcaecati nostrum impedit, magnam,
+                            blanditiis consectetur ut nesciunt similique consequuntur
+                            quaerat officiis deserunt nihil!</p>
+                        <div class="social-icons">icons, icons, icons</div>
+        
+                    </div>
+                </article>
+                <article class="about-us person-1">
+        
+                    <div class="about-info">
+                        <h1 class="about-title">Just my sweat heart...</h1>
+                        <h2 class="about-name">Katiane</h2>
+                        <p class="about-text">Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Similique earum consectetur, iste facilis
+                            cumque aliquam molestias, mollitia laboriosam enim
+                            voluptatibus aut quia natus culpa soluta libero? Ad eius
+                            esse assumenda reprehenderit quasi suscipit ab modi! Sit
+                            ipsam eveniet, maiores accusamus eius reprehenderit est
+                            quaerat exercitationem dolorem, sapiente obcaecati
+                            perspiciatis consequuntur?</p>
+                        <p class="about-text">Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Molestias quas doloribus quae odio?
+                            Impedit repudiandae temporibus unde incidunt? Voluptate,
+                            voluptas. Voluptas at error ut, veniam sit sunt! Quidem
+                            quibusdam quas vitae fuga voluptates blanditiis accusamus
+                            aut odit mollitia doloremque accusantium ab veniam maxime
+                            illum omnis, eos maiores porro ratione totam incidunt quo
+                            in. Aspernatur corporis voluptas, eum blanditiis cumque
+                            repellendus?</p>
+                        <p class="about-text">Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Error ratione cumque aut! Ad minus illo
+                            cum, nisi quo placeat rem in. Exercitationem, doloribus
+                            velit possimus ratione obcaecati nostrum impedit, magnam,
+                            blanditiis consectetur ut nesciunt similique consequuntur
+                            quaerat officiis deserunt nihil!</p>
+                        <div class="social-icons">icons, icons, icons</div>
+                    </div>
+                    <img src="./images/DSC_0185.JPG" alt="" class="about-person-image">
+                </article>
+        
+            </div>
         </section>
-        <!-- end of CARD -->
-    </header>
-    <!--************ end of HEADER SECTION ************-->
 
-    <!--************ PLACES SECTION ************-->
-    <section class="places-section" data-scroll = 100 id="places-cards">
-        <div class="general-wrapper" id="places-card-carousel">
-            <!-- carousel next & prev btns -->
-            <button class="slide-btn prev-btn"><i
-                    class="fas fa-chevron-right "></i></button>
-            <button class="slide-btn next-btn"><i class="fas fa-chevron-left "></i></button>
-                <!--cards inject by js  -->
-            
-        </div>
-    </section>
+        <!--************ MAIN SECTION ************-->
+        <main class="main-wrapper scroll-section" data-scroll="100" >
+            <h1 class="main-section-title">GALLERY</h1>
+            <section class="center-wrapper section-wrapper gallery" id="gallery">
+                <!-- <article class="image-gallery">
+                    <img src="" alt="">
+                </article> -->
+            </section>
+        
+            <section id="gallery-full-carousel-wrapper">
+            <button id="close-gallery-btn">
+                <i class="fas fa-th-large"></i>
+            </button>
+            <!-- insert by js  -->
+            </section>
+         </main>
+        
+        <!--************ JOURNAL SECTION ************-->
+        <section class="scroll-section" id="journal">
+            <div class="journal-header">
+                <h1 class="journal-banner-title">Journey Jornal</h1>
+                <p class="journal-banner-text">When words say more then pictures</p>
+            </div>
+            <div class="center-wrapper">
+                <div class="journal-wrapper" id="journal-wrapper">
+                    <!-- content insert by js -->
+                </div>
+                <div class="journal-pages-wrapper" id="journal-pages">
+                <!-- content insert by js -->
+                </div>
+            </div>
+        </section>
 
+        <!--************ FOOTER SECTION ************-->
+        <footer class="footer scroll-section">
+            <p>Copyrigth &copy; CodeErgoSum - <span id="current-year"></span> </p>
+        </footer>
 
-    <!--************ end of PLACES SECTION ************-->
-
-
-    <!-- MAIN SECTION -->
-<main class="main-wrapper" data-scroll="100" >
-    <section class="central-wrapper section-wrapper gallery" id="gallery">
-        <!-- <article class="image-gallery">
-            <img src="" alt="">
-        </article> -->
-    </section>
-    
-    <section id="gallery-full-carousel-wrapper">
-        <button id="close-gallery-btn">
-            <i class="fas fa-th-large"></i>
-        </button>
-        <!-- insert by js  -->
-    </section>
-   
-    <section class="section-wrapper" id="journal">
-        <div class="journal-header">
-            <h1 class="journal-banner-title">Journey Jornal</h1>
-        <p class="journal-banner-text">When words say more then pictures</p></div>
-        <div class="journal-wrapper" id="journal-wrapper">
-            
-        </div>
-        <div id="journal-pages"></div>
-    </section>
-</main>
-
-<footer class="footer">
-    <p>Copyrigth &copy; CodeErgoSum - <span id="current-year"></span> </p>
-</footer>
-
-
-<script src="./src/app.js" type="module"></script>
+    </div>
+    <script src="./src/app.js" type="module"></script>
 </body>
 </html>
 
