@@ -1,4 +1,5 @@
-import { SliderCarousel } from "./utils/carouselGenerator.js";
+// import { PhotoCarouselGenerator } from "./utils/carouselGenerator.js";
+import { CarouselGenerator } from "./utils/carouselGenerator.js";
 import {dataTravel } from "./dataGallery/placesCard.js";
 
 export function fullCarousel(rootElementId){
@@ -6,8 +7,11 @@ const gallery = document.getElementById(`${rootElementId}`)
 
     gallery.addEventListener('click', (e)=>{
         //generate Carousel full images
-        const galleryFullCarousel = new SliderCarousel('gallery-full-carousel-wrapper', dataTravel)
+        // const galleryFullCarousel = new PhotoCarouselGenerator('gallery-full-carousel-wrapper', dataTravel)
+        const galleryFullCarousel = new CarouselGenerator('gallery-full-carousel-wrapper', dataTravel)
         
+        // set type of render function
+        galleryFullCarousel.renderType = 2
         //set change type
         galleryFullCarousel.slideChangeType = "infinite"
         
@@ -17,7 +21,6 @@ const gallery = document.getElementById(`${rootElementId}`)
             console.log(e.target);
             galleryFullCarousel.slideIndex = e.target.getAttribute('data-image-id')
             galleryFullCarousel.slideGroupId = e.target.getAttribute('data-place-id')
-            console.log(galleryFullCarousel.slideGroupId);
         
             //remove class to hide-carousel: it is added below, after click "close-btn", to create a close effect 
             galleryFullCarousel.sliderContainer.classList.remove('hide-carousel')
