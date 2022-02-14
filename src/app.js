@@ -1,6 +1,5 @@
-// import {CardCarouselGenerator, PhotoCarouselGenerator} from "./utils/carouselGenerator.js"
 import {CarouselGenerator} from "./utils/carouselGenerator.js"
-import {placesCardsData, photosHero1, galleryImages, dataTravel} from "./dataGallery/placesCard.js"
+import {placesCardsData, photosHero1, galleryImages, dataTravel, photosHero2} from "./dataGallery/placesCard.js"
 import { renderGallery } from "./renderGallery.js"
 import {fullCarousel} from "./fullCarousel.js"
 import { renderJournal } from "./renderJournal.js"
@@ -14,15 +13,22 @@ import { backToTopBtn } from "./utils/backToTopBtn.js"
 
 // ===== CAROUSEL HERO (left side)===== //
 
-const carouselHero1 = new CarouselGenerator('hero-slider-wrapper', photosHero1, 5000)
+const carouselHero1 = new CarouselGenerator('hero-slider-1-wrapper', photosHero1, 10000)
 carouselHero1.sliderAction = 'onSlide'
 carouselHero1.renderType = 2
-carouselHero1.interval = 5000
-carouselHero1.renderSlides('hero-slider', 'hero-slide-1')
 carouselHero1.slideChangeType = 'infinite'
 carouselHero1.slideChangeOnClick()
+carouselHero1.renderSlides('hero-slider', 'hero-slide-1')
 
 // ===== CAROUSEL HERO (rigth side)===== //
+
+const carouselHero2= new CarouselGenerator('hero-slider-2-wrapper', photosHero2,7000)
+carouselHero2.sliderAction = 'onSlide';
+carouselHero2.renderType = 2;
+carouselHero2.slideChangeType = 'infinite';
+carouselHero2.slideChangeOnClick();
+carouselHero2.renderSlides('hero-slider', 'hero-slide-1')
+
 
 
 // ===== CAROUSEL PLACES CARDS ===== //
@@ -59,6 +65,34 @@ fullCarousel('gallery')
 typingEffect()
 backToTopBtn()
 getFullYear()
+
+// ===== CAROUSEL FULL IMAGES - image gallery ===== //
+const scrollYSections = document.querySelectorAll('.scroll-y-section');
+const aboutBtn = document.querySelector('.about-btn')
+const travelRouteBtn = document.querySelector('.bussola-btn')
+const scrollSnap = document.querySelector('#scroll-snap-wrapper')
+const aboutCloseBtn = document.querySelector('.about-close-btn')
+const travelCloseBtn = document.querySelector('.travel-close-btn')
+
+aboutBtn.addEventListener('click', (e)=>{
+    scrollYSections[0].style.left = '0'  
+    document.body.classList.add('hide-scroll-bar')
+    
+    aboutCloseBtn.addEventListener('click', (e)=>{
+        scrollYSections[0].style.left = '100vw'
+        document.body.classList.remove('hide-scroll-bar')
+        // scrollYSections[0].style.position = 'fixed'
+    })
+})
+travelRouteBtn.addEventListener('click', (e)=>{
+    scrollYSections[1].style.left = '0'
+
+    travelCloseBtn.addEventListener('click', (e)=>{
+        scrollYSections[1].style.left = '-100vw'
+    })
+
+})
+
 
 
 

@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="./css/minireset.css">
 </head>
 <body>
-    <div class="scroll-wrapper">
+    <!-- <div class="scroll-wrapper" id="scroll-snap-wrapper"> -->
         <!--************ HEADER SECTION ************-->
         <header class="header-wrapper scroll-section" id="header-wrapper" data-scroll = "100">
-            <!-- HERO and NAVBAR-->
+            <!-- HERO -->
             <section class="hero">
                 <nav class="navbar">
                     <ul class="nav-links">
@@ -30,61 +30,60 @@
                         <li class="nav-link">
                             <a href="contact.html">Contact</a>
                         </li>
-                        <!-- <li class="nav-link about-link">
-                            <a href="about.html">About</a>
-                        </li> -->
                     </ul>
                 </nav>
-            <!-- main title -->
-            <!-- <div class="main-title-wrapper"> </div> -->
-            <h1 class="main-title"><span id="main-title-1"></span> <span id="main-title-2"></span></h1>
-            <!-- end of main title -->
+
+                <div class="paper-sheet sheet-1"></div>
+                <div class="paper-sheet sheet-2"></div>
+                <div class="paper-sheet sheet-3"></div>
+                <div class="paper-sheet sheet-4"></div>
+                <div class="paper-sheet sheet-5"></div>
+                
+                <!-- main title -->
+                <h1 class="main-title"><span id="main-title-1"></span> <span id="main-title-2"></span></h1>
+                <!-- end of main title -->
+                
+                <!-- travel objects -->
+                <article class="bussola-wrapper">
+                    <button class="bussola-btn">ROUTE</button>
+                    <img class="bussola" src="images/bussola-img-2.png" alt=" bussola over a wooden table">
+                </article>
+                <article class="pen-wrapper">
+                    <img class="pen" src="images/pen.png" alt="old hand writing">
+                </article>
+                <article class="travel-map-wrapper">
+                    <img class="travel-map" src="images/southern-america-travel-map.jpg" alt="southern america travel map">
+                </article>
+                <!-- end of travel objects -->
+
+                <!-- CAROUSEL HERO 1 -->
+                <article class="hero-carousel-1-wrapper" id="hero-slider-1-wrapper">
+                    <!-- images injected by JS -->
+                </article>
+                <!-- end of small SLIDER -->
+                
+                <!-- CAROUSEL HERO 2 -->
+                <button class="about-btn">About</button>
+                <article class="hero-picture-wrapper">
+                        <div id="hero-slider-2-wrapper"></div>
+                    <!-- images injected by JS -->
+                </article>
+                <!-- end of PICTURE SLIDER-->
+                
+                <!-- CARD -->
+                <article class="hero-contact-wrapper">
+                    <button class="contact-btn">Contact</button>
+                </article>
+                <!-- end of CARD -->
+
+                <!-- end of HERO  -->
+            </section>
             
-            <!-- travel objects -->
-            <img class="bussola" src="images/bussola.png" alt="old bussola">
-            <img class="pen" src="images/pen.png" alt="old hand writing">
-            <!-- end of travel objects -->
-
-            <!-- end of HERO and NAVBAR -->
-            </section>
-            <!-- small SLIDER -->
-            <section class="hero-slider-wrapper" id="hero-slider-wrapper">
-                <!-- images injected by JS -->
-                <!-- <img src="" alt=""> -->
-            </section>
-            <!-- end of small SLIDER -->
-
-            <!-- PICTURE -->
-            <section class="hero-picture-wrapper">
-                <img src="" alt="">
-                <div class="nav-link about-link">
-                    <a href="about.html">About</a>
-                </div>
-            </section>
-            <!-- end of PICTURE -->
-
-            <!-- CARD -->
-            <section class="hero-card-wrapper">
-                <img src="" alt="">
-            </section>
-            <!-- end of CARD -->
         </header>
 
-        <!--************ PLACES SECTION ************-->
-        <section class="places-section scroll-section" data-scroll = 100 id="places-cards">
-            <div class="general-wrapper center-wrapper" id="places-card-carousel">
-                <!-- carousel next & prev btns -->
-                <button class="slide-btn prev-btn"><i
-                        class="fas fa-chevron-right "></i></button>
-                <button class="slide-btn next-btn"><i class="fas fa-chevron-left "></i></button>
-                    <!--cards inject by js  -->
-                
-            </div>
-        </section>
-
         <!--************ ABOUT SECTION ************-->
-        <section class="about-main-wrapper scroll-section">
-            <i class="fa-solid fa-xmark close-btn"></i>
+        <section class="about-main-wrapper scroll-y-section">
+            <i class="fa-solid fa-xmark about-close-btn"></i>
             <div class="about-wrapper center-wrapper">
                 <article class="about-us person-1">
                     <img src="./images/DSC_0083 (2).JPG" alt=""
@@ -116,11 +115,11 @@
                             blanditiis consectetur ut nesciunt similique consequuntur
                             quaerat officiis deserunt nihil!</p>
                         <div class="social-icons">icons, icons, icons</div>
-        
+
                     </div>
                 </article>
                 <article class="about-us person-1">
-        
+
                     <div class="about-info">
                         <h1 class="about-title">Just my sweat heart...</h1>
                         <h2 class="about-name">Katiane</h2>
@@ -151,9 +150,34 @@
                     </div>
                     <img src="./images/DSC_0185.JPG" alt="" class="about-person-image">
                 </article>
-        
+
             </div>
         </section>
+
+        <!--************ TRAVEL ROUTE SECTION ************-->
+        <section class="travel-route-wrapper scroll-y-section">
+            <i class="fa-solid fa-xmark travel-close-btn"></i>
+            <div class="center-wrapper travel-route-title">
+                <h1>TRAVEL ROUTE</h1>
+            <!-- <iframe
+                src="https://www.google.com/maps/d/u/0/embed?mid=1sE_LyTUzb8FvJM79OwldWwZgcgzdFw5K&ehbc=2E312F"
+                width="640" height="480"></iframe> -->
+                <img src="images/latin-america-map.png" alt="">
+            </div>
+        </section>                          
+
+        <!--************ PLACES SECTION ************-->
+        <section class="places-section scroll-section" data-scroll = 100 id="places-cards">
+            <div class="general-wrapper center-wrapper" id="places-card-carousel">
+                <!-- carousel next & prev btns -->
+                <button class="slide-btn prev-btn"><i
+                        class="fas fa-chevron-right "></i></button>
+                <button class="slide-btn next-btn"><i class="fas fa-chevron-left "></i></button>
+                    <!--cards inject by js  -->
+                
+            </div>
+        </section>
+
 
         <!--************ MAIN SECTION ************-->
         <main class="main-wrapper scroll-section" data-scroll="100" >
@@ -193,7 +217,7 @@
             <p>Copyrigth &copy; CodeErgoSum - <span id="current-year"></span> </p>
         </footer>
 
-    </div>
+    <!-- </div> -->
     <script src="./src/app.js" type="module"></script>
 </body>
 </html>

@@ -58,72 +58,36 @@ export const placesCardsData = [
     },
     
 ]
-// export const placesCardsData = [
-//     {
-//         img: "./images/DSC_0195.JPG",
-//         place: "MÉXICO",
-//         title: "Tοda jornada tem um começo!"
-//     },
-//     {
-//         img: "./images/DSC_0185.JPG",
-//         place: "CENTRAL AMERICA",
-//         title: "On the road to the Jungle"
-//     },
-//     {
-//         img: "./images/DSC_0196.JPG",
-//         place: "COLOMBIA",
-//         title: "Almost like Home"
-//     },
-//     {
-//         img: "./images/DSC_0200.JPG",
-//         place: "ECUADOR",
-//         title: "Game changer"
-//     },
-//     {
-//         img: "./images/DSC_0195.JPG",
-//         place: "MÉXICO",
-//         title: "Tοda jornada tem um começo!"
-//     },
-//     {
-//         img: "./images/DSC_0185.JPG",
-//         place: "CENTRAL AMERICA",
-//         title: "On the road to the Jungle"
-//     },
-//     {
-//         img: "./images/DSC_0196.JPG",
-//         place: "COLOMBIA",
-//         title: "Almost like Home"
-//     },
-//     {
-//         img: "./images/DSC_0200.JPG",
-//         place: "ECUADOR",
-//         title: "Game changer"
-//     },
-    
-// ]
+
 export const photosHero1 = [
     {
         id: 0,
         gallery: [
             {
-            img: "./images/DSC_0029.JPG",
-            imgPlace: "Mexico City",
+            img: "./images/carousel-1/carousel-1.JPG",
+            imgPlace: "Uyuni Salar - Bolivia",
             imgDate: "10/17/2007",
+            alt: "portrail image, man in Uyuni Salar - Bolivia",
             },
             {
-            img: "./images/DSC_0083 (2).JPG",
-            imgPlace: "Mexico City",
+            img: "./images/carousel-1/carousel-2.JPG",
+            imgPlace: "Atitlan Lake - Peru",
             imgDate: "10/17/2007",
+            alt: "Portrail image, Woman and Atitlan Lake as background - Peru",
+
             },
             {
-            img: "./images/DSC_0185.JPG",
-            imgPlace: "Mexico City",
+            img: "./images/carousel-1/carousel-3.JPG",
+            imgPlace: "Atitlan Lake - Peru",
             imgDate: "10/17/2007",
+            alt: "Woman biking and Atitlan Lake as background - Peru",
+
             },
             {
-            img: "./images/DSC_0029.JPG",
-            imgPlace: "Mexico City",
+            img: "./images/carousel-1/carousel-4.JPG",
+            imgPlace: "Atitlan Lake - Peru",
             imgDate: "10/17/2007",
+            alt: "Woman biking and Atitlan Lake as background - Peru",
             },
             
         ],
@@ -132,17 +96,38 @@ export const photosHero1 = [
 ]
 export const photosHero2 = [
     {
-        img: "./images/DSC_0029.JPG"
+        id: 0,
+        gallery: [
+            {
+            img: "./images/carousel-1/carousel-1.JPG",
+            imgPlace: "Uyuni Salar - Bolivia",
+            imgDate: "10/17/2007",
+            alt: "portrail image, man in Uyuni Salar - Bolivia",
+            },
+            {
+            img: "./images/carousel-1/carousel-2.JPG",
+            imgPlace: "Atitlan Lake - Peru",
+            imgDate: "10/17/2007",
+            alt: "Portrail image, Woman and Atitlan Lake as background - Peru",
+
+            },
+            {
+            img: "./images/carousel-1/carousel-3.JPG",
+            imgPlace: "Atitlan Lake - Peru",
+            imgDate: "10/17/2007",
+            alt: "Woman biking and Atitlan Lake as background - Peru",
+
+            },
+            {
+            img: "./images/carousel-1/carousel-4.JPG",
+            imgPlace: "Atitlan Lake - Peru",
+            imgDate: "10/17/2007",
+            alt: "Woman biking and Atitlan Lake as background - Peru",
+            },
+            
+        ],
     },
-    {
-        img: "./images/DSC_0083 (2).JPG"
-    },
-    {
-        img: "./images/DSC_0185.JPG"
-    },
-    {
-        img: "./images/DSC_0083 (2).JPG"
-    },
+    
 ]
 
 export const galleryImages = [

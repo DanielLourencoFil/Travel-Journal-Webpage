@@ -18,7 +18,6 @@ const gallery = document.getElementById(`${rootElementId}`)
         // console.log(galleryFullCarousel.slides)
         //after image click
         if(e.target){
-            console.log(e.target);
             galleryFullCarousel.slideIndex = e.target.getAttribute('data-image-id')
             galleryFullCarousel.slideGroupId = e.target.getAttribute('data-place-id')
         
@@ -29,7 +28,7 @@ const gallery = document.getElementById(`${rootElementId}`)
             galleryFullCarousel.sliderContainer.classList.add('show-carousel')
             
             //set position on window for carousel based on gallery position: to cover full width and height
-            const sliderPosition = document.getElementById('gallery').getBoundingClientRect().top;
+            const sliderPosition = document.querySelector('.main-wrapper').getBoundingClientRect().top;
             galleryFullCarousel.sliderContainer.style.top = `${sliderPosition*-1}px`
             
             //render carousel into container
@@ -40,7 +39,9 @@ const gallery = document.getElementById(`${rootElementId}`)
             
             //stop window scrolling in order to get the carousel in place and avoid conflict betwen scrolling change type
             document.body.classList.add('stop-scrolling')
-            
+            // document.querySelector('#scroll-snap-wrapper').classList.add('stop-scrolling')
+            console.log(document.body.classList);
+                       
             //add event listener to close btn
             const closeGalleryBtn = document.querySelector('#close-gallery-btn')
             closeGalleryBtn.addEventListener('click', (e)=>{
@@ -51,6 +52,7 @@ const gallery = document.getElementById(`${rootElementId}`)
                 galleryFullCarousel.sliderContainer.classList.add('hide-carousel')
                 setTimeout(function(){
                     galleryFullCarousel.sliderContainer.classList.remove('show-carousel')
+                    // document.querySelector('#scroll-snap-wrapper').classList.remove('stop-scrolling')
                     galleryFullCarousel.slider.remove()
                 }, 1000);
             
