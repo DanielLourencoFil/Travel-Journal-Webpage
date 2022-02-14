@@ -66,8 +66,9 @@ export class CarouselGenerator {
 
             // IMPORTANTE: numero de slides precisa ser passado dinamicamente:
             //encontrar um modo, para numero de slides impar 
-            if(this.slidesDisplayNumber > 1 && index == this.slidesDisplayNumber){
+            if(this.slidesDisplayNumber > 1 && index >= this.slidesDisplayNumber){
                 hideSlide = "hide-slide"
+                console.log(this.slidesDisplayNumber);
             }
 
             return `
@@ -107,7 +108,7 @@ export class CarouselGenerator {
 
             return `
              <article class=" slide ${!this.hasBtn && "onSlide"} ${this.slideCSS} ${position} ${hideSlide}">
-            <img src="${slide.img}" class="img-slide " alt="${alt}"></img>
+            <img src="${img}" class="img-slide " alt="${alt}"></img>
             <span class="photo-number">${index+1}</span>
             </article>
             `
