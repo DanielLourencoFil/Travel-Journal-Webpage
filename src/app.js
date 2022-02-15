@@ -34,12 +34,61 @@ carouselHero2.renderSlides('hero-slider', 'hero-slide-1')
 // ===== CAROUSEL PLACES CARDS ===== //
 const carouselPlacesCard = new CarouselGenerator('places-card-carousel',dataTravel)
 carouselPlacesCard.slideGeneralDataMap = true
-carouselPlacesCard.slidesDisplayNumber = 4
 carouselPlacesCard.renderType = 1
 carouselPlacesCard.slideChangeOnClick()
 carouselPlacesCard.slideChangeType = 'linear'
-carouselPlacesCard.slideLinearValue = 25.5 // 4 slides per time : display max-width design
-carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
+// carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
+// carouselPlacesCard.slidesDisplayNumber = 4
+// carouselPlacesCard.slideLinearValue = 25.5 // 4 slides per time : display max-width design
+
+
+//////////////////////////////////////////
+window.addEventListener('resize',()=>{
+    screenSize()
+})
+screenSize()
+
+function screenSize(){
+    const cardsWrapper = document.querySelector('.places-wrapper')
+    console.log(cardsWrapper);
+    const size = window.getComputedStyle(document.body, '::after').getPropertyValue('content');
+    if(size.indexOf("size-1-screen") != -1){
+        cardsWrapper && cardsWrapper.remove()
+        carouselPlacesCard.slidesLinearTranslation = 100
+        console.log('yes',size);
+        carouselPlacesCard.slidesDisplayNumber = 1
+        // carouselPlacesCard.slideLinearValue = 100 // 4 slides per time : display max-width design
+        carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
+        
+    }
+    if(size.indexOf("size-2-screen") != -1){
+        cardsWrapper && cardsWrapper.remove()
+        
+        carouselPlacesCard.slidesLinearTranslation = 104.2
+        carouselPlacesCard.slidesDisplayNumber = 2
+        carouselPlacesCard.slideLinearValue = 50 // 4 slides per time : display max-width design
+        carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
+        console.log('yes',size);
+    }
+    if(size.indexOf("size-3-screen") != -1){
+        cardsWrapper && cardsWrapper.remove()
+        carouselPlacesCard.slidesLinearTranslation = 103.25
+        carouselPlacesCard.slideLinearValue = 33 // 4 slides per time : display max-width design
+        carouselPlacesCard.slidesDisplayNumber = 3
+        carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
+        console.log('yes',size);
+    }
+    if(size.indexOf("size-4-screen") != -1){
+        cardsWrapper && cardsWrapper.remove()
+        carouselPlacesCard.slidesLinearTranslation = 106.5
+        carouselPlacesCard.slideLinearValue = 25 // 4 slides per time : display max-width design
+        carouselPlacesCard.slidesDisplayNumber = 4
+        carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
+        console.log('yes',size);
+}
+}
+
+
 
 //===== RENDER IMAGES GALLERY after card selection / as default, the images related with the first card are rendered 
 
@@ -62,17 +111,20 @@ const carouselPlacesCards = carouselPlacesCard.slider.children;
 fullCarousel('gallery')
 
 ////////////// UTILS
-typingEffect()
+// typingEffect()
 backToTopBtn()
 getFullYear()
 
-// ===== CAROUSEL FULL IMAGES - image gallery ===== //
+// =====   ABOUT - ROUTE - CONTACT - sections ===== //
 const scrollYSections = document.querySelectorAll('.scroll-y-section');
-const aboutBtn = document.querySelector('.about-btn')
+const contactSection = document.querySelector('.contact-wrapper')
 const travelRouteBtn = document.querySelector('.bussola-btn')
-const scrollSnap = document.querySelector('#scroll-snap-wrapper')
+const aboutBtn = document.querySelector('.about-btn')
+const contactBtn = document.querySelector('.contact-btn')
 const aboutCloseBtn = document.querySelector('.about-close-btn')
 const travelCloseBtn = document.querySelector('.travel-close-btn')
+const contactCloseBtn = document.querySelector('.contact-close-btn')
+// const scrollSnap = document.querySelector('#scroll-snap-wrapper')
 
 aboutBtn.addEventListener('click', (e)=>{
     scrollYSections[0].style.left = '0'  
@@ -90,9 +142,35 @@ travelRouteBtn.addEventListener('click', (e)=>{
     travelCloseBtn.addEventListener('click', (e)=>{
         scrollYSections[1].style.left = '-100vw'
     })
-
+})
+contactBtn.addEventListener('click', (e)=>{
+    setTimeout(function(){
+        contactSection.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'
+    },750)
+    contactSection.classList.add('show-contact-section')
+    
+    contactCloseBtn.addEventListener('click', ()=>{
+        contactSection.style.backgroundColor = 'rgba(0, 0, 0, 0)'
+        setTimeout(function(){
+            contactSection.classList.remove('show-contact-section')
+    },500)
+    })
 })
 
 
 
 
+
+
+/*
+
+// ===== CAROUSEL PLACES CARDS ===== //
+const carouselPlacesCard = new CarouselGenerator('places-card-carousel',dataTravel)
+carouselPlacesCard.slideGeneralDataMap = true
+carouselPlacesCard.slidesDisplayNumber = 4
+carouselPlacesCard.renderType = 1
+carouselPlacesCard.slideChangeOnClick()
+carouselPlacesCard.slideChangeType = 'linear'
+carouselPlacesCard.slideLinearValue = 25.5 // 4 slides per time : display max-width design
+carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
+*/

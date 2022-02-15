@@ -2,16 +2,20 @@ let charIndex1 = 0;
 let charIndex2 = 0;
 let charIndex3 = 0;
 
-let isTimeforReverTyping = false
+let isTimeforRevertTyping = false
 
 
 export function typingEffect(){
     const text1 = ['Once Upon a Dream Called','Latin America...']; 
     const text2 = 'Latin America...'; 
     const speed = 100; 
+    const mainTitlePartOne = document.getElementById("main-title-1")
+    const mainTitlePartTwo = document.getElementById("main-title-2")
+    // mainTitlePartOne.textContent = ''
+    // mainTitlePartTwo.textContent = ''
     
         if (charIndex1 < text1[0].length) {
-          document.getElementById("main-title-1").innerHTML += text1[0].charAt(charIndex1);
+          mainTitlePartOne.textContent += text1[0].charAt(charIndex1);
           charIndex1++;
           setTimeout(typingEffect, speed);
         }
@@ -20,7 +24,7 @@ export function typingEffect(){
     if(charIndex1 === text1[0].length && charIndex2 < text1[1].length){
         // charIndex1 = 0
         setTimeout(function(){
-            document.getElementById("main-title-2").innerHTML += text1[1].charAt(charIndex2);
+            mainTitlePartTwo.textContent += text1[1].charAt(charIndex2);
           charIndex2++;
           setTimeout(typingEffect, speed);
 

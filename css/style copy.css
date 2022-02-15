@@ -23,28 +23,28 @@ body {
   overflow-x: hidden;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 600px) {
   body::after {
     content: "size-1-screen";
     font: 0;
   }
 }
 
-@media screen and (min-width: 770px) {
+@media screen and (min-width: 601px) {
   body::after {
     content: "size-2-screen";
     font: 0;
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 780px) {
   body::after {
     content: "size-3-screen";
     font: 0;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1000px) {
   body::after {
     content: "size-4-screen";
     font: 0;
@@ -85,7 +85,7 @@ img {
 
 .center-wrapper {
   width: 85vw;
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -1035,12 +1035,13 @@ img {
 }
 
 .places-section {
-  overflow: hidden;
+  overflow-x: hidden;
   width: 100vw;
   height: 100vh;
   display: -ms-grid;
   display: grid;
   place-items: center;
+  padding: 3rem 0;
 }
 
 #places-card-carousel {
@@ -1048,13 +1049,18 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 60vw;
-  height: 75vh;
-  background: green;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 85%;
+  height: 100%;
 }
 
 #places-card-carousel .slide-btn {
@@ -1063,7 +1069,7 @@ img {
   border: none;
   font-size: 2.5rem;
   color: orangered;
-  z-index: 6;
+  z-index: 5;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -1093,17 +1099,18 @@ img {
 
 .places-wrapper {
   position: relative;
+  margin: 0 auto;
   width: 100%;
-  height: 100%;
-  background: red;
+  height: 70%;
+  gap: 0.75rem;
 }
 
 .place-card {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 23.5%;
+  height: 60vh;
   background: khaki;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1118,7 +1125,7 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   cursor: pointer;
   will-change: contents;
   -webkit-transition: all 0.3s ease-in-out;
@@ -1129,7 +1136,7 @@ img {
   -webkit-transform: scale(1.025);
           transform: scale(1.025);
   border: 1px solid rgba(134, 42, 6, 0.7);
-  z-index: 3;
+  z-index: 99;
 }
 
 .place-card .country-name {
@@ -1166,64 +1173,6 @@ img {
   height: 0.2rem;
   background: rgba(134, 42, 6, 0.7);
   border-radius: 5rem;
-}
-
-@media screen and (min-width: 770px) {
-  #places-card-carousel {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 80vw;
-    height: 75vh;
-  }
-  .place-card {
-    width: 48%;
-    margin: 0 1%;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  #places-card-carousel {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 85vw;
-    height: 75vh;
-  }
-  .place-card {
-    width: 32%;
-    width: 32%;
-    margin: 0 1%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  #places-card-carousel {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 90vw;
-    height: 75vh;
-  }
-  .place-card {
-    width: 23.5%;
-    margin: 0 0.75%;
-  }
 }
 
 .hide-slide {
@@ -1607,4 +1556,4 @@ img {
             transform: translateY(0);
   }
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style copy.css.map */

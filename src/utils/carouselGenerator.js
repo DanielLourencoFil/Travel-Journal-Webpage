@@ -12,6 +12,7 @@ export class CarouselGenerator {
         
         this.slidesDisplayNumber = 1 // number of slides displayed on carousel per time : can be 1; 2; 3; 4; 5
         this.slideLinearValue = 100; // default
+        this.slidesLinearTranslation = 100 //default value for single slide displayed | two = 104.2 | three = 103.25 | four = 106.5
         this.changeType // set by type of change: "onClick" || "onScroll"
         this.slideChangeType = "infinite" // default || "linear"
         this.hasBtn = false
@@ -37,6 +38,7 @@ export class CarouselGenerator {
         
     ///////////////////
         if(this.slideChangeType === 'linear'){
+            console.log(this.slideLinearValue); 
             this.slider.querySelectorAll('.place-card').forEach((slide,i)=>{
                 let slideAmount = `${i*this.slideLinearValue}%` 
                 slide.style.left = slideAmount
@@ -66,7 +68,7 @@ export class CarouselGenerator {
 
             // IMPORTANTE: numero de slides precisa ser passado dinamicamente:
             //encontrar um modo, para numero de slides impar 
-            if(this.slidesDisplayNumber > 1 && index >= this.slidesDisplayNumber){
+            if(index >= this.slidesDisplayNumber){
                 hideSlide = "hide-slide"
                 console.log(this.slidesDisplayNumber);
             }
@@ -101,8 +103,8 @@ export class CarouselGenerator {
             
             if(this.slideIndex > 0 && index == this.slideIndex-1) position = "last"
             if(this.slideIndex > 0 && index == this.slideIndex) position = "active"
-            
-            if(this.slidesDisplayNumber > 1 && index == this.slidesDisplayNumber){
+            console.log(this.slidesDisplayNumber);
+            if(this.slidesDisplayNumber > 0 && index == this.slidesDisplayNumber){
                 hideSlide = "hide-slide"
             }
 
@@ -127,6 +129,7 @@ export class CarouselGenerator {
                 changerClass = "slide-btn"
             }
         });
+
 
         //add eventListener to slides or btn
         this.slidesDom = [...this.sliderContainer.getElementsByClassName(`${changerClass}`)]
@@ -214,55 +217,69 @@ export class CarouselGenerator {
         }
     }
     sliderActionLinear = (e)=>{
-
-        // IMPORTANTE: numero de slides precisa ser passado dinamicamente:
-        //encontrar um modo, para numero de slides impar 
         let numberOfSlidesToShow = this.slidesDisplayNumber
         
-        // add css classes for fading effect
-        // console.log(numberOfSlidesToShow);
-
         if(e.parentElement.classList.contains('next-btn')){
             this.counter++
-
-            this.counter <= numberOfSlidesToShow && this.counter > 0 ? e.parentElement.disabled = false : e.parentElement.disabled = true
-            this.slidesDom[0].disabled = false
-            if(this.counter > 4) this.counter = 5
+            if(this.counter >= 1 && this.counter < this.slides.length-numberOfSlidesToShow){
+                console.log( e.parentElement);
+                e.parentElement.disabled = false
+                this.slidesDom[0].disabled = false
+            }
+            else{
+                
+                e.parentElement.disabled = true
+                this.slidesDom[0].disabled = false
+            }
         } 
         if(e.parentElement.classList.contains('prev-btn')) {
             this.counter--
-
-            this.counter <= numberOfSlidesToShow && this.counter >= 0? e.parentElement.disabled = false : e.parentElement.disabled = true
-            this.slidesDom[1].disabled = false
-            if(this.counter < 0) this.counter = 0
+            if(this.counter >= 1 && this.counter < this.slides.length-numberOfSlidesToShow){
+                console.log( e.parentElement);
+                e.parentElement.disabled = false
+                this.slidesDom[1].disabled = false
+            }
+            else{
+                
+                e.parentElement.disabled = true
+                this.slidesDom[1].disabled = false
+            }
         }
         
         this.slider.querySelectorAll('.place-card').forEach((slide, index)=>{
-            // console.log(index);
             if(index > (numberOfSlidesToShow-1 + this.counter) || index < this.counter){
-                // console.log(numberOfSlidesToShow-1 + this.counter, "counter =", this.counter);
-                
                 slide.classList.add("hide-slide")
             }
-           
             else{
                 slide.classList.remove("hide-slide")
             }
-            // slide.style.transform = `translateX(-${(this.counter*103.5)}%) `0k
-           slide.style.transform = `translateX(-${(this.counter*108.5)}%)  `
+            
+           slide.style.transform = `translateX(-${(this.counter*this.slidesLinearTranslation)}%)  `
 
            slide.addEventListener('mouseover', ()=>{
-             slide.style.transform = `translateX(-${(this.counter*108.5)}%) scale(1.025)  `   
+             slide.style.transform = `translateX(-${(this.counter*this.slidesLinearTranslation)}%) scale(1.025)`   
             })
            slide.addEventListener('mouseout', ()=>{
-             slide.style.transform = `translateX(-${(this.counter*108.5)}%) scale(1)  `   
+             slide.style.transform = `translateX(-${(this.counter*this.slidesLinearTranslation)}%) scale(1)  `   
             })
         })
-
     }
     //new possible ways for slide actions: ie. linear carousel
     // for futher code...
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ////// copy of both carousel types: before merge attemp : delete if merge is usesfull
@@ -507,6 +524,8 @@ sliderActionInfinite = (target) =>{
         })
     }
 }
+
+
 class CardCarouselGenerator {
     constructor(sliderId, slidesData, interval=0){
         this.sliderContainer = document.getElementById(sliderId)
