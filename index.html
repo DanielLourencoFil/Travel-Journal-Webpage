@@ -40,7 +40,7 @@
                 <div class="paper-sheet sheet-5"></div>
                 
                 <!-- main title -->
-                <h1 class="main-title"><span id="main-title-1"></span> <span id="main-title-2"></span></h1>
+                <h1 class="main-title"><span id="main-title-1">Once upon a Time a Dream Called</span> <span id="main-title-2">Latin America</span></h1>
                 <!-- end of main title -->
                 
                 <!-- travel objects -->
@@ -63,10 +63,13 @@
                 <!-- end of small SLIDER -->
                 
                 <!-- CAROUSEL HERO 2 -->
+                <article class="carousel-about-wrapper">
                 <button class="about-btn">About</button>
-                <article class="hero-picture-wrapper">
-                        <div id="hero-slider-2-wrapper"></div>
-                    <!-- images injected by JS -->
+                <div class="hero-picture-wrapper">
+                        <div id="hero-slider-2-wrapper">
+                            <!-- images injected by JS -->
+                        </div>
+                </div>
                 </article>
                 <!-- end of PICTURE SLIDER-->
                 
@@ -166,11 +169,24 @@
             </div>
         </section>                          
 
+        <!--************ CONTACT SECTION ************-->
+        <section class="contact-wrapper">
+            <i class="fa-solid fa-xmark contact-close-btn"></i>
+            <form class="contact-form">
+                <label for=""></label>
+                <input type="text" name="name" placeholder="Name">
+                <label for="email"></label>
+                <input type="email" name="email" placeholder="Email">
+                <label for="message"></label>
+                <textarea type="text" name="message" placeholder="Write here your message" rows="10" ></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
         <!--************ PLACES SECTION ************-->
         <section class="places-section scroll-section" data-scroll = 100 id="places-cards">
             <div class="general-wrapper center-wrapper" id="places-card-carousel">
                 <!-- carousel next & prev btns -->
-                <button class="slide-btn prev-btn"><i
+                <button class="slide-btn prev-btn" disabled><i
                         class="fas fa-chevron-right "></i></button>
                 <button class="slide-btn next-btn"><i class="fas fa-chevron-left "></i></button>
                     <!--cards inject by js  -->

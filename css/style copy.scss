@@ -46,25 +46,25 @@ body {
 	overflow-x: hidden;
 }
 //media "query" for js
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 600px) {
 	body::after {
 		content: "size-1-screen";
 		font: 0;
 	}
 }
-@media screen and (min-width: 770px) {
+@media screen and (min-width: 601px) {
 	body::after {
 		content: "size-2-screen";
 		font: 0;
 	}
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 780px) {
 	body::after {
 		content: "size-3-screen";
 		font: 0;
 	}
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1000px) {
 	body::after {
 		content: "size-4-screen";
 		font: 0;
@@ -109,7 +109,7 @@ img {
 }
 .center-wrapper {
 	width: 85vw;
-	max-width: 1600px;
+	max-width: 1200px;
 	margin: 0 auto;
 }
 .scroll-y-section {
@@ -948,29 +948,23 @@ img {
 
 // ********* CAROUSEL COUNTRIES MENU CARDS ********* //
 .places-section {
-	// position: relative;
-	overflow: hidden;
+	overflow-x: hidden;
 	width: 100vw;
 	height: 100vh;
 	display: grid;
 	place-items: center;
-	// justify-content: center;
-	// align-items: center;
-	// padding: 3rem 0;
+	padding: 3rem 0;
 }
 
 #places-card-carousel {
 	// overflow-x: unset;
 	position: relative;
 	display: flex;
-	flex-direction: column;
-	// justify-content: flexenter;
-	// align-items: center;
-	width: 60vw;
-	height: 75vh;
-	// gap: 2rem;
-	// overflow: hidden;
-	background: green;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 85%;
+	height: 100%;
 	// &:scrollbar-width: none;
 
 	.slide-btn {
@@ -979,7 +973,7 @@ img {
 		border: none;
 		font-size: 2.5rem;
 		color: $color-primary-300;
-		z-index: 6;
+		z-index: 5;
 		transition: $transition-500;
 		&:hover {
 			transform: scale(1.2);
@@ -1002,26 +996,24 @@ img {
 }
 .places-wrapper {
 	position: relative;
-	// margin: 0 auto;
+	margin: 0 auto;
 	width: 100%;
-	height: 100%;
-	// gap: 2rem;
-	background: red;
+	height: 70%;
+	gap: 0.75rem;
 }
 
 .place-card {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
-	// margin-left: 10%;
+	width: 23.5%;
+	height: 60vh;
 	background: khaki;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 2rem;
+	gap: 1rem;
 	cursor: pointer;
 	will-change: contents;
 	transition: all 0.3s ease-in-out;
@@ -1030,8 +1022,9 @@ img {
 		transform: scale(1.025);
 		// transform: scale(1.1);
 		border: 1px solid $color-primary-500;
-		z-index: 3;
+		z-index: 99;
 	}
+
 	.country-name {
 		position: absolute;
 		top: 0;
@@ -1063,56 +1056,6 @@ img {
 		border-radius: 5rem;
 	}
 }
-@media screen and (min-width: 770px) {
-	#places-card-carousel {
-		// overflow-x: unset;
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		// justify-content: flexenter;
-		// align-items: center;
-		width: 80vw;
-		height: 75vh;
-	}
-	.place-card {
-		width: 48%;
-		margin: 0 1%;
-	}
-}
-@media screen and (min-width: 1000px) {
-	#places-card-carousel {
-		// overflow-x: unset;
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		// justify-content: flexenter;
-		// align-items: center;
-		width: 85vw;
-		height: 75vh;
-	}
-	.place-card {
-		width: 32%;
-		width: 32%;
-		margin: 0 1%;
-	}
-}
-@media screen and (min-width: 1200px) {
-	#places-card-carousel {
-		// overflow-x: unset;
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		// justify-content: flexenter;
-		// align-items: center;
-		width: 90vw;
-		height: 75vh;
-	}
-	.place-card {
-		width: 23.5%;
-		margin: 0 0.75%;
-	}
-}
-
 .hide-slide {
 	opacity: 0;
 }
