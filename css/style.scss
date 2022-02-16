@@ -307,7 +307,7 @@ img {
 .pen {
 	width: 20rem;
 	position: absolute;
-	bottom: -10%;
+	bottom: -5%;
 	// right: clamp(-50px, -10%, -50px);
 	right: -10%;
 	transform: rotate(-30deg);
@@ -335,7 +335,7 @@ img {
 	.contact-btn {
 		z-index: 10;
 		position: relative;
-		top: 40%;
+		top: 30%;
 		left: 60%;
 		display: flex;
 		align-items: center;
@@ -1232,13 +1232,13 @@ img {
 	border: none;
 	will-change: contents;
 	transition: $transition-500;
-	z-index: -1;
+	z-index: 50;
 	cursor: pointer;
 	&:hover {
 		animation: bounce 0.5s ease-in-out infinite;
 	}
 	& i {
-		font-size: 3rem;
+		font-size: 3.5rem;
 		color: $color-primary-500;
 		transition: $transition-500;
 		&:hover {

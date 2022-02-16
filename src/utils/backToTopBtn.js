@@ -1,7 +1,7 @@
 export function backToTopBtn(){
     const backToTopBtn = document.createElement('button')
     backToTopBtn.setAttribute('id', 'back-to-top-btn')
-    backToTopBtn.innerHTML = `<a href="#places-cards"><i class="fas fa-bicycle bike-to-top-btn"></i></a>`
+    backToTopBtn.innerHTML = `<a href="#places-cards"><i class="fa-solid fa-circle-arrow-up"></i></a>`
     backToTopBtn.disabled = true
     
     document.body.appendChild(backToTopBtn)
