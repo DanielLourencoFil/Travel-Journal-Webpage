@@ -19,6 +19,10 @@ export function renderGallery(dataToRenderId = 0){
                    return `
                    <article class="gallery-image">
                     <img src="${img}" data-image-id="${index}" data-place-id="${item.id}" alt="${alt}">
+                    <div class="image-info-wrapper"
+                    <p class="photo-place">${imgPlace}</p>
+                    <p class="photo-number">${index+1}/${item.gallery.length}</p>
+                    </div>
                     </article>
                    ` 
              
