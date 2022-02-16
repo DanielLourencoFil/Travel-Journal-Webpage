@@ -2,13 +2,28 @@
 import { CarouselGenerator } from "./utils/carouselGenerator.js";
 import {dataTravel } from "./dataGallery/placesCard.js";
 
-export function fullCarousel(rootElementId){
+export function fullCarousel(rootElementId, removeEvent = false){
 const gallery = document.getElementById(`${rootElementId}`)
 
-    gallery.addEventListener('click', (e)=>{
+console.log('from carousel');
+
+const galleryClickEvent = (e, time)=>{
+   
         //generate Carousel full images
         // const galleryFullCarousel = new PhotoCarouselGenerator('gallery-full-carousel-wrapper', dataTravel)
-        const galleryFullCarousel = new CarouselGenerator('gallery-full-carousel-wrapper', dataTravel)
+        const galleryFullCarousel = new CarouselGenerator('gallery-full-carousel-wrapper', dataTravel, time)
+        galleryFullCarousel.slideGeneralDataMap = false
+        
+        // const playSlider = document.querySelector('#play-gallery-btn')
+        // playSlider.addEventListener('click',()=>{
+        //     console.log('jjjjjjjjjj');
+            
+        //     // galleryFullCarousel.interval = 1000
+        //     // galleryFullCarousel.automatic = true
+        //     galleryClickEvent(e, 5000)
+        // })
+
+        // console.log(galleryFullCarousel.interval);
         
         // set type of render function
         galleryFullCarousel.renderType = 2
@@ -40,7 +55,6 @@ const gallery = document.getElementById(`${rootElementId}`)
             //stop window scrolling in order to get the carousel in place and avoid conflict betwen scrolling change type
             document.body.classList.add('stop-scrolling')
             // document.querySelector('#scroll-snap-wrapper').classList.add('stop-scrolling')
-            console.log(document.body.classList);
                        
             //add event listener to close btn
             const closeGalleryBtn = document.querySelector('#close-gallery-btn')
@@ -58,5 +72,14 @@ const gallery = document.getElementById(`${rootElementId}`)
             
             })
         }
-    })
+    }
+    
+    gallery.addEventListener('click', galleryClickEvent)
+    console.log(removeEvent);
+    if(removeEvent == true){
+        gallery.removeEventListener('click', galleryClickEvent)
+        console.log('ddddddddddd',gallery.removeEventListener('click', galleryClickEvent));
+    } 
+
 }
+

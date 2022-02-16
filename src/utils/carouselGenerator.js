@@ -6,9 +6,11 @@ export class CarouselGenerator {
         this.slidesDom; // created when slidesChangeOnClick || slidesChangeOnScroll are called
         this.slidesDisplayNumber = 1
         this.slideIndex = 0
-        this.slideGroupId = 0
+        this.slideGroupId; 
         this.slider // create at renderSlides() - inner Container
         this.slideCSS // passed in renderSlides()
+        
+        this.slideGeneralDataMap = true // default
         
         this.slidesDisplayNumber = 1 // number of slides displayed on carousel per time : can be 1; 2; 3; 4; 5
         this.slideLinearValue = 100; // default
@@ -29,6 +31,7 @@ export class CarouselGenerator {
         this.slideCSS = slideCSS
         this.slider = document.createElement('div')
         this.slider.classList.add(slideCarousel)
+        // this.slider.innerHTML = 'oioioioioioioioioi'
         this.sliderContainer.appendChild(this.slider)
         this.slider = this.sliderContainer.querySelector(`.${slideCarousel}`)
     
@@ -70,7 +73,7 @@ export class CarouselGenerator {
             //encontrar um modo, para numero de slides impar 
             if(index >= this.slidesDisplayNumber){
                 hideSlide = "hide-slide"
-                console.log(this.slidesDisplayNumber);
+                // console.log(this.slidesDisplayNumber);
             }
 
             return `
@@ -85,37 +88,47 @@ export class CarouselGenerator {
         }).join('')
     }
     renderType2 = ()=>{
+        let tempItem;
         Object.values(this.slides).forEach(item=>{
-            
-            let tempItem = item
-            
-            if(item.id == this.slideGroupId && !this.slideGeneralDataMap ){
-                tempItem = item 
-            }
-            this.slider.innerHTML = item.gallery.map((slide,index) =>{
-            const {img, imgDate, imgPlace, alt} = slide;
-            let position = "next"
-            let hideSlide = ''
-            if(this.slideIndex == 0){
-                if(index == 0) position = "active"
-                if(index == item.gallery.length-1) position = "last"
-            }
-            
-            if(this.slideIndex > 0 && index == this.slideIndex-1) position = "last"
-            if(this.slideIndex > 0 && index == this.slideIndex) position = "active"
-            console.log(this.slidesDisplayNumber);
-            if(this.slidesDisplayNumber > 0 && index == this.slidesDisplayNumber){
-                hideSlide = "hide-slide"
+            const render =() =>{
+                this.slider.innerHTML = tempItem.gallery.map((slide,index) =>{
+                    const {img, imgDate, imgPlace, alt} = slide;
+                let position = "next"
+                let hideSlide = ''
+                if(this.slideIndex == 0){
+                    if(index == 0) position = "active"
+                    if(index == item.gallery.length-1) position = "last"
+                }
+                
+                if(this.slideIndex > 0 && index == this.slideIndex-1) position = "last"
+                if(this.slideIndex > 0 && index == this.slideIndex) position = "active"
+                if(this.slidesDisplayNumber > 0 && index == this.slidesDisplayNumber){
+                    hideSlide = "hide-slide"
+                }
+
+                return `
+                <article class=" slide ${!this.hasBtn && "onSlide"} ${this.slideCSS} ${position} ${hideSlide}">
+                <img src="${img}" class="img-slide " alt="${alt}"></img>
+                <span class="photo-number">${index+1}/${item.gallery.length}</span>
+                <span class="photo-place">${imgPlace}</span>
+                </article>
+                `
+            }).join('')
             }
 
-            return `
-             <article class=" slide ${!this.hasBtn && "onSlide"} ${this.slideCSS} ${position} ${hideSlide}">
-            <img src="${img}" class="img-slide " alt="${alt}"></img>
-            <span class="photo-number">${index+1}</span>
-            </article>
-            `
-        }).join('')
-    })
+            if(item.id == this.slideGroupId && this.slideGeneralDataMap === false ){
+                tempItem = item
+                console.log('iiiiiiiiiiii', tempItem);
+                render()
+                return
+            }    
+            if(this.slideGeneralDataMap === true){
+                tempItem = item
+                 console.log('aaaaaaaaaaaaaaaaaa', tempItem);
+                render()
+                return
+            }
+        })
     }
     slideChangeOnClick = () =>{
         this.changeType = "onClick"
@@ -129,7 +142,6 @@ export class CarouselGenerator {
                 changerClass = "slide-btn"
             }
         });
-
 
         //add eventListener to slides or btn
         this.slidesDom = [...this.sliderContainer.getElementsByClassName(`${changerClass}`)]
@@ -275,13 +287,13 @@ export class CarouselGenerator {
 
 
 
+//*************************************************************************//
+//*************************************************************************//
+//*************************************************************************//
+//*************************************************************************//
+//*************************************************************************//
 
-
-
-
-
-
-
+/*
 ////// copy of both carousel types: before merge attemp : delete if merge is usesfull
  class PhotoCarouselGenerator {
     constructor(sliderId, slidesData, interval = 0){
@@ -762,3 +774,4 @@ sliderActionInfinite = (target) =>{
 
     }
 }
+*/

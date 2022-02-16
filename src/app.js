@@ -14,6 +14,7 @@ import { backToTopBtn } from "./utils/backToTopBtn.js"
 // ===== CAROUSEL HERO (left side)===== //
 
 const carouselHero1 = new CarouselGenerator('hero-slider-1-wrapper', photosHero1, 10000)
+// carouselHero1.slideGeneralDataMap = true
 carouselHero1.sliderAction = 'onSlide'
 carouselHero1.renderType = 2
 carouselHero1.slideChangeType = 'infinite'
@@ -23,6 +24,8 @@ carouselHero1.renderSlides('hero-slider', 'hero-slide-1')
 // ===== CAROUSEL HERO (rigth side)===== //
 
 const carouselHero2= new CarouselGenerator('hero-slider-2-wrapper', photosHero2,7000)
+// carouselHero1.slideGeneralDataMap = true
+
 carouselHero2.sliderAction = 'onSlide';
 carouselHero2.renderType = 2;
 carouselHero2.slideChangeType = 'infinite';
@@ -33,7 +36,7 @@ carouselHero2.renderSlides('hero-slider', 'hero-slide-1')
 
 // ===== CAROUSEL PLACES CARDS ===== //
 const carouselPlacesCard = new CarouselGenerator('places-card-carousel',dataTravel)
-carouselPlacesCard.slideGeneralDataMap = true
+// carouselPlacesCard.slideGeneralDataMap = true
 carouselPlacesCard.renderType = 1
 carouselPlacesCard.slideChangeOnClick()
 carouselPlacesCard.slideChangeType = 'linear'
@@ -45,46 +48,69 @@ carouselPlacesCard.slideChangeType = 'linear'
 //////////////////////////////////////////
 window.addEventListener('resize',()=>{
     screenSize()
+    // fullCarousel('gallery')
 })
 screenSize()
 
 function screenSize(){
     const cardsWrapper = document.querySelector('.places-wrapper')
     console.log(cardsWrapper);
+    const gallery = document.getElementById('gallery')
     const size = window.getComputedStyle(document.body, '::after').getPropertyValue('content');
+    const hasfullCarousel = window.getComputedStyle(gallery, "::after").getPropertyValue('content');
+    if(hasfullCarousel.indexOf('full-slide') == -1){
+        console.log('yyyyyyyyyyyyyyyyy');
+         let removeEvent = true
+        fullCarousel('gallery', removeEvent)
+    }
+    else{
+            fullCarousel('gallery')
+
+    }
+
     if(size.indexOf("size-1-screen") != -1){
         cardsWrapper && cardsWrapper.remove()
+        // 1 slides per time
         carouselPlacesCard.slidesLinearTranslation = 100
-        console.log('yes',size);
-        carouselPlacesCard.slidesDisplayNumber = 1
-        // carouselPlacesCard.slideLinearValue = 100 // 4 slides per time : display max-width design
+        carouselPlacesCard.slidesDisplayNumber = 1 
         carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
         
+        let removeEvent = true
+        // fullCarousel('gallery', removeEvent)
     }
     if(size.indexOf("size-2-screen") != -1){
+        console.log(size);
         cardsWrapper && cardsWrapper.remove()
-        
+        // 2 slides per time
         carouselPlacesCard.slidesLinearTranslation = 104.2
         carouselPlacesCard.slidesDisplayNumber = 2
-        carouselPlacesCard.slideLinearValue = 50 // 4 slides per time : display max-width design
+        carouselPlacesCard.slideLinearValue = 50 
         carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
-        console.log('yes',size);
+        
+        let removeEvent = false
+        // fullCarousel('gallery')
     }
     if(size.indexOf("size-3-screen") != -1){
         cardsWrapper && cardsWrapper.remove()
+        // 3 slides per time
         carouselPlacesCard.slidesLinearTranslation = 103.25
-        carouselPlacesCard.slideLinearValue = 33 // 4 slides per time : display max-width design
+        carouselPlacesCard.slideLinearValue = 33  
         carouselPlacesCard.slidesDisplayNumber = 3
         carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
-        console.log('yes',size);
+
+        let removeEvent = false
+        fullCarousel('gallery', removeEvent)
     }
     if(size.indexOf("size-4-screen") != -1){
         cardsWrapper && cardsWrapper.remove()
+        // 4 slides per time
         carouselPlacesCard.slidesLinearTranslation = 106.5
-        carouselPlacesCard.slideLinearValue = 25 // 4 slides per time : display max-width design
+        carouselPlacesCard.slideLinearValue = 25 
         carouselPlacesCard.slidesDisplayNumber = 4
         carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
-        console.log('yes',size);
+
+        let removeEvent = false
+        // fullCarousel('gallery', removeEvent)
 }
 }
 
@@ -108,7 +134,7 @@ const carouselPlacesCards = carouselPlacesCard.slider.children;
 });
 
 // ===== CAROUSEL FULL IMAGES - image gallery ===== //
-fullCarousel('gallery')
+// fullCarousel('gallery')
 
 ////////////// UTILS
 // typingEffect()
@@ -138,18 +164,24 @@ aboutBtn.addEventListener('click', (e)=>{
 })
 travelRouteBtn.addEventListener('click', (e)=>{
     scrollYSections[1].style.left = '0'
-
+    document.body.classList.add('hide-scroll-bar')
+    
     travelCloseBtn.addEventListener('click', (e)=>{
         scrollYSections[1].style.left = '-100vw'
+        document.body.classList.remove('hide-scroll-bar')
     })
 })
 contactBtn.addEventListener('click', (e)=>{
+    document.body.classList.add('hide-scroll-bar')
+    contactSection.classList.add('show-contact-section')
     setTimeout(function(){
+
         contactSection.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'
     },750)
-    contactSection.classList.add('show-contact-section')
     
+    document.body.classList.remove('hide-scroll-bar')
     contactCloseBtn.addEventListener('click', ()=>{
+
         contactSection.style.backgroundColor = 'rgba(0, 0, 0, 0)'
         setTimeout(function(){
             contactSection.classList.remove('show-contact-section')

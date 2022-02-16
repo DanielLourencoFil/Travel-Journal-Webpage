@@ -211,12 +211,12 @@ export const dataTravel = [
         gallery: [
             {
             img: "./images/DSC_0029.JPG",
-            imgPlace: "Mexico City",
+            imgPlace: "Mexico City 1",
             imgDate: "10/17/2007",
             },
             {
             img: "./images/DSC_0083 (2).JPG",
-            imgPlace: "Mexico City",
+            imgPlace: "Mexico City 2",
             imgDate: "10/17/2007",
             },
             {
@@ -318,8 +318,6 @@ export const dataTravel = [
             },
         ]    
     },
-    
-    
     {   
         id: 1,
         place: "Central America",
@@ -515,47 +513,47 @@ export const dataTravel = [
         gallery: [
             {
             img: "./images/DSC_0029.JPG",
-            imgPlace: "Quito City",
+            imgPlace: "Quito City 01",
             imgDate: "10/17/2007",
             },
             {
             img: "./images/DSC_0083 (2).JPG",
-            imgPlace: "Mexico City",
+            imgPlace: "Mexico City 02",
             imgDate: "10/17/2007",
             },
             {
             img: "./images/DSC_0185.JPG",
-            imgPlace: "Mexico City",
+            imgPlace: "Mexico City 03",
             imgDate: "10/17/2007",
             },
             {
             img: "./images/DSC_0029.JPG",
-            imgPlace: "Mexico City",
+            imgPlace: "Mexico City 04",
             imgDate: "10/17/2007",
             },
             {
             img: "./images/DSC_0083 (2).JPG",
-            imgPlace: "Mexico City",
+            imgPlace: "Mexico City 05",
             imgDate: "10/17/2007",
             },
             {
             img: "./images/DSC_0185.JPG",
-            imgPlace: "Mexico City",
+            imgPlace: "Mexico City 06",
             imgDate: "10/17/2007",
             },
             {
             img: "./images/DSC_0029.JPG",
-            imgPlace: "Mexico City",
+            imgPlace: "Mexico City 07",
             imgDate: "10/17/2007",
             },
             {
             img: "./images/DSC_0083 (2).JPG",
-            imgPlace: "Mexico City",
+            imgPlace: "Mexico City 08",
             imgDate: "10/17/2007",
             },
             {
             img: "./images/DSC_0185.JPG",
-            imgPlace: "Mexico City",
+            imgPlace: "Mexico City 09",
             imgDate: "10/17/2007",
             },
         ],
@@ -602,7 +600,6 @@ export const dataTravel = [
             },
         ]    
     },
-////
     {   
         id: 4,
         place: "Peru",
@@ -697,8 +694,6 @@ export const dataTravel = [
             },
         ]    
     },
-    
-    
     {   
         id: 5,
         place: "Bolivia",
@@ -987,48 +982,48 @@ export const dataTravel = [
         title: "Home sweat home",
         gallery: [
             {
-            img: "./images/DSC_0029.JPG",
+            img: "./images/DSC_0083 (2).JPG",
             imgPlace: "Brazilian-Uruguayan border",
             imgDate: "10/17/2007",
             },
             {
             img: "./images/DSC_0083 (2).JPG",
-            imgPlace: "Mexico City",
-            imgDate: "10/17/2007",
-            },
-            {
-            img: "./images/DSC_0185.JPG",
-            imgPlace: "Mexico City",
-            imgDate: "10/17/2007",
-            },
-            {
-            img: "./images/DSC_0029.JPG",
-            imgPlace: "Mexico City",
+            imgPlace: "Mexico ",
             imgDate: "10/17/2007",
             },
             {
             img: "./images/DSC_0083 (2).JPG",
-            imgPlace: "Mexico City",
-            imgDate: "10/17/2007",
-            },
-            {
-            img: "./images/DSC_0185.JPG",
-            imgPlace: "Mexico City",
-            imgDate: "10/17/2007",
-            },
-            {
-            img: "./images/DSC_0029.JPG",
-            imgPlace: "Mexico City",
+            imgPlace: "Mexico ",
             imgDate: "10/17/2007",
             },
             {
             img: "./images/DSC_0083 (2).JPG",
-            imgPlace: "Mexico City",
+            imgPlace: "Mexico ",
             imgDate: "10/17/2007",
             },
             {
-            img: "./images/DSC_0185.JPG",
-            imgPlace: "Mexico City",
+            img: "./images/DSC_0083 (2).JPG",
+            imgPlace: "Mexico ",
+            imgDate: "10/17/2007",
+            },
+            {
+            img: "./images/DSC_0083 (2).JPG",
+            imgPlace: "Mexico ",
+            imgDate: "10/17/2007",
+            },
+            {
+            img: "./images/DSC_0083 (2).JPG",
+            imgPlace: "Mexico ",
+            imgDate: "10/17/2007",
+            },
+            {
+            img: "./images/DSC_0083 (2).JPG",
+            imgPlace: "Mexico ",
+            imgDate: "10/17/2007",
+            },
+            {
+            img: "./images/DSC_0083 (2).JPG",
+            imgPlace: "Brazilian-Uruguayan border",
             imgDate: "10/17/2007",
             },
         ],
