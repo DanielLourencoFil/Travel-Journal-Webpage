@@ -144,43 +144,67 @@ getFullYear()
 // =====   ABOUT - ROUTE - CONTACT - sections ===== //
 const scrollYSections = document.querySelectorAll('.scroll-y-section');
 const contactSection = document.querySelector('.contact-wrapper')
+
 const travelRouteBtn = document.querySelector('.bussola-btn')
-const aboutBtn = document.querySelector('.about-btn')
-const contactBtn = document.querySelector('.contact-btn')
-const aboutCloseBtn = document.querySelector('.about-close-btn')
 const travelCloseBtn = document.querySelector('.travel-close-btn')
+
+const aboutBtn = document.querySelector('.about-btn')
+const aboutCloseBtn = document.querySelector('.about-close-btn')
+
+const contactBtn = document.querySelector('.contact-btn')
 const contactCloseBtn = document.querySelector('.contact-close-btn')
 // const scrollSnap = document.querySelector('#scroll-snap-wrapper')
 
 aboutBtn.addEventListener('click', (e)=>{
-    scrollYSections[0].style.left = '0'  
+    scrollYSections[0].style.left = '0'
+    
+    //*** hide the document body Y scroll bar, avoiding user to scroll beyond current section  
     document.body.classList.add('hide-scroll-bar')
     
     aboutCloseBtn.addEventListener('click', (e)=>{
         scrollYSections[0].style.left = '100vw'
+
+        // add back Y scroll to whole document body    
         document.body.classList.remove('hide-scroll-bar')
-        // scrollYSections[0].style.position = 'fixed'
     })
 })
+
 travelRouteBtn.addEventListener('click', (e)=>{
     scrollYSections[1].style.left = '0'
+    //*** hide the document body Y scroll bar, avoiding user to scroll beyond current section
     document.body.classList.add('hide-scroll-bar')
+
+    //********* By default the Y scroll bar is hidden. Add it when the slide translation is over. It is necessary to avoid the unpleasant presence of the Y scroll bar while the slide is moving
+    // get the time for the transition effect
+    let time = window.getComputedStyle(scrollYSections[1]).getPropertyValue('transition')
+    time = parseInt(time.split(' ')[1].split('s')[0]);
+    
+    // add a class to show the Y scroll bar after transition effect is over
+    setTimeout(function() {
+        scrollYSections[1].classList.remove('hide-scroll-bar')
+    }, time*1000)
     
     travelCloseBtn.addEventListener('click', (e)=>{
         scrollYSections[1].style.left = '-100vw'
+        
+        // add back Y scroll to whole document body    
         document.body.classList.remove('hide-scroll-bar')
+        
+        // hide Y scroll bar to current section
+        scrollYSections[1].classList.add('hide-scroll-bar')
     })
 })
-contactBtn.addEventListener('click', (e)=>{
-    document.body.classList.add('hide-scroll-bar')
-    contactSection.classList.add('show-contact-section')
-    setTimeout(function(){
 
-        contactSection.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'
-    },750)
+contactBtn.addEventListener('click', (e)=>{
+    contactSection.classList.add('show-contact-section')
+    document.body.classList.add('hide-scroll-bar')
     
-    document.body.classList.remove('hide-scroll-bar')
+    setTimeout(function(){
+        contactSection.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'
+    },1000)
+    
     contactCloseBtn.addEventListener('click', ()=>{
+        document.body.classList.remove('hide-scroll-bar')
 
         contactSection.style.backgroundColor = 'rgba(0, 0, 0, 0)'
         setTimeout(function(){
