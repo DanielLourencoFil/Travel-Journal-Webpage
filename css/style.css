@@ -302,7 +302,7 @@ img {
 .pen {
   width: 20rem;
   position: absolute;
-  bottom: -10%;
+  bottom: -5%;
   right: -10%;
   -webkit-transform: rotate(-30deg);
           transform: rotate(-30deg);
@@ -338,7 +338,7 @@ img {
 .hero-contact-wrapper .contact-btn {
   z-index: 10;
   position: relative;
-  top: 40%;
+  top: 30%;
   left: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1444,7 +1444,7 @@ img {
   will-change: contents;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  z-index: -1;
+  z-index: 50;
   cursor: pointer;
 }
 
@@ -1454,7 +1454,7 @@ img {
 }
 
 #back-to-top-btn i {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: rgba(134, 42, 6, 0.7);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;

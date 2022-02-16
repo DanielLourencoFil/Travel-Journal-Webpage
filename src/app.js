@@ -136,10 +136,7 @@ const carouselPlacesCards = carouselPlacesCard.slider.children;
 // ===== CAROUSEL FULL IMAGES - image gallery ===== //
 // fullCarousel('gallery')
 
-////////////// UTILS
-// typingEffect()
-backToTopBtn()
-getFullYear()
+
 
 // =====   ABOUT - ROUTE - CONTACT - sections ===== //
 const scrollYSections = document.querySelectorAll('.scroll-y-section');
@@ -215,7 +212,10 @@ contactBtn.addEventListener('click', (e)=>{
 
 
 
-
+////////////// UTILS
+// typingEffect()
+backToTopBtn()
+getFullYear()
 
 
 /*
