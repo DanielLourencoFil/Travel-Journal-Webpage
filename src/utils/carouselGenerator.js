@@ -41,7 +41,6 @@ export class CarouselGenerator {
         
     ///////////////////
         if(this.slideChangeType === 'linear'){
-            console.log(this.slideLinearValue); 
             this.slider.querySelectorAll('.place-card').forEach((slide,i)=>{
                 let slideAmount = `${i*this.slideLinearValue}%` 
                 slide.style.left = slideAmount
@@ -118,13 +117,11 @@ export class CarouselGenerator {
 
             if(item.id == this.slideGroupId && this.slideGeneralDataMap === false ){
                 tempItem = item
-                console.log('iiiiiiiiiiii', tempItem);
                 render()
                 return
             }    
             if(this.slideGeneralDataMap === true){
                 tempItem = item
-                 console.log('aaaaaaaaaaaaaaaaaa', tempItem);
                 render()
                 return
             }

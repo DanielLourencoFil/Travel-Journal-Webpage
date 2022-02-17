@@ -2,18 +2,11 @@ import { dataTravel } from "./dataGallery/placesCard.js"
 
 export function renderGallery(dataToRenderId = 0){
     const gallery = document.querySelector('#gallery')
-    //   console.log(dataTravel);
 
-// console.log(dataTravel);
     Object.values(dataTravel).forEach((item) =>{
-        // console.log(item.id);
         if(item.id == dataToRenderId){
-            // console.log(dataToRenderId);
-            // console.log(item.journal);
 
             gallery.innerHTML = item.gallery.map((place, index) =>{
-                // console.log(diary.alt);
-                // console.log(item.id, 'id');
                 const {img, imgPlace, imgDate, alt} = place
                   
                    return `

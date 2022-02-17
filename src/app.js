@@ -1,7 +1,7 @@
 import {CarouselGenerator} from "./utils/carouselGenerator.js"
 import {placesCardsData, photosHero1, galleryImages, dataTravel, photosHero2} from "./dataGallery/placesCard.js"
 import { renderGallery } from "./renderGallery.js"
-import {fullCarousel} from "./fullCarousel.js"
+import {fullCarousel, galleryClickEvent} from "./fullCarousel.js"
 import { renderJournal } from "./renderJournal.js"
 
 //utils
@@ -46,25 +46,42 @@ carouselPlacesCard.slideChangeType = 'linear'
 
 
 //////////////////////////////////////////
+const gallery = document.getElementById('gallery')
+let hasfullCarousel = window.getComputedStyle(gallery, "::after").getPropertyValue('content');
+
+if(hasfullCarousel.indexOf('full-slide') == -1){
+    gallery.removeEventListener('click', galleryClickEvent) 
+        // console.log('yyyyyoooooooooooooo');
+        // let removeEvent = true
+        // fullCarousel('gallery', removeEvent)
+}else{
+    gallery.addEventListener('click', galleryClickEvent)
+        // console.log('else from first ooooooo');
+
+}
+
 window.addEventListener('resize',()=>{
     screenSize()
-    // fullCarousel('gallery')
 })
 screenSize()
 
 function screenSize(){
     const cardsWrapper = document.querySelector('.places-wrapper')
-    console.log(cardsWrapper);
-    const gallery = document.getElementById('gallery')
     const size = window.getComputedStyle(document.body, '::after').getPropertyValue('content');
-    const hasfullCarousel = window.getComputedStyle(gallery, "::after").getPropertyValue('content');
+    // console.log(cardsWrapper);
+    // const gallery = document.getElementById('gallery')
+   
+    hasfullCarousel = window.getComputedStyle(gallery, "::after").getPropertyValue('content');
+
     if(hasfullCarousel.indexOf('full-slide') == -1){
-        console.log('yyyyyyyyyyyyyyyyy');
-         let removeEvent = true
-        fullCarousel('gallery', removeEvent)
+        gallery.removeEventListener('click', galleryClickEvent) 
+        // console.log('full slide resize yyyyyyyyyyy');
+        // let removeEvent = true
+        // fullCarousel('gallery', removeEvent)
     }
     else{
-            fullCarousel('gallery')
+        gallery.addEventListener('click', galleryClickEvent)
+        // console.log('else esle yyyyyyyyy');
 
     }
 
@@ -75,11 +92,11 @@ function screenSize(){
         carouselPlacesCard.slidesDisplayNumber = 1 
         carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
         
-        let removeEvent = true
+        // let removeEvent = true
         // fullCarousel('gallery', removeEvent)
     }
     if(size.indexOf("size-2-screen") != -1){
-        console.log(size);
+        // console.log(size);
         cardsWrapper && cardsWrapper.remove()
         // 2 slides per time
         carouselPlacesCard.slidesLinearTranslation = 104.2
@@ -98,8 +115,8 @@ function screenSize(){
         carouselPlacesCard.slidesDisplayNumber = 3
         carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
 
-        let removeEvent = false
-        fullCarousel('gallery', removeEvent)
+        // let removeEvent = false
+        // fullCarousel('gallery', removeEvent)
     }
     if(size.indexOf("size-4-screen") != -1){
         cardsWrapper && cardsWrapper.remove()
@@ -109,11 +126,10 @@ function screenSize(){
         carouselPlacesCard.slidesDisplayNumber = 4
         carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
 
-        let removeEvent = false
+        // let removeEvent = false
         // fullCarousel('gallery', removeEvent)
 }
 }
-
 
 
 //===== RENDER IMAGES GALLERY after card selection / as default, the images related with the first card are rendered 
@@ -134,8 +150,8 @@ const carouselPlacesCards = carouselPlacesCard.slider.children;
 });
 
 // ===== CAROUSEL FULL IMAGES - image gallery ===== //
-// fullCarousel('gallery')
 
+// fullCarousel('gallery')
 
 
 // =====   ABOUT - ROUTE - CONTACT - sections ===== //
@@ -216,17 +232,3 @@ contactBtn.addEventListener('click', (e)=>{
 // typingEffect()
 backToTopBtn()
 getFullYear()
-
-
-/*
-
-// ===== CAROUSEL PLACES CARDS ===== //
-const carouselPlacesCard = new CarouselGenerator('places-card-carousel',dataTravel)
-carouselPlacesCard.slideGeneralDataMap = true
-carouselPlacesCard.slidesDisplayNumber = 4
-carouselPlacesCard.renderType = 1
-carouselPlacesCard.slideChangeOnClick()
-carouselPlacesCard.slideChangeType = 'linear'
-carouselPlacesCard.slideLinearValue = 25.5 // 4 slides per time : display max-width design
-carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
-*/

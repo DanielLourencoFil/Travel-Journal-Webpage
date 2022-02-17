@@ -2,12 +2,7 @@
 import { CarouselGenerator } from "./utils/carouselGenerator.js";
 import {dataTravel } from "./dataGallery/placesCard.js";
 
-export function fullCarousel(rootElementId, removeEvent = false){
-const gallery = document.getElementById(`${rootElementId}`)
-
-console.log('from carousel');
-
-const galleryClickEvent = (e, time)=>{
+export const galleryClickEvent = (e, time)=>{
    
         //generate Carousel full images
         // const galleryFullCarousel = new PhotoCarouselGenerator('gallery-full-carousel-wrapper', dataTravel)
@@ -73,13 +68,18 @@ const galleryClickEvent = (e, time)=>{
             })
         }
     }
-    
-    gallery.addEventListener('click', galleryClickEvent)
-    console.log(removeEvent);
-    if(removeEvent == true){
-        gallery.removeEventListener('click', galleryClickEvent)
-        console.log('ddddddddddd',gallery.removeEventListener('click', galleryClickEvent));
-    } 
+
+export function fullCarousel(rootElementId, removeEvent = false){
+const gallery = document.getElementById(`${rootElementId}`)
+
+gallery.addEventListener('click', galleryClickEvent)
+
+// console.log('from carousel');
+    // console.log(removeEvent);
+    // if(removeEvent == true){
+    //     gallery.removeEventListener('click', galleryClickEvent)
+    //     console.log('ddddddddddd',gallery.removeEventListener('click', galleryClickEvent));
+    // } 
 
 }
 
