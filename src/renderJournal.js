@@ -1,4 +1,4 @@
-import { dataTravel } from "./dataGallery/placesCard.js";
+import { dataTravel } from "./infoToRender/placesCard.js";
 
 let dataId;
 export function renderJournal(dataToRenderId = 0, pageToRender = 0){

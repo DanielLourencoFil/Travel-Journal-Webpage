@@ -1,6 +1,6 @@
 // import { PhotoCarouselGenerator } from "./utils/carouselGenerator.js";
 import { CarouselGenerator } from "./utils/carouselGenerator.js";
-import {dataTravel } from "./dataGallery/placesCard.js";
+import {dataTravel } from "./infoToRender/placesCard.js";
 
 export const galleryClickEvent = (e, time)=>{
    
