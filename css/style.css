@@ -533,7 +533,7 @@ video {
 
 .about-main-wrapper .about-close-btn {
   position: absolute;
-  top: 5vh;
+  top: 3vh;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -555,9 +555,9 @@ video {
           transform: rotate(-180deg) scale(1.2);
 }
 
-.about-wrappe {
-  width: 85vw;
-  max-width: 1220px;
+.about-wrapper {
+  width: 80%;
+  max-width: 1000px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -571,10 +571,150 @@ video {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  row-gap: 4rem;
+  gap: 5rem;
 }
 
-.about-wrappe .about-us {
+.about-header-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+}
+
+.about-header-text .about-main-title {
+  font-size: clamp(3rem, 6vw, 4.25rem);
+  text-align: center;
+}
+
+.about-header-text .underline {
+  width: 35%;
+  height: 5px;
+  background: rgba(134, 42, 6, 0.7);
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+
+.about-header-text .about-second-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.about-header-text .about-text {
+  text-align: justify;
+  font-size: 1.35rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.5;
+}
+
+.about-us-wrapper .about-us-main-title {
+  position: relative;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.about-us-wrapper .about-us-main-title::before {
+  content: "";
+  width: clamp(10rem, 25vw, 16rem);
+  height: 5px;
+  position: absolute;
+  bottom: -0.5rem;
+  background: rgba(134, 42, 6, 0.7);
+}
+
+.about-us {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 4rem;
+  gap: 3rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  letter-spacing: 0.075rem;
+  text-align: justify;
+}
+
+.image-text-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+}
+
+.img-name-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+}
+
+.img-name-wrapper .about-person-image {
+  max-height: 400px;
+}
+
+.img-name-wrapper .about-name {
+  margin-top: clamp(0.35rem, 0.5vw, 0.75vw);
+  font-size: 1.75rem;
+  font-size: clamp(1.75rem, 5vw, 2.35rem);
+}
+
+.about-after-before-info-person {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+}
+
+.about-after-before-info-person h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.about-info-person {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+}
+
+.about-info-person .about-title {
+  font-size: 1.85rem;
+  margin-bottom: 1rem;
+}
+
+.about-info-person .about-text {
+  text-align: justify;
+}
+
+.about-info-person .social-icons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -582,32 +722,51 @@ video {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  gap: 2rem;
-}
-
-.about-wrappe .about-us .about-info .about-title {
-  font-size: 1.85rem;
-  margin-bottom: 2rem;
-}
-
-.about-wrappe .about-us .about-info .about-name {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.about-wrappe .about-us .about-info .about-text {
-  text-align: justify;
-}
-
-.about-wrappe .about-us .about-info .social-icons {
-  font-size: 1.5rem;
+  gap: 1rem;
   text-align: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   margin-top: 1.5rem;
-  color: goldenrod;
+  margin-bottom: 1.5rem;
+  will-change: contents;
 }
 
-.about-wrappe .about-us .about-person-image {
-  height: 35vh;
+.about-info-person .social-icons i {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: goldenrod;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.about-info-person .social-icons i:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  color: rgba(134, 42, 6, 0.7);
+}
+
+@media screen and (min-width: 830px) {
+  .image-text-wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 2rem;
+  }
+  .img-name-wrapper {
+    width: 50%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+  }
+  .img-name-wrapper .about-person-image {
+    margin-left: 0;
+    margin-right: auto;
+    max-height: 300px;
+  }
 }
 
 .travel-route-wrapper {

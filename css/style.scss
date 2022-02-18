@@ -479,16 +479,10 @@ video {
 
 // ********* ABOUT US ********* //
 .about-main-wrapper {
-	// position: absolute;
 	left: 100vw;
 	height: 100vh;
 	padding: 3rem 0;
-	// height: 100%;
-	// max-height: 100vh;
 	display: block;
-	// flex-direction: column;
-	// justify-content: center;
-	// align-items: center;
 	background: palegoldenrod;
 	transition: all 1.2s ease-in-out;
 	overflow-y: scroll;
@@ -496,7 +490,7 @@ video {
 	z-index: 9;
 	.about-close-btn {
 		position: absolute;
-		top: 5vh;
+		top: 3vh;
 		display: grid;
 		place-items: center;
 		opacity: 1;
@@ -508,7 +502,6 @@ video {
 		// will-change: contents;
 		z-index: 9;
 		color: $color-dark-900;
-
 		cursor: pointer;
 		&:hover {
 			color: $color-primary-300;
@@ -516,46 +509,146 @@ video {
 		}
 	}
 }
-.about-wrappe {
-	// min-height: 100%;
-	width: 85vw;
-	max-width: 1220px;
+// *** 2 main sections : first for text header and second for people
+.about-wrapper {
+	// width: 70%;// for widther screen size
+	width: 80%;
+	max-width: 1000px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	row-gap: 4rem;
-
-	.about-us {
+	// gap: 10rem;// for widther screen size
+	gap: 5rem;
+}
+// first section = header
+.about-header-text {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	.about-main-title {
+		font-size: clamp(3rem, 6vw, 4.25rem);
+		text-align: center;
+	}
+	.underline {
+		width: 35%;
+		height: 5px;
+		background: $color-primary-500;
+		margin: 0 auto;
+		margin-bottom: 6rem;
+	}
+	.about-second-title {
+		font-size: clamp(2rem, 5vw, 3rem);
+	}
+	.about-text {
+		text-align: justify;
+		font-size: 1.35rem;
+		letter-spacing: 0.1rem;
+		line-height: 1.5;
+	}
+}
+// second section people
+.about-us-wrapper {
+	.about-us-main-title {
+		position: relative;
+		font-size: clamp(2rem, 5vw, 3rem);
+		//underline using pseudo element
+		&::before {
+			content: "";
+			width: clamp(10rem, 25vw, 16rem);
+			height: 5px;
+			position: absolute;
+			bottom: -0.5rem;
+			background: $color-primary-500;
+		}
+	}
+}
+//**** each person
+.about-us {
+	display: flex;
+	flex-direction: column;
+	// flex-direction: row; // for widther screen size
+	margin-top: 4rem;
+	gap: 3rem;
+	font-size: 1.25rem;
+	line-height: 1.5;
+	letter-spacing: 0.075rem;
+	text-align: justify;
+}
+.image-text-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+.img-name-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	// flex: 1 0 auto;
+	gap: 1rem;
+	.about-person-image {
+		max-height: 400px;
+	}
+	.about-name {
+		margin-top: clamp(0.35rem, 0.5vw, 0.75vw);
+		font-size: 1.75rem;
+		font-size: clamp(1.75rem, 5vw, 2.35rem);
+	}
+}
+.about-after-before-info-person {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	& h1 {
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+}
+.about-info-person {
+	flex: 0 1 auto;
+	.about-title {
+		font-size: 1.85rem;
+		margin-bottom: 1rem;
+	}
+	.about-text {
+		text-align: justify;
+	}
+	.social-icons {
 		display: flex;
 		flex-direction: row;
-		gap: 2rem;
-		// justify-content: center;
-		// align-items: center;
-		//=== hide scroll bar
-
-		.about-info {
-			.about-title {
-				font-size: 1.85rem;
-				margin-bottom: 2rem;
-			}
-			.about-name {
-				font-size: 1.5rem;
-				margin-bottom: 1rem;
-			}
-			.about-text {
-				text-align: justify;
-			}
-			.social-icons {
-				font-size: 1.5rem;
-				text-align: center;
-				margin-top: 1.5rem;
-				color: goldenrod;
-			}
+		gap: 1rem;
+		text-align: center;
+		justify-content: flex-end;
+		margin-top: 1.5rem;
+		margin-bottom: 1.5rem;
+		will-change: contents;
+		& i {
+			font-size: clamp(2.5rem, 5vw, 3.5rem);
+			color: goldenrod;
+			transition: all 0.5s;
 		}
+		& i:hover {
+			transform: scale(1.2);
+			color: $color-primary-500;
+		}
+	}
+}
+@media screen and(min-width: 830px) {
+	.image-text-wrapper {
+		flex-direction: row;
+		align-items: flex-start;
+		gap: 2rem;
+	}
+	.img-name-wrapper {
+		width: 50%;
+		flex: 1 0 auto;
 		.about-person-image {
-			// height: auto !important;
-			height: 35vh;
+			margin-left: 0;
+			margin-right: auto;
+			max-height: 300px;
 		}
 	}
 }
@@ -616,9 +709,11 @@ video {
 		width: 100%;
 		height: 100%;
 	}
+	//hide header information and link to google travel maps
 	.hide-header {
 		position: absolute;
 		top: 0;
+		//prevent little visual issue when closing modal
 		left: -5%;
 		width: 110%;
 		height: 10%;
