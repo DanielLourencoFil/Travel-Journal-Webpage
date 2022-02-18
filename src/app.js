@@ -52,13 +52,9 @@ let hasfullCarousel = window.getComputedStyle(gallery, "::after").getPropertyVal
 
 if(hasfullCarousel.indexOf('full-slide') == -1){
     gallery.removeEventListener('click', galleryClickEvent) 
-        // console.log('yyyyyoooooooooooooo');
-        // let removeEvent = true
-        // fullCarousel('gallery', removeEvent)
+        
 }else{
     gallery.addEventListener('click', galleryClickEvent)
-        // console.log('else from first ooooooo');
-
 }
 
 window.addEventListener('resize',()=>{
@@ -143,7 +139,6 @@ const carouselPlacesCards = carouselPlacesCard.slider.children;
 [...carouselPlacesCards].forEach(slide=>{
     slide.addEventListener('click', e =>{
         if(e.target.classList.contains('journal-card') || e.target.classList.contains('gallery-card')){
-            // console.log(slide.dataset.id);
             renderJournal(slide.dataset.id)
             renderGallery(slide.dataset.id)
         }
