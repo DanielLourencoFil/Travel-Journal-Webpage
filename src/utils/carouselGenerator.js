@@ -56,6 +56,7 @@ export class CarouselGenerator {
     }
     renderType1 = () =>{
     this.slider.innerHTML = this.slides.map((slide,index) =>{
+        const {id, place, title, img, alt} = slide
             
             let position = "next"
             let hideSlide = ''
@@ -68,23 +69,21 @@ export class CarouselGenerator {
             if(this.slideIndex > 0 && index == this.slideIndex-1) position = "last"
             if(this.slideIndex > 0 && index == this.slideIndex) position = "active"
 
-            // IMPORTANTE: numero de slides precisa ser passado dinamicamente:
-            //encontrar um modo, para numero de slides impar 
             if(index >= this.slidesDisplayNumber){
                 hideSlide = "hide-slide"
-                // console.log(this.slidesDisplayNumber);
             }
 
             return `
-             <article class="${!this.hasBtn? "onSlide": ''} ${this.slideCSS} ${position} ${hideSlide}" data-id="${slide.id}">
-                <p class="country-name">${slide.place}</p>
-                <h2 class="country-title">${slide.title}</h2>
+             <article class="${!this.hasBtn? "onSlide": ''} ${this.slideCSS} ${position} ${hideSlide}" data-id="${id}">
+                <p class="country-name">${place}</p>
+                <img src="${img}" alt="${alt}" class="country-map">
+                <h2 class="country-title">${title}</h2>
                 <div class="underline"></div>
                 <a href="#gallery"><p class="gallery-card"><i class="far fa-images gallery-card-icon"></i>Gallery</p></a>
                 <a href="#journal"><p class="journal-card" ><i class="fas fa-book diary-card-icon"></i>Diary</p></a>
             </article>
             `
-        }).join('')
+    }).join('')
     }
     renderType2 = ()=>{
         let tempItem;

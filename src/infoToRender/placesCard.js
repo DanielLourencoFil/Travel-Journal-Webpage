@@ -3,7 +3,8 @@ export const placesCardsData = [
         gallery:{
             img: "./images/DSC_0195.JPG",
             place: "MÉXICO",
-            title: "Tοda jornada tem um começo!"
+            title: "Tοda jornada tem um começo!",
+            placeMap: "./images/maps/mexico-map.png",
         },
     },
     {   
@@ -12,48 +13,55 @@ export const placesCardsData = [
         },
         img: "./images/DSC_0185.JPG",
         place: "CENTRAL AMERICA",
-        title: "On the road to the Jungle"
+        title: "On the road to the Jungle",
+        placeMap: "./images/maps/central-america-map.png",
     },
     {   gallery:{
 
         img: "./images/DSC_0196.JPG",
         place: "COLOMBIA",
-        title: "Almost like Home"
+        title: "Almost like Home",
+        placeMap: "./images/maps/colombia-map.png",
     },
     },
     {   gallery:{
 
         img: "./images/DSC_0200.JPG",
         place: "ECUADOR",
-        title: "Game changer"
+        title: "Game changer",
+        placeMap: "./images/maps/ecuador-map.png",
     },
     },
     {   gallery:{
 
         img: "./images/DSC_0195.JPG",
         place: "MÉXICO",
-        title: "Tοda jornada tem um começo!"
+        title: "Tοda jornada tem um começo!",
+        placeMap: "./images/maps/mexico-map.png",
     },
     },
     {   gallery:{
 
         img: "./images/DSC_0185.JPG",
         place: "CENTRAL AMERICA",
-        title: "On the road to the Jungle"
+        title: "On the road to the Jungle",
+        placeMap: "./images/maps/mexico-map.png",
     },
     },
     {   gallery:{
 
         img: "./images/DSC_0196.JPG",
         place: "COLOMBIA",
-        title: "Almost like Home"
+        title: "Almost like Home",
+        placeMap: "./images/maps/mexico-map.png",
     },
     },
     {   gallery:{
 
         img: "./images/DSC_0200.JPG",
         place: "ECUADOR",
-        title: "Game changer"
+        title: "Game changer",
+        placeMap: "./images/maps/mexico-map.png",
     },
     },
     
@@ -207,7 +215,8 @@ export const dataTravel = [
         id: 0,
         place: "México",
         title: "Every journey has a beggining",
-        img: "",
+        img: "./images/maps/mexico-map.png",
+        alt: "mexico map",
         gallery: [
             {
             img: "./images/DSC_0029.JPG",
@@ -322,6 +331,8 @@ export const dataTravel = [
         id: 1,
         place: "Central America",
         title: "On the road to the Jungle",
+        img: "./images/maps/central-america-map.png",
+        alt: "central america map",
         gallery: [
             {
             img: "./images/DSC_0029.JPG",
@@ -416,6 +427,8 @@ export const dataTravel = [
         id: 2,
         place: "Colombia",
         title: "Almost like Home",
+        img: "./images/maps/colombia-map.png",
+        alt: "colombia map",
         gallery: [
             {
             img: "./images/DSC_0029.JPG",
@@ -510,6 +523,8 @@ export const dataTravel = [
         id: 3,
         place: "Ecuador",
         title: "Game changer",
+        img: "./images/maps/ecuador-map.png",
+        alt: "ecuador map",
         gallery: [
             {
             img: "./images/DSC_0029.JPG",
@@ -604,6 +619,8 @@ export const dataTravel = [
         id: 4,
         place: "Peru",
         title: "Desert and Snow, sea and mountains",
+        img: "./images/maps/peru-map.png",
+        alt: "peru map",
         gallery: [
             {
             img: "./images/DSC_0029.JPG",
@@ -698,6 +715,8 @@ export const dataTravel = [
         id: 5,
         place: "Bolivia",
         title: "The Height Way Road",
+        img: "./images/maps/bolivia-map.png",
+        alt: "bolivia map",
         gallery: [
             {
             img: "./images/DSC_0029.JPG",
@@ -792,6 +811,8 @@ export const dataTravel = [
         id: 6,
         place: "Argentina",
         title: "The whole way down",
+        img: "./images/maps/argentina-map.png",
+        alt: "argentina map",
         gallery: [
             {
             img: "./images/DSC_0029.JPG",
@@ -886,6 +907,8 @@ export const dataTravel = [
         id: 7,
         place: "Uruguay",
         title: "Almost Home",
+        img: "./images/maps/uruguay-map.png",
+        alt: "uruguay map",
         gallery: [
             {
             img: "./images/DSC_0029.JPG",
@@ -980,6 +1003,8 @@ export const dataTravel = [
         id: 8,
         place: "Brazil",
         title: "Home sweat home",
+        img: "./images/maps/brazil-map.png",
+        alt: "brazil map",
         gallery: [
             {
             img: "./images/DSC_0083 (2).JPG",
