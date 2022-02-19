@@ -662,6 +662,7 @@ video {
 
 // ********* TRAVEL ROUTE SECTION ********* //
 .travel-route-wrapper {
+	// position: relative;
 	padding: 2rem 0;
 	left: -100vw;
 	width: 100vw;
@@ -670,43 +671,94 @@ video {
 	z-index: 9;
 	transition: all 2s ease-in-out;
 	display: block;
-	align-items: center;
-	justify-content: center;
+	// display: flex;
+	// align-items: center;
+	// justify-content: space-between;
 	overflow-y: scroll;
 	overscroll-behavior: contain;
 	.travel-close-btn {
 		position: absolute;
-		top: 1rem;
-		right: 3rem;
+		top: 0.5rem;
+		display: grid;
+		place-items: center;
+		opacity: 1;
+		right: 1rem;
+		width: 3rem;
+		height: 3rem;
 		font-size: 2rem;
 		transition: $transition-500;
-		will-change: contents;
+		z-index: 9;
+		color: $color-primary-500;
 		cursor: pointer;
 		&:hover {
 			color: $color-primary-300;
 			transform: rotate(-180deg) scale(1.2);
 		}
 	}
-	.travel-route-title {
-		font-size: 3rem;
+	.timeline-open-small-screen {
+		z-index: 2;
+		position: absolute;
+		bottom: 1rem;
+		right: 50%;
+		transform: translateX(50%);
 		display: flex;
-		flex-direction: column;
-		justify-items: center;
 		align-items: center;
-		& h1 {
-			z-index: 9;
+		justify-content: center;
+		width: clamp(5.5rem, 8vw, 6.25rem);
+		height: clamp(5.5rem, 8vw, 6.25rem);
+		border-radius: 50%;
+		border: transparent;
+		background: $color-primary-300;
+		// transform: rotate(-10deg);
+		color: $color-dark-500;
+		text-transform: uppercase;
+		font-family: $font-secondary;
+		letter-spacing: $letter-spacing-100;
+		font-size: clamp(0.55rem, 5vw, 1.15rem);
+		will-change: contents;
+		box-shadow: 0.1rem 0.1rem 0.5rem $color-dark-900;
+		cursor: pointer;
+		transition: all 0.3s ease-in-out;
+		&:hover {
+			box-shadow: 0 0 10px $color-primary-100;
+			color: $color-light-100;
 		}
 	}
 }
+.travel-route-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin-top: 3rem;
+	font-size: clamp(2.5rem, 7vw, 4.25rem);
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-items: space-between;
+	align-items: center;
+	gap: 5rem;
+	& h1 {
+		z-index: 999;
+		background: peru;
+		padding: 0 1rem;
+	}
+}
 .embed-wrapper {
-	top: -2rem;
+	// top: -2rem;
 	position: relative;
+	top: 17.5%;
+	transform: translateY(-50%);
 	// padding-top: 75%; // aspect ration for 4:3 || 4/3 = 0.75
-	padding-top: 56.25%; // aspect ration for 4:3 || 4/3 = 0.75
+	// padding-top: 56.25%; // aspect ration for 16:9 || 16/9 = 0.75
+	padding-top: 150%; // aspect ration for 3:2 || 3/2 = 1.5
 	overflow: hidden;
 	width: 100%;
-	max-width: 750px;
+	width: 80%;
+
 	.responsive-iframe {
+		max-width: 750px;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -718,13 +770,13 @@ video {
 	//hide header information and link to google travel maps
 	.hide-header {
 		position: absolute;
-		top: 0;
-		//prevent little visual issue when closing modal
+		top: -0.5rem;
+		//prevent little visual issue when closing modal related with iframe
 		left: -5%;
 		width: 110%;
-		height: 10%;
+		height: 15%;
 		background: peru;
-		z-index: 2;
+		z-index: 9;
 	}
 }
 // ********* end of TRAVEL ROUTE SECTION ********* //
@@ -734,6 +786,9 @@ video {
 .timeline-wrapper {
 	padding: 2rem 0;
 	left: -100vw;
+	// top: 0;
+	// left: 0;
+	// top: 90vh;
 	width: 100vw;
 	height: 100vh;
 	background: rgb(245, 188, 131);
@@ -744,30 +799,62 @@ video {
 	overscroll-behavior: contain;
 	overflow-x: hidden !important;
 	color: $color-dark-500;
+	// &:hover {
+	// 	transform: translateX(10%);
+	// }
 
 	.timeline-btn {
 		position: absolute;
-		width: 7rem;
-		height: 7rem;
-		font-weight: 400;
-		font-size: 1.35rem;
+		width: clamp(5rem, 10vw, 7rem);
+		height: clamp(5rem, 10vw, 7rem);
+		font-weight: bolder;
+		font-size: clamp(0.5rem, 4vw, 1.35rem);
 		letter-spacing: 0.1rem;
 		color: $color-dark-500;
-		top: 50%;
 		transform: translate(50%, -50%) rotate(90deg);
-		right: 0;
 		border: transparent;
 		border-radius: 50%;
+		top: 50%;
+
+		right: 0;
 		border: 1px solid $color-dark-500;
 		cursor: pointer;
-		padding-top: 3rem;
+		padding-top: clamp(1rem, 6vw, 3rem);
 		transition: color 0.5s, background 0.5s;
 		&:hover {
 			color: $color-sucess-500;
 			background: $color-light-200;
 		}
 	}
+	.timeline-open-btn {
+		display: none;
+	}
+
+	// .timeline-btn {
+	// 	position: absolute;
+	// 	width: 7rem;
+	// 	height: 7rem;
+	// 	font-weight: 400;
+	// 	font-size: 1.35rem;
+	// 	letter-spacing: 0.1rem;
+	// 	color: $color-dark-500;
+	// 	top: 50%;
+	// 	transform: translate(50%, -50%) rotate(90deg);
+	// 	right: 0;
+	// 	border: transparent;
+	// 	border-radius: 50%;
+	// 	border: 1px solid $color-dark-500;
+	// 	cursor: pointer;
+	// 	padding-top: 3rem;
+	// 	transition: color 0.5s, background 0.5s;
+	// 	&:hover {
+	// 		color: $color-sucess-500;
+	// 		background: $color-light-200;
+	// 	}
+	// }
 	.timeline-label {
+		display: none;
+		//===== @media 660px
 		position: absolute;
 		bottom: 17.5%;
 		right: -3rem;
@@ -777,13 +864,35 @@ video {
 		letter-spacing: 0.2rem;
 	}
 	.timeline-close-btn {
-		padding-top: 3.75rem;
+		top: 15%;
+		right: 0;
+		// padding-top: 2.25rem;
+		font-weight: bold;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-end;
+		// padding-top: 3.75rem;
 		z-index: -1;
-		opacity: 0;
+		z-index: 1;
+		opacity: 1;
+		& i {
+			font-size: 1.25rem;
+		}
 		&:hover {
 			color: $color-alert-500;
 		}
 	}
+	//===== @media 660px
+
+	// .timeline-close-btn {
+	// 	padding-top: 3.75rem;
+	// 	z-index: -1;
+	// 	opacity: 0;
+	// 	&:hover {
+	// 		color: $color-alert-500;
+	// 	}
+	// }
 	.timeline-title {
 		font-size: 3rem;
 		color: $color-dark-500;
@@ -802,12 +911,26 @@ video {
 		opacity: 0;
 	}
 }
+.show-timeline {
+	// left: -94vw;
+	left: -100vw;
+}
+.show-timeline-small-screen {
+	left: 0;
+}
+@media screen and(min-width:660px) {
+	.show-timeline {
+		left: -94vw;
+	}
+}
+
 .timeline {
 	.waypoint {
 		position: relative;
 		border-left: 5px solid $color-primary-300;
 		padding: 1.5rem 0rem;
-		padding-left: 6rem;
+		padding-left: 3rem;
+		// padding-left: 6rem;
 		display: flex;
 		flex-direction: column;
 		color: $color-dark-500;
@@ -831,7 +954,8 @@ video {
 			position: relative;
 			width: 60vw;
 			max-width: 500px;
-			padding: 1rem 2rem;
+			padding: 0.5rem 1rem;
+			// padding: 1rem 2rem;
 			display: flex;
 			flex-direction: column;
 			gap: 1rem;
@@ -854,9 +978,74 @@ video {
 			p {
 				letter-spacing: 0.1rem;
 				color: $color-dark-500;
+				font-size: clamp(0.725rem, 6vw, 1.125rem);
 			}
 			& h1 {
+				font-size: clamp(0.875rem, 7vw, 1.5rem);
+				// font-size: 1.5rem;
+			}
+		}
+	}
+}
+/////************************
+
+@media screen and(min-width:660px) {
+	.timeline {
+		.waypoint {
+			position: relative;
+			border-left: 5px solid $color-primary-300;
+			padding: 1.5rem 0rem;
+			padding-left: 6rem;
+			display: flex;
+			flex-direction: column;
+			color: $color-dark-500;
+
+			.timeline-circle {
+				position: absolute;
+				left: 0;
+				top: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 2.5rem;
+				height: 2.5rem;
+				text-align: center;
+				border-radius: 50%;
 				font-size: 1.5rem;
+				background: $color-primary-300;
+				transform: translate(-55.75%, -50%) !important;
+			}
+			.timeline-panel {
+				position: relative;
+				width: 60vw;
+				max-width: 500px;
+				padding: 1rem 2rem;
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+				background: rgb(245, 188, 131);
+				border: 1px solid $color-dark-500;
+				&::before {
+					position: absolute;
+					left: 0;
+					top: 50%;
+					transform: translate(-55%, -50%) rotate(45deg);
+					content: "";
+					width: 1.5rem;
+					height: 1.5rem;
+					background: inherit;
+					border-left: 1px solid $color-dark-500;
+					border-bottom: 1px solid $color-dark-500;
+					z-index: 1;
+				}
+				& h1,
+				p {
+					letter-spacing: 0.1rem;
+					color: $color-dark-500;
+				}
+				& h1 {
+					font-size: 1.5rem;
+				}
 			}
 		}
 	}
@@ -1507,6 +1696,7 @@ video {
 		width: 90%;
 		.journal-image {
 			// width: 35vw !important;
+			width: 90%;
 		}
 	}
 }
@@ -1583,7 +1773,7 @@ video {
 	}
 }
 .show-back-btn {
-	z-index: 99 !important;
+	z-index: 50 !important;
 	opacity: 1 !important;
 }
 @keyframes bounce {
