@@ -856,7 +856,7 @@ export const dataTravel = [
             },
             {
             img: "./images/DSC_0185.JPG",
-            imgPlace: "Mexico City",
+            imgPlace: "Argentina 9",
             imgDate: "10/17/2007",
             },
         ],
@@ -1028,7 +1028,7 @@ export const dataTravel = [
             },
             {
             img: "./images/DSC_0083 (2).JPG",
-            imgPlace: "Mexico ",
+            imgPlace: "Brazil 5 ",
             imgDate: "10/17/2007",
             },
             {
@@ -1043,7 +1043,7 @@ export const dataTravel = [
             },
             {
             img: "./images/DSC_0083 (2).JPG",
-            imgPlace: "Mexico ",
+            imgPlace: "Brazil 8 ",
             imgDate: "10/17/2007",
             },
             {
