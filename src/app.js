@@ -179,6 +179,7 @@ aboutBtn.addEventListener('click', (e)=>{
 
         // add back Y scroll to whole document body    
         document.body.classList.remove('hide-scroll-bar')
+
     })
 })
 
