@@ -250,8 +250,6 @@ video {
 	font-family: $font-primary;
 	//font size using vw for responsive design
 	font-size: clamp(2rem, 8vw, 5.5rem);
-	// font-size: clamp(3rem, 7vw, 5.5rem);
-	// font-size: 8vw;
 	text-align: center;
 	line-height: 1.2;
 	font-weight: bold;
@@ -261,7 +259,6 @@ video {
 
 	span:last-child {
 		font-size: clamp(2.5rem, 8vw, 6rem);
-		// font-size: clamp(4rem, 7vw, 6rem);
 	}
 }
 //travel objects
@@ -272,7 +269,6 @@ video {
 	.bussola {
 		width: clamp(11rem, 20vw, 14rem);
 		height: auto;
-		// border-radius: 50%;
 		transform: rotate(5deg);
 	}
 	.bussola-btn {
@@ -309,9 +305,6 @@ video {
 	position: absolute;
 	bottom: 0;
 	right: -25%;
-	// bottom: -5%;
-	// right: -10%;
-	// right: clamp(-50px, -10%, -50px);
 	transform: rotate(-30deg);
 	z-index: 2;
 }
@@ -336,12 +329,11 @@ video {
 	box-shadow: $box-shadow-500;
 }
 .contact-btn {
-	z-index: 99;
-	position: relative;
-	top: 15%;
-	left: 55%;
-	// top: 25%;
-	// left: 70%;
+	z-index: 0;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	transform: translateY(50%) rotate(-10deg);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -350,7 +342,6 @@ video {
 	border-radius: 50%;
 	border: transparent;
 	background: $color-primary-300;
-	transform: rotate(-10deg);
 	color: $color-dark-500;
 	text-transform: uppercase;
 	font-family: $font-secondary;
@@ -370,11 +361,11 @@ video {
 		right: -10%;
 	}
 }
-@media screen and(min-width:1000px) {
-	.contact-btn {
-		left: 65%;
-	}
-}
+// @media screen and(min-width:1000px) {
+// 	.contact-btn {
+// 		left: 65%;
+// 	}
+// }
 //carousel hero 1
 // .hero-carousel-1-wrapper {
 // 	display: none;
@@ -430,9 +421,9 @@ video {
 	border: 0.5rem solid $color-light-100;
 	box-shadow: $box-shadow-500;
 	// transition: all 0.5s ease-in-out;
-	z-index: 2;
+	z-index: 0;
 	.about-btn {
-		z-index: 2;
+		z-index: 1;
 		position: relative;
 		top: 0;
 		right: 3rem;
@@ -1194,6 +1185,9 @@ video {
 		transition: $transition-500;
 		&:hover {
 			transform: scale(1.2) translateY(-50%);
+		}
+		&:disabled {
+			cursor: not-allowed;
 		}
 	}
 	.prev-btn {
