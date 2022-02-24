@@ -307,10 +307,12 @@ video {
 }
 
 .contact-btn {
-  z-index: 99;
-  position: relative;
-  top: 15%;
-  left: 55%;
+  z-index: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -webkit-transform: translateY(50%) rotate(-10deg);
+          transform: translateY(50%) rotate(-10deg);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -325,8 +327,6 @@ video {
   border-radius: 50%;
   border: transparent;
   background: orangered;
-  -webkit-transform: rotate(-10deg);
-          transform: rotate(-10deg);
   color: #373737;
   text-transform: uppercase;
   font-family: "Gochi Hand", cursive;
@@ -349,12 +349,6 @@ video {
 @media screen and (min-width: 700px) {
   .pen {
     right: -10%;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  .contact-btn {
-    left: 65%;
   }
 }
 
@@ -393,11 +387,11 @@ video {
   border: 0.5rem solid white;
   -webkit-box-shadow: 0 -5px 15px -5px #373737;
           box-shadow: 0 -5px 15px -5px #373737;
-  z-index: 2;
+  z-index: 0;
 }
 
 .carousel-about-wrapper .about-btn {
-  z-index: 2;
+  z-index: 1;
   position: relative;
   top: 0;
   right: 3rem;
@@ -1320,6 +1314,10 @@ video {
 #places-card-carousel .slide-btn:hover {
   -webkit-transform: scale(1.2) translateY(-50%);
           transform: scale(1.2) translateY(-50%);
+}
+
+#places-card-carousel .slide-btn:disabled {
+  cursor: not-allowed;
 }
 
 #places-card-carousel .prev-btn {
