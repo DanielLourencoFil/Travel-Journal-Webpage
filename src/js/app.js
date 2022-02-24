@@ -1,11 +1,11 @@
 //carousels
 import {CarouselGenerator} from "./utils/carouselGenerator.js"
-import {fullCarousel, galleryClickEvent} from "./fullCarousel.js"
+import {fullCarousel, galleryClickEvent} from "./utils/fullCarousel.js"
 
 //render functions
-import { renderTimeline } from "./renderTimeline.js"
-import { renderJournal } from "./renderJournal.js"
-import { renderGallery } from "./renderGallery.js"
+import { renderTimeline } from "./utils/renderTimeline.js"
+import { renderJournal } from "./utils/renderJournal.js"
+import { renderGallery } from "./utils/renderGallery.js"
 
 //info to render
 import {placesCardsData, photosHero1, galleryImages, dataTravel, photosHero2} from "./infoToRender/placesCard.js"
