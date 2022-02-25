@@ -78,8 +78,8 @@ export class CarouselGenerator {
                 <p class="country-name">${place}</p>
                 <img src="${img}" alt="${alt}" class="country-map">
                 <h2 class="country-title">${title}</h2>
-                <div class="underline"></div>
                 <a href="#gallery"><p class="gallery-card"><i class="far fa-images gallery-card-icon"></i>Gallery</p></a>
+                <div class="underline"></div>
                 <a href="#journal"><p class="journal-card" ><i class="fas fa-book diary-card-icon"></i>Diary</p></a>
             </article>
             `
