@@ -464,7 +464,7 @@ video {
   .bussola-wrapper {
     position: absolute;
     top: 5%;
-    left: 5%;
+    left: 0;
   }
   .bussola-wrapper .bussola {
     width: clamp(9rem, 23.75vw, 12rem);
@@ -482,8 +482,8 @@ video {
   display: block;
   display: none;
   background: palegoldenrod;
-  -webkit-transition: all 1.2s ease-in-out;
-  transition: all 1.2s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
   overflow-y: scroll;
   overscroll-behavior: contain;
   z-index: 9;
@@ -740,8 +740,8 @@ video {
   height: 100vh;
   background: peru;
   z-index: 9;
-  -webkit-transition: all 2s ease-in-out;
-  transition: all 2s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
   display: block;
   overflow-y: scroll;
   overscroll-behavior: contain;
@@ -887,8 +887,8 @@ video {
   height: 100vh;
   background: #f5bc83;
   z-index: 9;
-  -webkit-transition: all 2s ease-in-out;
-  transition: all 2s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
   display: block;
   overflow-y: scroll;
   overscroll-behavior: contain;
@@ -938,7 +938,7 @@ video {
   top: 15%;
   right: 0;
   justify-self: flex-end;
-  padding-top: clamp(1rem, 6vw, 3rem);
+  padding-top: clamp(2.5rem, 6vw, 3rem);
   z-index: 1;
 }
 
