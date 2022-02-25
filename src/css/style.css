@@ -103,8 +103,8 @@ video {
 
 .header-wrapper {
   position: relative;
-  background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.3))), url(/images/wooden-table-top-4.jpg) center/cover;
-  background: linear-gradient(to left rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url(/images/wooden-table-top-4.jpg) center/cover;
+  background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.3))), url(/src/images/wooden-table-top-4.jpg) center/cover;
+  background: linear-gradient(to left rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url(/src/images/wooden-table-top-4.jpg) center/cover;
   background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
@@ -1891,7 +1891,7 @@ video {
   height: 35vh;
   -webkit-box-shadow: 0 0 15px #3b2c18;
           box-shadow: 0 0 15px #3b2c18;
-  background: radial-gradient(circle, rgba(116, 99, 46, 0.2) 0%, rgba(238, 196, 56, 0.3) 52%, rgba(255, 255, 255, 0.6) 100%), url(/images/DSC_0210.JPG);
+  background: radial-gradient(circle, rgba(116, 99, 46, 0.2) 0%, rgba(238, 196, 56, 0.3) 52%, rgba(255, 255, 255, 0.6) 100%), url(/src/images/DSC_0210.JPG);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

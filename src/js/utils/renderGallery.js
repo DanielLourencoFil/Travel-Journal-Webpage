@@ -1,4 +1,4 @@
-import { dataTravel } from "./infoToRender/placesCard.js"
+import { dataTravel } from "../infoToRender/placesCard.js"
 
 export function renderGallery(dataToRenderId = 0){
     const gallery = document.querySelector('#gallery')
