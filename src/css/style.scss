@@ -39,13 +39,14 @@ li {
 a {
 	text-decoration: none;
 	&:visited {
-		color: inherit;
+		color: $color-dark-500;
 	}
 }
 body {
 	// position: relative;
 	font-family: $font-secondary;
 	color: $color-dark-500;
+	max-width: 100vw;
 	width: 100vw;
 	overflow-x: hidden;
 }
@@ -147,6 +148,7 @@ video {
 	box-shadow: 2px 0 10px $color-dark-500;
 }
 .hero {
+	// position: relative;
 	position: relative;
 	width: 75vw;
 	max-width: 900px;
@@ -154,6 +156,7 @@ video {
 	max-height: 600px;
 	background-image: $color-gradient-100;
 	z-index: 0;
+	display: flex;
 	flex-direction: column;
 	box-shadow: 15px -15px 25px 10px rgba(0, 0, 0, 0.7);
 }
@@ -247,8 +250,6 @@ video {
 	font-family: $font-primary;
 	//font size using vw for responsive design
 	font-size: clamp(2rem, 8vw, 5.5rem);
-	// font-size: clamp(3rem, 7vw, 5.5rem);
-	// font-size: 8vw;
 	text-align: center;
 	line-height: 1.2;
 	font-weight: bold;
@@ -258,7 +259,6 @@ video {
 
 	span:last-child {
 		font-size: clamp(2.5rem, 8vw, 6rem);
-		// font-size: clamp(4rem, 7vw, 6rem);
 	}
 }
 //travel objects
@@ -269,7 +269,6 @@ video {
 	.bussola {
 		width: clamp(11rem, 20vw, 14rem);
 		height: auto;
-		// border-radius: 50%;
 		transform: rotate(5deg);
 	}
 	.bussola-btn {
@@ -306,9 +305,6 @@ video {
 	position: absolute;
 	bottom: 0;
 	right: -25%;
-	// bottom: -5%;
-	// right: -10%;
-	// right: clamp(-50px, -10%, -50px);
 	transform: rotate(-30deg);
 	z-index: 2;
 }
@@ -333,12 +329,11 @@ video {
 	box-shadow: $box-shadow-500;
 }
 .contact-btn {
-	z-index: 99;
-	position: relative;
-	top: 15%;
-	left: 55%;
-	// top: 25%;
-	// left: 70%;
+	z-index: 0;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	transform: translateY(50%) rotate(-10deg);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -347,7 +342,6 @@ video {
 	border-radius: 50%;
 	border: transparent;
 	background: $color-primary-300;
-	transform: rotate(-10deg);
 	color: $color-dark-500;
 	text-transform: uppercase;
 	font-family: $font-secondary;
@@ -367,11 +361,11 @@ video {
 		right: -10%;
 	}
 }
-@media screen and(min-width:1000px) {
-	.contact-btn {
-		left: 65%;
-	}
-}
+// @media screen and(min-width:1000px) {
+// 	.contact-btn {
+// 		left: 65%;
+// 	}
+// }
 //carousel hero 1
 // .hero-carousel-1-wrapper {
 // 	display: none;
@@ -427,9 +421,9 @@ video {
 	border: 0.5rem solid $color-light-100;
 	box-shadow: $box-shadow-500;
 	// transition: all 0.5s ease-in-out;
-	z-index: 2;
+	z-index: 0;
 	.about-btn {
-		z-index: 2;
+		z-index: 1;
 		position: relative;
 		top: 0;
 		right: 3rem;
@@ -486,6 +480,7 @@ video {
 
 // ********* ABOUT US ********* //
 .about-main-wrapper {
+	width: 100vw;
 	left: 100vw;
 	height: 100vh;
 	padding: 3rem 0;
@@ -761,13 +756,13 @@ video {
 	top: -5%;
 	position: relative;
 	// padding-top: 75%; // aspect ration for 4:3 || 4/3 = 0.75
-	// padding-top: 56.25%; // aspect ration for 16:9 || 16/9 = 0.75
+	// padding-top: 56.25%; // aspect ration for 16:9 || 16/9 = 0.5625
 	padding-top: 150%; // aspect ration for 3:2 || 3/2 = 1.5
 	overflow: hidden;
 	width: 100%;
 	width: 80%;
-
 	.responsive-iframe {
+		margin: 0 auto;
 		max-width: 750px;
 		position: absolute;
 		top: 0;
@@ -794,7 +789,7 @@ video {
 		display: none;
 	}
 	.embed-wrapper {
-		padding-top: 75%; // aspect ration for 4:3 || 4/3 = 0.75
+		padding-top: 56.25%;
 	}
 }
 // ********* end of TRAVEL ROUTE SECTION ********* //
@@ -823,21 +818,21 @@ video {
 }
 .timeline-btn {
 	position: absolute;
-	width: clamp(5rem, 10vw, 7rem);
-	height: clamp(5rem, 10vw, 7rem);
-	font-weight: bolder;
-	font-size: clamp(0.5rem, 4vw, 1.35rem);
+	top: 50%;
+	right: 0;
+	width: clamp(5rem, 10vw, 6rem);
+	height: clamp(5rem, 10vw, 6rem);
+	font-size: clamp(0.5rem, 2.5vw, 1.15rem);
 	letter-spacing: 0.1rem;
 	color: $color-dark-500;
 	transform: translate(50%, -50%) rotate(90deg);
 	border: transparent;
 	border-radius: 50%;
-	top: 50%;
-
-	right: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	border: 1px solid $color-dark-500;
 	cursor: pointer;
-	padding-top: clamp(1rem, 6vw, 3rem);
 	transition: color 0.5s, background 0.5s;
 	&:hover {
 		color: $color-sucess-500;
@@ -847,7 +842,20 @@ video {
 .timeline-open-btn {
 	display: none;
 }
+.timeline-close-btn {
+	top: 15%;
+	right: 0;
+	justify-self: flex-end;
+	padding-top: clamp(1rem, 6vw, 3rem);
 
+	z-index: 1;
+	& i {
+		font-size: 1.25rem;
+	}
+	&:hover {
+		color: $color-alert-500;
+	}
+}
 // .timeline-btn {
 // 	position: absolute;
 // 	width: 7rem;
@@ -880,22 +888,6 @@ video {
 	transform: rotate(90deg);
 	font-size: 2rem;
 	letter-spacing: 0.2rem;
-}
-.timeline-close-btn {
-	top: 15%;
-	right: 0;
-	font-weight: bold;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-end;
-	z-index: 1;
-	& i {
-		font-size: 1.25rem;
-	}
-	&:hover {
-		color: $color-alert-500;
-	}
 }
 
 .timeline-title {
@@ -933,13 +925,14 @@ video {
 	}
 	.timeline-open-btn {
 		display: flex;
-		font-size: clamp(0.5rem, 3vw, 1.35rem);
+		padding-top: 3.5rem;
+		font-size: clamp(0.5rem, 3vw, 1.15rem);
 	}
 	.timeline-close-btn {
 		top: 50%;
-		font-size: clamp(0.5rem, 3vw, 1.35rem);
-		width: clamp(6rem, 15vw, 7rem);
-		height: clamp(6rem, 15vw, 7rem);
+		font-size: clamp(0.5rem, 3vw, 1.15rem);
+		width: clamp(6rem, 15vw, 5.5rem);
+		height: clamp(6rem, 15vw, 5.5rem);
 		z-index: -1;
 		opacity: 0;
 	}
@@ -1192,6 +1185,9 @@ video {
 		transition: $transition-500;
 		&:hover {
 			transform: scale(1.2) translateY(-50%);
+		}
+		&:disabled {
+			cursor: not-allowed;
 		}
 	}
 	.prev-btn {
@@ -1642,7 +1638,7 @@ video {
 			rgba(238, 196, 56, 0.3) 52%,
 			rgba(255, 255, 255, 0.6) 100%
 		),
-		url(/images/DSC_0210.JPG);
+		url(/src/images/DSC_0210.JPG);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
