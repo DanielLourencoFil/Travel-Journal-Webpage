@@ -18,9 +18,9 @@ import { typingEffect } from "./utils/typingEffect.js";
 import {getFullYear} from "./utils/getFullYear.js"
 import { backToTopBtn } from "./utils/backToTopBtn.js"
 
+console.log('yes');
 
-
-// ===== CAROUSEL HERO (left side)===== //
+//===== CAROUSEL HERO (left side)===== //
 // const carouselHero1 = new CarouselGenerator('hero-slider-1-wrapper', photosHero1, 10000)
 // // carouselHero1.slideGeneralDataMap = true
 // carouselHero1.sliderAction = 'onSlide'
@@ -30,7 +30,7 @@ import { backToTopBtn } from "./utils/backToTopBtn.js"
 // carouselHero1.renderSlides('hero-slider', 'hero-slide-1')
 
 
-// ===== CAROUSEL HERO (rigth side)===== //
+//===== CAROUSEL HERO (rigth side)===== //
 const carouselHero2= new CarouselGenerator('hero-slider-2-wrapper', photosHero2,7000)
 carouselHero2.sliderAction = 'onSlide';
 carouselHero2.renderType = 2;
