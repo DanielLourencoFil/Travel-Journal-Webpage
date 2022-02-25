@@ -38,6 +38,7 @@ li {
 }
 a {
 	text-decoration: none;
+	color: $color-dark-500;
 	&:visited {
 		color: $color-dark-500;
 	}
@@ -242,14 +243,14 @@ video {
 // main title
 .main-title {
 	position: absolute;
-	width: 90%;
+	min-width: 75%;
 	max-width: 850px;
-	top: 45%;
+	top: 40%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	font-family: $font-primary;
 	//font size using vw for responsive design
-	font-size: clamp(2rem, 8vw, 5.5rem);
+	font-size: clamp(2rem, 8vw, 5rem);
 	text-align: center;
 	line-height: 1.2;
 	font-weight: bold;
@@ -264,10 +265,11 @@ video {
 //travel objects
 .bussola-wrapper {
 	position: absolute;
-	top: -10vh;
-	left: -5vw;
+	top: -5%;
+	left: 15%;
+	transform: translate(-50%, -25%);
 	.bussola {
-		width: clamp(11rem, 20vw, 14rem);
+		width: clamp(9rem, 22.5vw, 11rem);
 		height: auto;
 		transform: rotate(5deg);
 	}
@@ -356,11 +358,7 @@ video {
 		color: $color-light-100;
 	}
 }
-@media screen and(min-width:700px) {
-	.pen {
-		right: -10%;
-	}
-}
+
 // @media screen and(min-width:1000px) {
 // 	.contact-btn {
 // 		left: 65%;
@@ -393,7 +391,51 @@ video {
 // 	}
 // }
 // css for slides inserted by js: works for carousel 1 and carousel 2
-.hero-slide-1 {
+
+//carousel hero 2
+.carousel-about-wrapper {
+	position: absolute;
+	width: clamp(11rem, 30vw, 16rem);
+	height: clamp(11rem, 30vw, 16rem);
+	left: 0;
+	bottom: 0;
+	transform: translate(-5%, 20%) rotate(20deg);
+	background: $color-light-200;
+	box-sizing: border-box;
+	border: 0.5rem solid $color-light-100;
+	box-shadow: $box-shadow-500;
+	// transition: all 0.5s ease-in-out;
+	z-index: 0;
+}
+.about-btn {
+	z-index: 1;
+	position: absolute;
+	top: -15%;
+	left: -40%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: clamp(5.5rem, 8vw, 6.25rem);
+	height: clamp(5.5rem, 8vw, 6.25rem);
+	border-radius: 50%;
+	border: transparent;
+	background: $color-primary-300;
+	transform: rotate(-10deg);
+	color: $color-dark-500;
+	text-transform: uppercase;
+	font-family: $font-secondary;
+	letter-spacing: $letter-spacing-100;
+	font-size: clamp(0.65rem, 6vw, 1.325rem);
+	will-change: contents;
+	box-shadow: 0.1rem 0.1rem 0.5rem $color-dark-900;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	&:hover {
+		box-shadow: 0 0 10px $color-primary-100;
+		color: $color-light-100;
+	}
+}
+.hero-slide {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -407,49 +449,6 @@ video {
 	place-items: center;
 	height: 100%;
 	z-index: -2;
-}
-//carousel hero 2
-.carousel-about-wrapper {
-	position: absolute;
-	width: clamp(13rem, 25vw, 17rem);
-	height: clamp(13rem, 25vw, 17rem);
-	left: -7.5vw;
-	bottom: -15vh;
-	transform: rotate(20deg);
-	background: $color-light-200;
-	box-sizing: border-box;
-	border: 0.5rem solid $color-light-100;
-	box-shadow: $box-shadow-500;
-	// transition: all 0.5s ease-in-out;
-	z-index: 0;
-	.about-btn {
-		z-index: 1;
-		position: relative;
-		top: 0;
-		right: 3rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: clamp(5.5rem, 8vw, 6.25rem);
-		height: clamp(5.5rem, 8vw, 6.25rem);
-		border-radius: 50%;
-		border: transparent;
-		background: $color-primary-300;
-		transform: rotate(-10deg);
-		color: $color-dark-500;
-		text-transform: uppercase;
-		font-family: $font-secondary;
-		letter-spacing: $letter-spacing-100;
-		font-size: clamp(0.65rem, 6vw, 1.325rem);
-		will-change: contents;
-		box-shadow: 0.1rem 0.1rem 0.5rem $color-dark-900;
-		cursor: pointer;
-		transition: all 0.3s ease-in-out;
-		&:hover {
-			box-shadow: 0 0 10px $color-primary-100;
-			color: $color-light-100;
-		}
-	}
 }
 .hero-picture-wrapper {
 	// transform: rotate(20deg);
@@ -476,6 +475,24 @@ video {
 	height: 100%;
 	overflow: hidden;
 }
+
+@media screen and(min-width: 660px) {
+	.pen {
+		right: -5%;
+	}
+	.bussola-wrapper {
+		position: absolute;
+		top: 5%;
+		left: 5%;
+		.bussola {
+			width: clamp(9rem, 23.75vw, 12rem);
+		}
+	}
+	.carousel-about-wrapper {
+		bottom: -10%;
+	}
+}
+
 // ********* end of HEADER ********* //
 
 // ********* ABOUT US ********* //
@@ -485,6 +502,7 @@ video {
 	height: 100vh;
 	padding: 3rem 0;
 	display: block;
+	display: none;
 	background: palegoldenrod;
 	transition: all 1.2s ease-in-out;
 	overflow-y: scroll;
@@ -1258,6 +1276,7 @@ video {
 	.journal-card {
 		font-size: 1.375rem;
 		transition: all 0.5s;
+		color: $color-dark-500;
 		&:hover {
 			color: $color-primary-500;
 			transform: scale(1.1);
@@ -1269,16 +1288,12 @@ video {
 		gap: 0.5rem;
 	}
 	.underline {
-		position: absolute;
-		bottom: 15%;
+		// position: absolute;
+		// bottom: 15%;
 		width: 50%;
 		height: 0.2rem;
 		background: $color-primary-500;
 		border-radius: 5rem;
-		transition: width 0.5s ease-in-out;
-		&:hover {
-			width: 10%;
-		}
 	}
 }
 @media screen and (min-width: 770px) {

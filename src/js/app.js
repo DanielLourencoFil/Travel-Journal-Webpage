@@ -36,7 +36,7 @@ carouselHero2.sliderAction = 'onSlide';
 carouselHero2.renderType = 2;
 carouselHero2.slideChangeType = 'infinite';
 carouselHero2.slideChangeOnClick();
-carouselHero2.renderSlides('hero-slider', 'hero-slide-1')
+carouselHero2.renderSlides('hero-slider', 'hero-slide')
 
 
 
@@ -169,15 +169,25 @@ const contactCloseBtn = document.querySelector('.contact-close-btn')
 
 
 aboutBtn.addEventListener('click', (e)=>{
-    scrollYSections[0].style.left = '0'
+    scrollYSections[0].style.display = 'block'
+    
+    setTimeout(()=> scrollYSections[0].style.left = '0'
+,100)
+
     
     //*** hide the document body Y scroll bar, avoiding user to scroll beyond current section  
     document.body.classList.add('hide-scroll-bar')
+
+    // get the time for the transition effect
+    let time = window.getComputedStyle(scrollYSections[0]).getPropertyValue('transition')
+    time = parseInt(time.split(' ')[1].split('s')[0]);
     
     aboutCloseBtn.addEventListener('click', (e)=>{
         scrollYSections[0].style.left = '100vw'
+        setTimeout(()=> scrollYSections[0].style.display = 'none'
+,time*1000)
 
-        // add back Y scroll to whole document body    
+        // add back Y-scroll to body    
         document.body.classList.remove('hide-scroll-bar')
 
     })
@@ -210,7 +220,7 @@ travelCloseBtn.addEventListener('click', (e)=>{
     scrollYSections[2].classList.remove('show-timeline')
     // scrollYSections[2].style.left = '-100vw'
 
-    // add back Y scroll to whole document body    
+    // add back Y-scroll to body    
     document.body.classList.remove('hide-scroll-bar')
     
     // hide Y scroll bar to current section
