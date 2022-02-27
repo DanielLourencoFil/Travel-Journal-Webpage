@@ -1351,7 +1351,27 @@ video {
 	width: 100vw;
 	height: 100vh;
 	z-index: -9;
-	transition: all 0.5s ease-in-out;
+	.slide-btn {
+		border: transparent;
+		background: none;
+		opacity: 0.9;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 4rem;
+		color: $color-primary-500;
+		z-index: 99;
+		transition: all 0.5s ease-in-out;
+		&:hover {
+			transform: scale(1.1) translateY(-50%);
+		}
+	}
+	.prev-btn {
+		right: 1rem;
+	}
+	.next-btn {
+		left: 1rem;
+	}
 }
 #close-gallery-btn {
 	position: absolute;
@@ -1372,6 +1392,7 @@ video {
 		transform: scale(1.1);
 	}
 }
+
 @media screen and(min-width:800px) {
 	#close-gallery-btn {
 		bottom: calc(7rem - 10vw);

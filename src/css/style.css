@@ -1662,8 +1662,34 @@ video {
   width: 100vw;
   height: 100vh;
   z-index: -9;
+}
+
+#gallery-full-carousel-wrapper .slide-btn {
+  border: transparent;
+  background: none;
+  opacity: 0.9;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 4rem;
+  color: rgba(134, 42, 6, 0.7);
+  z-index: 99;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+}
+
+#gallery-full-carousel-wrapper .slide-btn:hover {
+  -webkit-transform: scale(1.1) translateY(-50%);
+          transform: scale(1.1) translateY(-50%);
+}
+
+#gallery-full-carousel-wrapper .prev-btn {
+  right: 1rem;
+}
+
+#gallery-full-carousel-wrapper .next-btn {
+  left: 1rem;
 }
 
 #close-gallery-btn {
