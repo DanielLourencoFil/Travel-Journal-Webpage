@@ -147,10 +147,12 @@ export class CarouselGenerator {
              // call slide action based on type of change:
                 if(this.slideChangeType === "infinite"){
                 this.sliderActionInfinite(e.target)
-                }
-                if(this.slideChangeType === "linear"){
+                console.log(e.target);
+            }
+            if(this.slideChangeType === "linear"){
+                    console.log(e.target, "linear");
                 this.sliderActionLinear(e.target)
-                }
+            }
                 
             })
         })

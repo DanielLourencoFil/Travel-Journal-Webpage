@@ -5,27 +5,14 @@ import {dataTravel} from "../infoToRender/placesCard.js";
 export const galleryClickEvent = (e, time)=>{
    
         //generate Carousel full images
-        // const galleryFullCarousel = new PhotoCarouselGenerator('gallery-full-carousel-wrapper', dataTravel)
         const galleryFullCarousel = new CarouselGenerator('gallery-full-carousel-wrapper', dataTravel, time)
         galleryFullCarousel.slideGeneralDataMap = false
-        
-        // const playSlider = document.querySelector('#play-gallery-btn')
-        // playSlider.addEventListener('click',()=>{
-        //     console.log('jjjjjjjjjj');
-            
-        //     // galleryFullCarousel.interval = 1000
-        //     // galleryFullCarousel.automatic = true
-        //     galleryClickEvent(e, 5000)
-        // })
-
-        // console.log(galleryFullCarousel.interval);
         
         // set type of render function
         galleryFullCarousel.renderType = 2
         //set change type
         galleryFullCarousel.slideChangeType = "infinite"
         
-        // console.log(galleryFullCarousel.slides)
         //after image click
         if(e.target){
             galleryFullCarousel.slideIndex = e.target.getAttribute('data-image-id')
@@ -45,7 +32,7 @@ export const galleryClickEvent = (e, time)=>{
             galleryFullCarousel.renderSlides('gallery-full-carousel', 'full-carousel-image') 
         
             //set type of changing
-            galleryFullCarousel.slideChangeOnScroll()
+            galleryFullCarousel.slideChangeOnClick()
             
             //stop window scrolling in order to get the carousel in place and avoid conflict betwen scrolling change type
             document.body.classList.add('stop-scrolling')
