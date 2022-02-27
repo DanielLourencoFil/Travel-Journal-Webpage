@@ -57,8 +57,8 @@ video {
 	height: auto;
 	display: block;
 }
-//media "query" for js : used to call some functions on screen resize,i.e, place cards number of cards; 
-// and desable fullscreen carrousel on screens smaller than 660px 
+//media "query" for js : used to call some functions on screen resize,i.e, place cards number of cards;
+// and desable fullscreen carrousel on screens smaller than 660px
 @media screen and (max-width: 769px) {
 	body::after {
 		content: "size-1-screen";
@@ -84,7 +84,6 @@ video {
 	}
 }
 // end of media "query" for js
-
 
 // ********* GENERAL CUSTOM CLASSES********* //
 .stop-scrolling {
@@ -122,12 +121,11 @@ video {
 	overflow-x: hidden;
 }
 
-
 // ********* HEADER ********* //
 .header-wrapper {
 	position: relative;
 	background: linear-gradient(to left rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)),
-		url(/src/images/wooden-table-top-4.jpg) center/cover;
+		url(images/wooden-table-top-4.jpg) center/cover;
 	background-repeat: no-repeat;
 	width: 100vw;
 	height: 100vh;
@@ -417,7 +415,6 @@ video {
 	}
 }
 // ********* end of HEADER ********* //
-
 
 // ********* ABOUT US SECTION ********* //
 .about-main-wrapper {
@@ -1190,7 +1187,6 @@ video {
 		gap: 0.5rem;
 	}
 	.underline {
-		
 		width: 50%;
 		height: 0.2rem;
 		background: $color-primary-500;
