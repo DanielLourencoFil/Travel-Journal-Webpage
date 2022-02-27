@@ -228,10 +228,8 @@ travelCloseBtn.addEventListener('click', (e)=>{
 })
 
 travelRouteTimelineBtn.addEventListener('click', ()=>{
-    console.log('bnt');
     scrollYSections[2].classList.add('show-timeline-small-screen')
     scrollYSections[2].classList.remove('show-timeline')
-    // scrollYSections[2].classList.add('show-timeline')
 
     timelineBtn.classList.add('hide-timeline-btn')
     timelineCloseBtn.classList.add('show-timeline-btn')
@@ -242,7 +240,6 @@ travelRouteTimelineBtn.addEventListener('click', ()=>{
 
 timelineBtn.addEventListener('click', (e)=>{
     scrollYSections[2].classList.add('hide-timeline')
-    // scrollYSections[2].style.left = '0'
 
     //*** hide the document body Y scroll bar, avoiding user to scroll beyond current section
     document.body.classList.add('hide-scroll-bar')
@@ -263,13 +260,9 @@ timelineBtn.addEventListener('click', (e)=>{
 })
 timelineCloseBtn.addEventListener('click', (e)=>{
     console.log('close btn');
-    // scrollYSections[2].style.left = '-94vw';
-    // scrollYSections[2].style.left = '-94vw';
     scrollYSections[2].classList.remove('show-timeline-small-screen')
         scrollYSections[2].classList.remove('hide-timeline')
 
-
-    
     // add back Y scroll to whole document body    
     document.body.classList.remove('hide-scroll-bar')
     
