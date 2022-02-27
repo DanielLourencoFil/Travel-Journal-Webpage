@@ -1312,7 +1312,7 @@ video {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 60vw;
+  width: 90vw;
   height: 80vh;
 }
 
@@ -1340,7 +1340,7 @@ video {
 }
 
 #places-card-carousel .prev-btn {
-  right: -3rem;
+  right: 1rem;
 }
 
 #places-card-carousel .prev-btn:disabled {
@@ -1348,7 +1348,7 @@ video {
 }
 
 #places-card-carousel .next-btn {
-  left: -3rem;
+  left: 1rem;
 }
 
 #places-card-carousel .next-btn:disabled {
@@ -1450,6 +1450,19 @@ video {
   height: 0.2rem;
   background: rgba(134, 42, 6, 0.7);
   border-radius: 5rem;
+}
+
+@media screen and (min-width: 550px) {
+  #places-card-carousel {
+    width: 80vw;
+    height: 75vh;
+  }
+  #places-card-carousel .prev-btn {
+    right: -3rem;
+  }
+  #places-card-carousel .next-btn {
+    left: -3rem;
+  }
 }
 
 @media screen and (min-width: 770px) {

@@ -1095,7 +1095,8 @@ video {
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	width: 60vw;
+	width: 90vw;
+	// width: 60vw;
 	height: 80vh;
 	.slide-btn {
 		position: absolute;
@@ -1115,13 +1116,13 @@ video {
 		}
 	}
 	.prev-btn {
-		right: -3rem;
+		right: 1rem;
 		&:disabled {
 			color: $color-primary-500;
 		}
 	}
 	.next-btn {
-		left: -3rem;
+		left: 1rem;
 		&:disabled {
 			color: $color-primary-500;
 		}
@@ -1197,6 +1198,18 @@ video {
 		height: 0.2rem;
 		background: $color-primary-500;
 		border-radius: 5rem;
+	}
+}
+@media screen and (min-width: 550px) {
+	#places-card-carousel {
+		width: 80vw;
+		height: 75vh;
+		.prev-btn {
+			right: -3rem;
+		}
+		.next-btn {
+			left: -3rem;
+		}
 	}
 }
 @media screen and (min-width: 770px) {
