@@ -124,7 +124,7 @@ video {
 // ********* HEADER ********* //
 .header-wrapper {
 	position: relative;
-	background: linear-gradient(to left rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)),
+	background: linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)),
 		url(images/wooden-table-top-4.jpg) center/cover;
 	background-repeat: no-repeat;
 	width: 100vw;
@@ -1534,7 +1534,7 @@ video {
 			rgba(238, 196, 56, 0.3) 52%,
 			rgba(255, 255, 255, 0.6) 100%
 		),
-		url(/src/images/DSC_0210.JPG);
+		url(images/DSC_0210.JPG);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
