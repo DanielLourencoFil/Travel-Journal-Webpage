@@ -476,6 +476,13 @@ video {
   }
 }
 
+@media screen and (max-height: 550px) {
+  .about-btn {
+    top: 35%;
+    left: -35%;
+  }
+}
+
 .about-main-wrapper {
   width: 100vw;
   left: 100vw;
@@ -1013,7 +1020,7 @@ video {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding-top: 3.5rem;
+    padding-top: 3rem;
     font-size: clamp(0.5rem, 3vw, 1.15rem);
   }
   .timeline-close-btn {
