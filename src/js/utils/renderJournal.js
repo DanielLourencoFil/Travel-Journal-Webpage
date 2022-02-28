@@ -11,13 +11,9 @@ export function renderJournal(dataToRenderId = 0, pageToRender = 0){
 
     Object.values(dataTravel).forEach((item) =>{
         if(item.id == dataToRenderId){
-            // pagination = item.journal.length;
-            // console.log(typeof item.journal.length)
             pagination = Math.ceil(item.journal.length/2)
-            // console.log(pagination);
             if(pagination > 1){
                 for(let i = 0; i < pagination; i++){
-                // console.log(i, 'form loop');
                 journalPages.innerHTML += `<a href="#journal"><span data-page="${i+1}">${i+1}</span></a>`
                 }
                 
@@ -50,34 +46,7 @@ const journalPages = document.getElementById('journal-pages')
 journalPages.addEventListener('click', (e)=>{
     if(e.target.getAttribute("data-page")){
 
-        // console.log(e.target.dataset.page);
         let page = parseInt(e.target.dataset.page) -1;
         renderJournal(dataId, page)
-        // console.log(dataId);
     }
 })
-
-
-
-/**
-
- journalWrapper.innerHTML = item.journal.map((diary, index) =>{
-                const {title, place, date, distance, img, text, alt} = diary
-                pagination = diary.length
-                if(index >= pageToRender && index < pageToRender +2){
-                    console.log(pageToRender, (pageToRender) + 1);
-                    return `
-                    <article class="journal-text-wrapper" data-id=${index} >
-                    <h3 class="journal-title">${title}</h3>
-                    <div class="journal-info">
-                    <p class="journal-data">${date}</p>  
-                    <p class="journal-location">${place}</p>  
-                    <p class="journal-distance">${distance}</p>  
-                    </div>
-                    <p class="journal-text"><img class="journal-image" src="${img}" alt="${alt}">${text}</p>
-                    </article>
-                    ` 
-                }
-            }).join('')
-
-*/

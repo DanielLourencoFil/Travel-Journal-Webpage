@@ -1,13 +1,14 @@
-// it was replaced by css scroll-snap functionaltiy: so far has worked quite well
+// it was replaced by css scroll-snap functionaltiy: 
+// css scroll-snap is not working as expected; bugs when sections had no fix height, ie, gallery photos and jounal sections
+//my intention is to use snap only for the hero and place cards section: So far i didn't it.
+// this feature is to increase the user experience 
 
 export function scrollFullSection(){
 
     window.addEventListener('scroll', (e)=>{
         const sectionsToScroll = document.querySelectorAll("[data-scroll]")
-        // console.log(e.currentTarget.scrollY);
         sectionsToScroll.forEach((section, index) =>{
-            // console.log((section.getBoundingClientRect().top < 0));
-            // console.log(section.getBoundingClientRect().bottom );/*  */
+            
             if(section.getBoundingClientRect().top < 0 && section.getBoundingClientRect().bottom > 0 ){
                 console.log('yes', section);
                   window.scroll(0, window.innerHeight) 
@@ -15,13 +16,6 @@ export function scrollFullSection(){
 
                 console.log(section);
                 if(window.scrollY){
-                    // if(index > sectionsToScroll.length -2){
-                    //         console.log('no return');
-                    //         return
-                         
-                    //     }else{
-
-                    //     } 
                         window.scroll(0, window.innerHeight) 
                 }
                 if(window.scrollY  < 0){
