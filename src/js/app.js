@@ -2,6 +2,11 @@
 import {CarouselGenerator} from "./utils/carouselGenerator.js"
 import {fullCarousel, galleryClickEvent} from "./utils/fullCarousel.js"
 
+// event listeners
+import {carouselPlacesCardEventListener} from "./utils/carouselPlacesCardEventListener.js"
+import {fullCarouselRemoveEventListner} from "./utils/fullCarouselRemoveEventListner.js"
+import { screenResize } from "./utils/screenResize.js"
+
 //render functions
 import { renderTimeline } from "./utils/renderTimeline.js"
 import { renderJournal } from "./utils/renderJournal.js"
@@ -11,26 +16,14 @@ import { renderGallery } from "./utils/renderGallery.js"
 import {placesCardsData, photosHero1, galleryImages, dataTravel, photosHero2} from "./infoToRender/placesCard.js"
 import {timelineInfo} from "./infoToRender/timelineInfo.js"
 
-
 //utils
-// import {scrollFullSection} from "./utils/scrollFullSection.js"
-import { typingEffect } from "./utils/typingEffect.js";
+import { typingEffect } from "./utils/typingEffect.js"; // needs implementation
 import {getFullYear} from "./utils/getFullYear.js"
 import { backToTopBtn } from "./utils/backToTopBtn.js"
 
-console.log('yes');
-
-//===== CAROUSEL HERO (left side)===== //
-// const carouselHero1 = new CarouselGenerator('hero-slider-1-wrapper', photosHero1, 10000)
-// // carouselHero1.slideGeneralDataMap = true
-// carouselHero1.sliderAction = 'onSlide'
-// carouselHero1.renderType = 2
-// carouselHero1.slideChangeType = 'infinite'
-// carouselHero1.slideChangeOnClick()
-// carouselHero1.renderSlides('hero-slider', 'hero-slide-1')
 
 
-//===== CAROUSEL HERO (rigth side)===== //
+//===== CAROUSEL Photos HERO ===== //
 const carouselHero2= new CarouselGenerator('hero-slider-2-wrapper', photosHero2,7000)
 carouselHero2.sliderAction = 'onSlide';
 carouselHero2.renderType = 2;
@@ -39,217 +32,46 @@ carouselHero2.slideChangeOnClick();
 carouselHero2.renderSlides('hero-slider', 'hero-slide')
 
 
-
 // ===== CAROUSEL PLACES CARDS ===== //
 const carouselPlacesCard = new CarouselGenerator('places-card-carousel',dataTravel)
 carouselPlacesCard.renderType = 1
 carouselPlacesCard.slideChangeOnClick()
 carouselPlacesCard.slideChangeType = 'linear'
 
-//////////////////////////////////////////
-const gallery = document.getElementById('gallery')
-let hasfullCarousel = window.getComputedStyle(gallery, "::after").getPropertyValue('content');
-
-if(hasfullCarousel.indexOf('full-slide') == -1){
-    gallery.removeEventListener('click', galleryClickEvent) 
-        
-}else{
-    gallery.addEventListener('click', galleryClickEvent)
-}
-
+//=== change carousel cards based on screen rezise and mobile change to horizontal screen orientation
 window.addEventListener('resize',()=>{
-    screenSize()
+    screenResize(carouselPlacesCard)
 })
-
-screenSize()
-
-function screenSize(){
-    const gallery = document.querySelector('#gallery')
-     
-    // renderJournal()
-    const placesWrapper = document.querySelector('.places-wrapper')
-    const size = window.getComputedStyle(document.body, '::after').getPropertyValue('content');
-    // console.log(placesWrapper);
-    // const gallery = document.getElementById('gallery')
-   
-    hasfullCarousel = window.getComputedStyle(gallery, "::after").getPropertyValue('content');
-
-    if(hasfullCarousel.indexOf('full-slide') == -1){
-        gallery.removeEventListener('click', galleryClickEvent) 
-        // console.log('full slide resize yyyyyyyyyyy');
-        // let removeEvent = true
-        // fullCarousel('gallery', removeEvent)
-    }
-    else{
-        gallery.addEventListener('click', galleryClickEvent)
-        // console.log('else esle yyyyyyyyy');
-
-    }
-
-    if(size.indexOf("size-1-screen") != -1){
-        if(placesWrapper){
-            placesWrapper.remove()
-                    console.log('1', carouselPlacesCard.slidesDom);
-
-            // gallery.innerHTML = ''
-            //  gallery.remove()
-            // renderGallery(slide.dataset.id)        }
-            // placesWrapper && placesWrapper.remove() && gallery.remove()
-        }
-        // 1 slides per time
-        carouselPlacesCard.counter = 0 
-        carouselPlacesCard.slidesLinearTranslation = 100
-        carouselPlacesCard.slidesDisplayNumber = 1 
-        carouselPlacesCard.slideLinearValue = 100 
-               
-        carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
-
-        carouselPlacesCard.slidesDom[0].disabled = true
-        carouselPlacesCard.slidesDom[1].disabled = false
-        /////////////////////////////////////////
-    carouselPlacesCardEventListener()
-        
-        // let removeEvent = true
-        // fullCarousel('gallery', removeEvent)
-}
-    if(size.indexOf("size-2-screen") != -1){
-         if(placesWrapper){
-            console.log('2');
-            placesWrapper.remove()
-            // gallery.innerHTML = ''
-            // gallery.remove()
-            // renderGallery()
-            // renderGallery(slide.dataset.id)
-        }
-        // console.log(size);
-        // placesWrapper && placesWrapper.remove() && gallery.remove()
-        // 2 slides per time
-
-        carouselPlacesCard.counter = 0 
-
-        carouselPlacesCard.slidesLinearTranslation = 104.2
-        carouselPlacesCard.slidesDisplayNumber = 2
-        carouselPlacesCard.slideLinearValue = 50 
-        carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
-        
-        carouselPlacesCard.slidesDom[0].disabled = true
-        carouselPlacesCard.slidesDom[1].disabled = false
-        /////////////////////////////////////////
-    carouselPlacesCardEventListener()
-
-
-        let removeEvent = false
-        // fullCarousel('gallery')
-    }
-    if(size.indexOf("size-3-screen") != -1){
-         if(placesWrapper){
-            console.log('3');
-            placesWrapper.remove()
-            // gallery.remove()
-                        // renderGallery()
-
-
-        }
-        // placesWrapper && placesWrapper.remove() && gallery.remove()
-        // 3 slides per time
-        carouselPlacesCard.counter = 1 
-
-        carouselPlacesCard.slidesLinearTranslation = 103.25
-        carouselPlacesCard.slideLinearValue = 33  
-        carouselPlacesCard.slidesDisplayNumber = 3
-        carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
-
-        carouselPlacesCard.slidesDom[0].disabled = true
-        carouselPlacesCard.slidesDom[1].disabled = false
-           /////////////////////////////////////////
-    carouselPlacesCardEventListener()
-        // let removeEvent = false
-        // fullCarousel('gallery', removeEvent)
-    }
-    if(size.indexOf("size-4-screen") != -1){
-         if(placesWrapper){
-            console.log('4');
-            placesWrapper.remove()
-            // gallery.remove()
-                        // renderGallery()
-
-        }
-        // placesWrapper && placesWrapper.remove() && gallery.remove()
-
-        // 4 slides per time
-        carouselPlacesCard.counter = 1 
-
-        carouselPlacesCard.slidesLinearTranslation = 106.5
-        carouselPlacesCard.slideLinearValue = 25 
-        carouselPlacesCard.slidesDisplayNumber = 4
-        carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
-
-        carouselPlacesCard.slidesDom[0].disabled = true
-        carouselPlacesCard.slidesDom[1].disabled = false
-           /////////////////////////////////////////
-    carouselPlacesCardEventListener()
-        // let removeEvent = false
-        // fullCarousel('gallery', removeEvent)
-    }
-}
-
-
+//=== default 
+screenResize(carouselPlacesCard)
+//=== add eventlistener to render gallery and journal by clicking on card
+carouselPlacesCardEventListener(carouselPlacesCard)
 
 //===== RENDER IMAGES GALLERY after card selection / as default, the images related with the first card are rendered 
-
 renderGallery()
 renderJournal()
-
-carouselPlacesCardEventListener()
-
-///////////////////
-function carouselPlacesCardEventListener(){
-    const carouselPlacesCards = carouselPlacesCard.slider.children;
-    
-    [...carouselPlacesCards].forEach(slide=>{
-    slide.addEventListener('click', e =>{
-        if(e.target.classList.contains('journal-card') || e.target.classList.contains('gallery-card')){
-            // const gallery = document.querySelector('#gallery')
-            // gallery.innerHTML = ''
-            renderJournal(slide.dataset.id)
-            renderGallery(slide.dataset.id)
-        }
-    })
-    });
-    
-}
-////////////
-
 
 // ===== CAROUSEL FULL IMAGES - image gallery ===== //
 
 fullCarousel('gallery')
 
+//=== mobiles with vertical screen orientation don't need fullScreen photos carousel
+fullCarouselRemoveEventListner()
+
+
 // =====   ABOUT - ROUTE - TIMETABLE - CONTACT - sections ===== //
 const scrollYSections = document.querySelectorAll('.scroll-y-section');
 const contactSection = document.querySelector('.contact-wrapper')
 
-const travelRouteBtn = document.querySelector('.bussola-btn')
-const travelCloseBtn = document.querySelector('.travel-close-btn')
-const travelRouteTimelineBtn = document.querySelector('.timeline-open-small-screen')
-
-
-const timelineBtn = document.querySelector('.timeline-btn')
-const timelineCloseBtn = document.querySelector('.timeline-close-btn')
-
+//== ABOUT
 const aboutBtn = document.querySelector('.about-btn')
 const aboutCloseBtn = document.querySelector('.about-close-btn')
-
-const contactBtn = document.querySelector('.contact-btn')
-const contactCloseBtn = document.querySelector('.contact-close-btn')
-
 
 aboutBtn.addEventListener('click', (e)=>{
     scrollYSections[0].style.display = 'block'
     
     setTimeout(()=> scrollYSections[0].style.left = '0'
 ,100)
-
     
     //*** hide the document body Y scroll bar, avoiding user to scroll beyond current section  
     document.body.classList.add('hide-scroll-bar')
@@ -268,6 +90,11 @@ aboutBtn.addEventListener('click', (e)=>{
 
     })
 })
+
+//== TRAVEL ROUTE 
+const travelRouteBtn = document.querySelector('.bussola-btn')
+const travelCloseBtn = document.querySelector('.travel-close-btn')
+const travelRouteTimelineBtn = document.querySelector('.timeline-open-small-screen')
 
 travelRouteBtn.addEventListener('click', (e)=>{
     // scrollYSections[1].style.left = '0'
@@ -314,6 +141,11 @@ travelRouteTimelineBtn.addEventListener('click', ()=>{
 
 })
 
+//== TIMELINE
+
+const timelineBtn = document.querySelector('.timeline-btn')
+const timelineCloseBtn = document.querySelector('.timeline-close-btn')
+
 timelineBtn.addEventListener('click', (e)=>{
     scrollYSections[2].classList.add('hide-timeline')
 
@@ -350,6 +182,13 @@ timelineCloseBtn.addEventListener('click', (e)=>{
     timelineCloseBtn.classList.remove('show-timeline-btn')
 })
 
+//************** TIMELINE ***************/
+renderTimeline(timelineInfo)
+
+//== CONTACT
+const contactBtn = document.querySelector('.contact-btn')
+const contactCloseBtn = document.querySelector('.contact-close-btn')
+
 contactBtn.addEventListener('click', (e)=>{
     contactSection.classList.add('show-contact-section')
     document.body.classList.add('hide-scroll-bar')
@@ -368,12 +207,8 @@ contactBtn.addEventListener('click', (e)=>{
     })
 })
 
-//************** TIMELINE ***************/
-renderTimeline(timelineInfo)
 
-
-
-////////////// UTILS
+//************** SECONDARY FEATURES ***************/
 // typingEffect()
 backToTopBtn()
 getFullYear()
