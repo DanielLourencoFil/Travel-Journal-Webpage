@@ -22,14 +22,4 @@ export function renderGallery(dataToRenderId = 0){
             }).join('')
         }
     })
-
-
-
-
-    // gallery.innerHTML = dataTravel.map((image, index)=>{
-    //     return ` <article class="gallery-image">
-    //     <img src="${image.img}" data-image-id="${index}" alt="">
-    //             </article>`
-    //         }).join('')
-    
 }

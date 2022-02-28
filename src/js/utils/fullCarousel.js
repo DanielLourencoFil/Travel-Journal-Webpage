@@ -54,19 +54,12 @@ export const galleryClickEvent = (e, time)=>{
             
             })
         }
-    }
+}
 
 export function fullCarousel(rootElementId, removeEvent = false){
 const gallery = document.getElementById(`${rootElementId}`)
 
 gallery.addEventListener('click', galleryClickEvent)
-
-// console.log('from carousel');
-    // console.log(removeEvent);
-    // if(removeEvent == true){
-    //     gallery.removeEventListener('click', galleryClickEvent)
-    //     console.log('ddddddddddd',gallery.removeEventListener('click', galleryClickEvent));
-    // } 
 
 }
 

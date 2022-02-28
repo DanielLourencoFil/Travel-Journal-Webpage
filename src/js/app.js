@@ -1,6 +1,6 @@
 //carousels
 import {CarouselGenerator} from "./utils/carouselGenerator.js"
-import {fullCarousel, galleryClickEvent} from "./utils/fullCarousel.js"
+import {fullCarousel} from "./utils/fullCarousel.js"
 
 // event listeners
 import {carouselPlacesCardEventListener} from "./utils/carouselPlacesCardEventListener.js"
@@ -13,7 +13,7 @@ import { renderJournal } from "./utils/renderJournal.js"
 import { renderGallery } from "./utils/renderGallery.js"
 
 //info to render
-import {placesCardsData, photosHero1, galleryImages, dataTravel, photosHero2} from "./infoToRender/placesCard.js"
+import {dataTravel, photosHero2} from "./infoToRender/placesCard.js"
 import {timelineInfo} from "./infoToRender/timelineInfo.js"
 
 //utils
@@ -138,7 +138,6 @@ travelRouteTimelineBtn.addEventListener('click', ()=>{
     timelineCloseBtn.classList.add('show-timeline-btn')
 
         document.body.classList.add('hide-scroll-bar')
-
 })
 
 //== TIMELINE
