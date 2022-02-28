@@ -1,3 +1,6 @@
+import { renderJournal } from "./renderJournal.js"
+import { renderGallery } from "./renderGallery.js"
+
 export class CarouselGenerator {
     constructor(sliderId, slidesData, interval=0){
         this.sliderContainer = document.getElementById(sliderId)
@@ -31,7 +34,6 @@ export class CarouselGenerator {
         this.slideCSS = slideCSS
         this.slider = document.createElement('div')
         this.slider.classList.add(slideCarousel)
-        // this.slider.innerHTML = 'oioioioioioioioioi'
         this.sliderContainer.appendChild(this.slider)
         this.slider = this.sliderContainer.querySelector(`.${slideCarousel}`)
     
@@ -84,6 +86,7 @@ export class CarouselGenerator {
             </article>
             `
     }).join('')
+
     }
     renderType2 = ()=>{
         let tempItem;
@@ -264,7 +267,9 @@ export class CarouselGenerator {
                 slide.classList.remove("hide-slide")
             }
             
-           slide.style.transform = `translateX(-${(this.counter*this.slidesLinearTranslation)}%)  `
+           slide.style.transform = `translateX(-${(this.counter*this.slidesLinearTranslation)}%) `
+
+           console.log(this.slidesLinearTranslation, this.counter,'kkkkkkkkkkkkk');
 
            slide.addEventListener('mouseover', ()=>{
              slide.style.transform = `translateX(-${(this.counter*this.slidesLinearTranslation)}%) scale(1.025)`   

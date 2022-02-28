@@ -60,12 +60,16 @@ if(hasfullCarousel.indexOf('full-slide') == -1){
 window.addEventListener('resize',()=>{
     screenSize()
 })
+
 screenSize()
 
 function screenSize(){
-    const cardsWrapper = document.querySelector('.places-wrapper')
+    const gallery = document.querySelector('#gallery')
+     
+    // renderJournal()
+    const placesWrapper = document.querySelector('.places-wrapper')
     const size = window.getComputedStyle(document.body, '::after').getPropertyValue('content');
-    // console.log(cardsWrapper);
+    // console.log(placesWrapper);
     // const gallery = document.getElementById('gallery')
    
     hasfullCarousel = window.getComputedStyle(gallery, "::after").getPropertyValue('content');
@@ -83,50 +87,112 @@ function screenSize(){
     }
 
     if(size.indexOf("size-1-screen") != -1){
-        cardsWrapper && cardsWrapper.remove()
+        if(placesWrapper){
+            placesWrapper.remove()
+                    console.log('1', carouselPlacesCard.slidesDom);
+
+            // gallery.innerHTML = ''
+            //  gallery.remove()
+            // renderGallery(slide.dataset.id)        }
+            // placesWrapper && placesWrapper.remove() && gallery.remove()
+        }
         // 1 slides per time
+        carouselPlacesCard.counter = 0 
         carouselPlacesCard.slidesLinearTranslation = 100
         carouselPlacesCard.slidesDisplayNumber = 1 
+        carouselPlacesCard.slideLinearValue = 100 
+               
         carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
+
+        carouselPlacesCard.slidesDom[0].disabled = true
+        carouselPlacesCard.slidesDom[1].disabled = false
+        /////////////////////////////////////////
+    carouselPlacesCardEventListener()
         
         // let removeEvent = true
         // fullCarousel('gallery', removeEvent)
-    }
+}
     if(size.indexOf("size-2-screen") != -1){
+         if(placesWrapper){
+            console.log('2');
+            placesWrapper.remove()
+            // gallery.innerHTML = ''
+            // gallery.remove()
+            // renderGallery()
+            // renderGallery(slide.dataset.id)
+        }
         // console.log(size);
-        cardsWrapper && cardsWrapper.remove()
+        // placesWrapper && placesWrapper.remove() && gallery.remove()
         // 2 slides per time
+
+        carouselPlacesCard.counter = 0 
+
         carouselPlacesCard.slidesLinearTranslation = 104.2
         carouselPlacesCard.slidesDisplayNumber = 2
         carouselPlacesCard.slideLinearValue = 50 
         carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
         
+        carouselPlacesCard.slidesDom[0].disabled = true
+        carouselPlacesCard.slidesDom[1].disabled = false
+        /////////////////////////////////////////
+    carouselPlacesCardEventListener()
+
+
         let removeEvent = false
         // fullCarousel('gallery')
     }
     if(size.indexOf("size-3-screen") != -1){
-        cardsWrapper && cardsWrapper.remove()
+         if(placesWrapper){
+            console.log('3');
+            placesWrapper.remove()
+            // gallery.remove()
+                        // renderGallery()
+
+
+        }
+        // placesWrapper && placesWrapper.remove() && gallery.remove()
         // 3 slides per time
+        carouselPlacesCard.counter = 1 
+
         carouselPlacesCard.slidesLinearTranslation = 103.25
         carouselPlacesCard.slideLinearValue = 33  
         carouselPlacesCard.slidesDisplayNumber = 3
         carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
 
+        carouselPlacesCard.slidesDom[0].disabled = true
+        carouselPlacesCard.slidesDom[1].disabled = false
+           /////////////////////////////////////////
+    carouselPlacesCardEventListener()
         // let removeEvent = false
         // fullCarousel('gallery', removeEvent)
     }
     if(size.indexOf("size-4-screen") != -1){
-        cardsWrapper && cardsWrapper.remove()
+         if(placesWrapper){
+            console.log('4');
+            placesWrapper.remove()
+            // gallery.remove()
+                        // renderGallery()
+
+        }
+        // placesWrapper && placesWrapper.remove() && gallery.remove()
+
         // 4 slides per time
+        carouselPlacesCard.counter = 1 
+
         carouselPlacesCard.slidesLinearTranslation = 106.5
         carouselPlacesCard.slideLinearValue = 25 
         carouselPlacesCard.slidesDisplayNumber = 4
         carouselPlacesCard.renderSlides('places-wrapper', 'place-card')
 
+        carouselPlacesCard.slidesDom[0].disabled = true
+        carouselPlacesCard.slidesDom[1].disabled = false
+           /////////////////////////////////////////
+    carouselPlacesCardEventListener()
         // let removeEvent = false
         // fullCarousel('gallery', removeEvent)
+    }
 }
-}
+
 
 
 //===== RENDER IMAGES GALLERY after card selection / as default, the images related with the first card are rendered 
@@ -134,16 +200,26 @@ function screenSize(){
 renderGallery()
 renderJournal()
 
-const carouselPlacesCards = carouselPlacesCard.slider.children;
+carouselPlacesCardEventListener()
 
-[...carouselPlacesCards].forEach(slide=>{
+///////////////////
+function carouselPlacesCardEventListener(){
+    const carouselPlacesCards = carouselPlacesCard.slider.children;
+    
+    [...carouselPlacesCards].forEach(slide=>{
     slide.addEventListener('click', e =>{
         if(e.target.classList.contains('journal-card') || e.target.classList.contains('gallery-card')){
+            // const gallery = document.querySelector('#gallery')
+            // gallery.innerHTML = ''
             renderJournal(slide.dataset.id)
             renderGallery(slide.dataset.id)
         }
     })
-});
+    });
+    
+}
+////////////
+
 
 // ===== CAROUSEL FULL IMAGES - image gallery ===== //
 
