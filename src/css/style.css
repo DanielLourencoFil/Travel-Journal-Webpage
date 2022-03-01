@@ -1516,13 +1516,6 @@ video {
   border: 5px solid white;
   -webkit-box-shadow: 1px 1px 5px black;
           box-shadow: 1px 1px 5px black;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .main-wrapper .gallery .gallery-image .image-info-wrapper {
@@ -1562,6 +1555,9 @@ video {
     -webkit-transition: all, 0.5s ease-in-out;
     transition: all, 0.5s ease-in-out;
     cursor: pointer;
+  }
+  .main-wrapper .gallery .gallery-image img {
+    height: 100%;
   }
   .main-wrapper .gallery .gallery-image:hover {
     border: 5px solid #dadd19;
@@ -1725,7 +1721,7 @@ video {
   position: absolute;
   width: clamp(500px, 100%, 1000px);
   height: auto;
-  max-height: 100vh;
+  height: 100vh;
   opacity: 0;
   top: 50%;
   left: 50%;
@@ -1754,10 +1750,29 @@ video {
   }
 }
 
-.gallery-full-carousel .full-carousel-image .photo-number {
+.gallery-full-carousel .full-carousel-image .img-info {
   position: absolute;
+  width: 100%;
   top: 2vh;
-  right: 5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gallery-full-carousel .full-carousel-image .photo-number {
+  font-size: 1.35rem;
+  opacity: 0.8;
+  color: white;
+  text-shadow: 1px 1px black;
+  letter-spacing: 0.2rem;
+}
+
+.gallery-full-carousel .full-carousel-image .photo-date {
   font-size: 1.35rem;
   opacity: 0.8;
   color: white;
@@ -1766,9 +1781,6 @@ video {
 }
 
 .gallery-full-carousel .full-carousel-image .photo-place {
-  position: absolute;
-  top: 2vh;
-  left: 5vw;
   font-size: 1.35rem;
   opacity: 0.8;
   color: white;
