@@ -102,6 +102,72 @@ video {
   overflow-x: hidden;
 }
 
+.loading {
+  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #c0d3d8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 99;
+}
+
+.loading img {
+  position: relative;
+  width: 100px;
+}
+
+.loading:after {
+  content: "";
+  width: 150px;
+  height: 150px;
+  border: 10px dashed #da0000;
+  border-radius: 50%;
+  position: absolute;
+  top: 38.25%;
+  left: 41.5%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: loader 5s linear infinite;
+          animation: loader 5s linear infinite;
+}
+
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.hide-loader {
+  display: none;
+}
+
 .header-wrapper {
   position: relative;
   background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.3))), url("../images/wooden-table-top.jpg");

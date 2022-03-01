@@ -22,6 +22,11 @@ import {getFullYear} from "./utils/getFullYear.js"
 import { backToTopBtn } from "./utils/backToTopBtn.js"
 
 
+const loader = document.querySelector('.loading')
+window.addEventListener('domLoadedContent', ()=>{
+    loader.classList.add('hide-loader')
+})
+
 
 //===== CAROUSEL Photos HERO ===== //
 const carouselHero2= new CarouselGenerator('hero-slider-2-wrapper', photosHero2,7000)

@@ -120,6 +120,47 @@ video {
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
+// ********* LOADING SCREEN ********* //
+.loading {
+	position: absolute;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgb(192, 211, 216);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 99;
+	& img {
+		position: relative;
+		width: 100px;
+	}
+	&:after {
+		content: "";
+		width: 150px;
+		height: 150px;
+		border: 10px dashed $color-alert-500;
+		border-radius: 50%;
+		position: absolute;
+		top: 38.25%;
+		left: 41.5%;
+		transform: translate(-50%, -50%);
+		animation: loader 5s linear infinite;
+	}
+	@keyframes loader {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+}
+.hide-loader {
+	display: none;
+}
 
 // ********* HEADER ********* //
 .header-wrapper {
