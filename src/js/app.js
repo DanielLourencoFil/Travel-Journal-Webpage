@@ -23,6 +23,7 @@ import { backToTopBtn } from "./utils/backToTopBtn.js"
 
 
 const loader = document.querySelector('.loading')
+console.log(loader); 
 window.addEventListener('domLoadedContent', ()=>{
     loader.classList.add('hide-loader')
 })
