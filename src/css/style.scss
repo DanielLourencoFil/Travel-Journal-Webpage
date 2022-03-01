@@ -1342,6 +1342,17 @@ video {
 		right: calc(5rem + 10vw);
 	}
 }
+
+//*********** screen height > 660px = mobiles horizontal orientation
+@media screen and(max-height:660px) {
+	#close-gallery-btn {
+		opacity: 0.4;
+		right: 0.5rem;
+		bottom: 0.5rem;
+		color: $color-primary-600;
+	}
+}
+
 //*********** screen height > 900px
 @media screen and(min-width:660px) and(min-height:900px) {
 	#close-gallery-btn {
@@ -1380,7 +1391,8 @@ video {
 	.full-carousel-image {
 		position: absolute;
 		width: clamp(500px, 100%, 1000px);
-		height: auto;
+		height: 100%;
+		// height: auto;
 		// max-height: 100vh;
 		height: 100vh;
 		opacity: 0;
@@ -1404,6 +1416,9 @@ video {
 			display: flex;
 			justify-content: space-around;
 			align-items: center;
+			@media screen and(max-height:660px) {
+				width: 70%;
+			}
 		}
 		.photo-number {
 			// position: absolute;
