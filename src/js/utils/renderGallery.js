@@ -7,11 +7,11 @@ export function renderGallery(dataToRenderId = 0){
         if(item.id == dataToRenderId){
 
             gallery.innerHTML = item.gallery.map((place, index) =>{
-                const {img, imgPlace, imgDate, alt} = place
+                const {imgSmall, imagLarge,imgPlace, imgDateUs,imgDateBR, alt} = place
                   
                    return `
                    <article class="gallery-image">
-                    <img src="${img}" data-image-id="${index}" data-place-id="${item.id}" alt="${alt}">
+                    <img src="${imgSmall}" data-image-id="${index}" data-place-id="${item.id}" alt="${alt}">
                     <div class="image-info-wrapper"
                     <p class="photo-place">${imgPlace}</p>
                     <p class="photo-number">${index+1}/${item.gallery.length}</p>

@@ -94,7 +94,7 @@ export class CarouselGenerator {
         Object.values(this.slides).forEach(item=>{
             const render =() =>{
                 this.slider.innerHTML = tempItem.gallery.map((slide,index) =>{
-                    const {img, imgDate, imgPlace, alt} = slide;
+                    const {imgSmall, imgLarge,imgDateUS,imgDateBR, imgPlace, alt} = slide;
                 let position = "next"
                 let hideSlide = ''
                 if(this.slideIndex == 0){
@@ -110,9 +110,12 @@ export class CarouselGenerator {
 
                 return `
                 <article class=" slide ${!this.hasBtn && "onSlide"} ${this.slideCSS} ${position} ${hideSlide}">
-                <img src="${img}" class="img-slide " alt="${alt}"></img>
-                <span class="photo-number">${index+1}/${item.gallery.length}</span>
-                <span class="photo-place">${imgPlace}</span>
+                <img src="${imgLarge}" class="img-slide " alt="${alt}"></img>
+                <div class="img-info">
+                <p class="photo-place">${imgPlace}</p>
+                <p class="photo-date">${imgDateUS}</p>
+                <p class="photo-number">${index+1}/${item.gallery.length}</p>
+                </div>
                 </article>
                 `
             }).join('')

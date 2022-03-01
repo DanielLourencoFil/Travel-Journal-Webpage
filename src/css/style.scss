@@ -1217,8 +1217,6 @@ video {
 		.gallery-image {
 			border: 5px solid $color-light-100;
 			box-shadow: 1px 1px 5px $color-dark-900;
-			display: flex;
-			flex-direction: column;
 			.image-info-wrapper {
 				margin-top: 0.5rem;
 				display: flex;
@@ -1244,6 +1242,9 @@ video {
 			.gallery-image {
 				transition: all, 0.5s ease-in-out;
 				cursor: pointer;
+				& img {
+					height: 100%;
+				}
 				&:hover {
 					border: 5px solid $color-primary-100;
 					transform: scale(1.05);
@@ -1380,7 +1381,8 @@ video {
 		position: absolute;
 		width: clamp(500px, 100%, 1000px);
 		height: auto;
-		max-height: 100vh;
+		// max-height: 100vh;
+		height: 100vh;
 		opacity: 0;
 		top: 50%;
 		left: 50%;
@@ -1395,10 +1397,25 @@ video {
 		@media screen and(min-height:900px) {
 			width: clamp(500px, 100%, 1300px);
 		}
-		.photo-number {
+		.img-info {
 			position: absolute;
+			width: 100%;
 			top: 2vh;
-			right: 5vw;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+		.photo-number {
+			// position: absolute;
+			// top: 2vh;
+			// right: 5vw;
+			font-size: 1.35rem;
+			opacity: 0.8;
+			color: $color-light-100;
+			text-shadow: 1px 1px $color-dark-900;
+			letter-spacing: 0.2rem;
+		}
+		.photo-date {
 			font-size: 1.35rem;
 			opacity: 0.8;
 			color: $color-light-100;
@@ -1406,9 +1423,9 @@ video {
 			letter-spacing: 0.2rem;
 		}
 		.photo-place {
-			position: absolute;
-			top: 2vh;
-			left: 5vw;
+			// position: absolute;
+			// top: 2vh;
+			// left: 5vw;
 			font-size: 1.35rem;
 			opacity: 0.8;
 			color: $color-light-100;
