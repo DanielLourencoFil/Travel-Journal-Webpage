@@ -921,6 +921,14 @@ export const dataTravel = [
             imgDateBR: "11/28/2006",
             alt: "man-crossing-puente-de-las-americas-by-bike",
             },
+            {
+            imgSmall: "./images/central-america/gallery/central-america-45-large.JPG",
+            imgLarge: "./images/central-america/gallery/central-america-45-small.JPG",
+            imgPlace: "Panama Channel",
+            imgDateUS: "11/30/2006",
+            imgDateBR: "11/30/2006",
+            alt: "man-waching-ship-operation-on-panama-channel",
+            },
         ],
         journal:[
             {
