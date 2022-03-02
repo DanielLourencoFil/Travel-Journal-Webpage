@@ -109,9 +109,9 @@ export class CarouselGenerator {
                 }
 
                 return `
-                <article class=" slide ${!this.hasBtn && "onSlide"} ${this.slideCSS} ${position} ${hideSlide}">
+                <article class="slide ${!this.hasBtn && "onSlide"} ${this.slideCSS} ${position} ${hideSlide}">
                 <img srcset="${imgSmall} 650w, ${imgLarge} 1500w"
-                sizes="(min-width:280px) 100vw, (min-width:1000px) 80vw"  
+                sizes="(min-width: 280px) 100vw, (min-width: 1000px) 90vw"
                 src="${imgLarge}" class="img-slide " alt="${alt}">
                 </img>
                 <div class="img-info">
