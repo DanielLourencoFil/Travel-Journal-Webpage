@@ -297,14 +297,14 @@ video {
           transform: translate(-50%, -25%);
 }
 
-.bussola-wrapper .bussola {
+.bussola {
   width: clamp(9rem, 22.5vw, 11rem);
   height: auto;
   -webkit-transform: rotate(5deg);
           transform: rotate(5deg);
 }
 
-.bussola-wrapper .bussola-btn {
+.bussola-btn {
   position: absolute;
   top: -5%;
   left: 50%;
@@ -330,7 +330,7 @@ video {
   z-index: 9;
 }
 
-.bussola-wrapper .bussola-btn:hover {
+.bussola-btn:hover {
   -webkit-box-shadow: 0 0 10px #dadd19;
           box-shadow: 0 0 10px #dadd19;
   color: rgba(192, 211, 216, 0.952);
@@ -529,8 +529,9 @@ video {
     top: 5%;
     left: 0;
   }
-  .bussola-wrapper .bussola {
+  .bussola {
     width: clamp(9rem, 23.75vw, 12rem);
+    height: clamp(9rem, 23.75vw, 12rem);
   }
   .carousel-about-wrapper {
     bottom: -10%;
@@ -541,6 +542,41 @@ video {
   .about-btn {
     top: 35%;
     left: -35%;
+  }
+}
+
+@media screen and (max-height: 450px) and (min-width: 600px) {
+  .main-title {
+    font-size: 2.5rem;
+  }
+  .main-title span:last-child {
+    font-size: 3rem;
+  }
+  .carousel-about-wrapper {
+    width: 9.5rem;
+    height: 9.5rem;
+    bottom: 2.5%;
+    left: -10%;
+  }
+  .about-btn {
+    left: 100%;
+    top: 20%;
+  }
+  .bussola-wrapper {
+    left: 0;
+    z-index: 1;
+  }
+  .bussola {
+    width: 9.5rem;
+    height: 9.5rem;
+  }
+  .bussola-btn {
+    left: 65%;
+    top: -5%;
+  }
+  .pen {
+    right: -10%;
+    width: 18rem;
   }
 }
 
@@ -1305,9 +1341,15 @@ video {
   overflow: hidden;
   width: 100vw;
   height: 100vh;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #places-card-carousel {
@@ -1482,8 +1524,6 @@ video {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 80vw;
-    height: 75vh;
   }
   .place-card {
     width: 48%;
@@ -1492,18 +1532,6 @@ video {
 }
 
 @media screen and (min-width: 1000px) {
-  #places-card-carousel {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 85vw;
-    height: 75vh;
-  }
   .place-card {
     width: 32%;
     width: 32%;
@@ -1513,20 +1541,17 @@ video {
 
 @media screen and (min-width: 1200px) {
   #places-card-carousel {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     width: 90vw;
-    height: 75vh;
   }
   .place-card {
     width: 23.5%;
     margin: 0 0.75%;
+  }
+}
+
+@media screen and (max-height: 450px) and (min-width: 600px) {
+  #places-card-carrousel {
+    height: 90vh;
   }
 }
 
