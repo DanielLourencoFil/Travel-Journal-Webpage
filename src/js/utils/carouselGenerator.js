@@ -110,7 +110,10 @@ export class CarouselGenerator {
 
                 return `
                 <article class=" slide ${!this.hasBtn && "onSlide"} ${this.slideCSS} ${position} ${hideSlide}">
-                <img src="${imgLarge}" class="img-slide " alt="${alt}"></img>
+                <img srcset="${imgSmall} 650w, ${imgLarge} 1500w"
+                sizes="(min-width:280px) 100vw, (min-width:1000px) 80vw"  
+                src="${imgLarge}" class="img-slide " alt="${alt}">
+                </img>
                 <div class="img-info">
                 <p class="photo-place">${imgPlace}</p>
                 <p class="photo-date">${imgDateUS}</p>
