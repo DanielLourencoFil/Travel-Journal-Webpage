@@ -130,7 +130,7 @@ video {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 99;
+	z-index: 9;
 	& img {
 		position: relative;
 		width: 100px;
@@ -155,6 +155,7 @@ video {
 }
 .hide-loader {
 	display: none;
+	z-index: -9;
 }
 
 // ********* HEADER ********* //
