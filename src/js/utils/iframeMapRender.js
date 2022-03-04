@@ -13,7 +13,8 @@ export function iframeMapRender(){
     //     </iframe>
     //     `
     // }, 7000)
-     window.onload = ()=>{
+     
+         console.log('iframe');
          iframeContainer.innerHTML = `
     <div class="hide-header" ></div>
         <iframe
@@ -23,5 +24,4 @@ export function iframeMapRender(){
             frameborder="0"
             allowfullscreen>
         </iframe>`
-    }
 }
