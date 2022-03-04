@@ -22,11 +22,17 @@ import {getFullYear} from "./utils/getFullYear.js"
 import { backToTopBtn } from "./utils/backToTopBtn.js"
 
 
-//bugs with some mobiles : they never add class
+
+//===== LOADING SCREEN ===== //
+//bugs with some mobiles : they never add class : settime out as a backup for such cases
 const loader = document.querySelector('.loading')
 document.addEventListener('DOMContentLoaded', ()=>{
     loader.classList.add('hide-loader')
 })
+setTimeout(function(){
+    loader.classList.add('hide-loader')
+    console.log('yes');
+},5000)
 
 
 //===== CAROUSEL Photos HERO ===== //
