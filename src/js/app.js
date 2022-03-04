@@ -35,8 +35,7 @@ setTimeout(function(){
     loader.classList.add('hide-loader')
 },3000)
 
-//==== iframe render after whole page is loaded
-iframeMapRender()
+
 
 //===== CAROUSEL Photos HERO ===== //
 const carouselHero2= new CarouselGenerator('hero-slider-2-wrapper', photosHero2,7000)
@@ -65,6 +64,8 @@ carouselPlacesCardEventListener(carouselPlacesCard)
 //===== RENDER IMAGES GALLERY after card selection / as default, the images related with the first card are rendered 
 window.onload = ()=>{
 console.log('rendering gallery and journal');
+//==== iframe render after whole page is loaded
+iframeMapRender()   
     renderGallery()
     renderJournal()
    
