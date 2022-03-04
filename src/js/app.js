@@ -62,21 +62,22 @@ screenResize(carouselPlacesCard)
 carouselPlacesCardEventListener(carouselPlacesCard)
 
 //===== RENDER IMAGES GALLERY after card selection / as default, the images related with the first card are rendered 
-window.onload = ()=>{
-console.log('rendering gallery and journal');
-//==== iframe render after whole page is loaded
-// iframeMapRender()   
-    renderGallery()
-    renderJournal()
+renderGallery()
+renderJournal()
+
+// window.onload = ()=>{
+// console.log('rendering gallery and journal');
+// //==== iframe render after whole page is loaded
+// // iframeMapRender()   
    
-    // ===== CAROUSEL FULL IMAGES - image gallery ===== //
+//     // ===== CAROUSEL FULL IMAGES - image gallery ===== //
     
-    // fullCarousel('gallery')
+//     // fullCarousel('gallery')
     
-    //=== mobiles with vertical screen orientation don't need fullScreen photos carousel
-    // fullCarouselRemoveEventListner()
+//     //=== mobiles with vertical screen orientation don't need fullScreen photos carousel
+//     // fullCarouselRemoveEventListner()
     
-}
+// }
 
 // =====   ABOUT - ROUTE - TIMETABLE - CONTACT - sections ===== //
 const scrollYSections = document.querySelectorAll('.scroll-y-section');
