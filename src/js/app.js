@@ -65,7 +65,7 @@ carouselPlacesCardEventListener(carouselPlacesCard)
 window.onload = ()=>{
 console.log('rendering gallery and journal');
 //==== iframe render after whole page is loaded
-iframeMapRender()   
+// iframeMapRender()   
     renderGallery()
     renderJournal()
    
