@@ -62,13 +62,13 @@ screenResize(carouselPlacesCard)
 carouselPlacesCardEventListener(carouselPlacesCard)
 
 //===== RENDER IMAGES GALLERY after card selection / as default, the images related with the first card are rendered 
+iframeMapRender()   
 
 window.addEventListener('load', ()=>{
     console.log('rendering gallery and journal');
     //==== iframe render after whole page is loaded
     renderGallery()
     renderJournal()
-    iframeMapRender()   
     // ===== CAROUSEL FULL IMAGES - image gallery ===== //
     
     // fullCarousel('gallery')
