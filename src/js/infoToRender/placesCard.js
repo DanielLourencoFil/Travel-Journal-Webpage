@@ -3,6 +3,7 @@ export const photosHero2 = [
         id: 0,
         gallery: [
             {
+            imgSmall: "./images/carousel-1/carousel-1.JPG",
             imgLarge: "./images/carousel-1/carousel-1.JPG",
             imgPlace: "Uyuni Salar - Bolivia",
             imgDateUS: "10/17/2007",
@@ -10,6 +11,7 @@ export const photosHero2 = [
             alt: "portrail image, man in Uyuni Salar - Bolivia",
             },
             {
+            imgSmall: "./images/carousel-1/carousel-2.JPG",
             imgLarge: "./images/carousel-1/carousel-2.JPG",
             imgPlace: "Atitlan Lake - Peru",
             imgDateUS: "10/17/2007",
@@ -18,6 +20,7 @@ export const photosHero2 = [
 
             },
             {
+            imgSmall: "./images/carousel-1/carousel-3.JPG",
             imgLarge: "./images/carousel-1/carousel-3.JPG",
             imgPlace: "Atitlan Lake - Peru",
             imgDateUS: "10/17/2007",
@@ -26,6 +29,7 @@ export const photosHero2 = [
 
             },
             {
+            imgSmall: "./images/carousel-1/carousel-4.JPG",
             imgLarge: "./images/carousel-1/carousel-4.JPG",
             imgPlace: "Atitlan Lake - Peru",
             imgDateUS: "10/17/2007",
