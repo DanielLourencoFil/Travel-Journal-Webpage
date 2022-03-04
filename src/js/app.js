@@ -15,6 +15,7 @@ import { renderGallery } from "./utils/renderGallery.js"
 //info to render
 import {dataTravel, photosHero2} from "./infoToRender/placesCard.js"
 import {timelineInfo} from "./infoToRender/timelineInfo.js"
+import { iframeMapRender } from "./utils/iframeMapRender.js"
 
 //utils
 import { typingEffect } from "./utils/typingEffect.js"; // needs implementation
@@ -26,14 +27,16 @@ import { backToTopBtn } from "./utils/backToTopBtn.js"
 //===== LOADING SCREEN ===== //
 //bugs with some mobiles : they never add class : settime out as a backup for such cases
 const loader = document.querySelector('.loading')
+
 document.addEventListener('DOMContentLoaded', ()=>{
     loader.classList.add('hide-loader')
 })
 setTimeout(function(){
     loader.classList.add('hide-loader')
-    console.log('yes');
-},5000)
+},3000)
 
+//==== iframe render after whole page is loaded
+iframeMapRender()
 
 //===== CAROUSEL Photos HERO ===== //
 const carouselHero2= new CarouselGenerator('hero-slider-2-wrapper', photosHero2,7000)
