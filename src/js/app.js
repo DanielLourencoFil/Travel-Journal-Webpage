@@ -22,10 +22,11 @@ import {getFullYear} from "./utils/getFullYear.js"
 import { backToTopBtn } from "./utils/backToTopBtn.js"
 
 
+//bugs with some mobiles : they never add class
 const loader = document.querySelector('.loading')
 document.addEventListener('DOMContentLoaded', ()=>{
-    loader.classList.add('hide-loader')
-    // loader.style.display = "none";
+    // loader.classList.add('hide-loader')
+    loader.style.display = "none";
 })
 
 
