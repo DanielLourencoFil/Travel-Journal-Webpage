@@ -63,16 +63,19 @@ screenResize(carouselPlacesCard)
 carouselPlacesCardEventListener(carouselPlacesCard)
 
 //===== RENDER IMAGES GALLERY after card selection / as default, the images related with the first card are rendered 
-renderGallery()
-renderJournal()
-
-// ===== CAROUSEL FULL IMAGES - image gallery ===== //
-
-fullCarousel('gallery')
-
-//=== mobiles with vertical screen orientation don't need fullScreen photos carousel
-fullCarouselRemoveEventListner()
-
+window.onload = ()=>{
+console.log('renderin gallery and journal');
+    renderGallery()
+    renderJournal()
+   
+    // ===== CAROUSEL FULL IMAGES - image gallery ===== //
+    
+    // fullCarousel('gallery')
+    
+    //=== mobiles with vertical screen orientation don't need fullScreen photos carousel
+    // fullCarouselRemoveEventListner()
+    
+}
 
 // =====   ABOUT - ROUTE - TIMETABLE - CONTACT - sections ===== //
 const scrollYSections = document.querySelectorAll('.scroll-y-section');
