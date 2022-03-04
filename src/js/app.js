@@ -36,7 +36,7 @@ setTimeout(function(){
 },3000)
 
 //==== iframe render after whole page is loaded
-iframeMapRender()
+// iframeMapRender()
 
 //===== CAROUSEL Photos HERO ===== //
 const carouselHero2= new CarouselGenerator('hero-slider-2-wrapper', photosHero2,7000)
