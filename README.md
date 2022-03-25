@@ -1,7 +1,7 @@
 ## Travel Journal webpage
 
-It is a comemorative web page.
-This is a long due project that shows up a bike trip my wife and me have done a long time ago.
+It is a commemorative web page.
+This is a long due project that shows up a bike trip my wife and I have done a long time ago.
 
 ## Authors
 
