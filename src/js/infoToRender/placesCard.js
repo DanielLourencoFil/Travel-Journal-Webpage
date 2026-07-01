@@ -1367,6 +1367,7 @@ export const dataTravel = [
     {   
         id: 4,
         place: "Peru",
+        underConstruction: true,
         title: "Desert and Snow, sea and mountains",
         img: "./images/maps/peru-map.png",
         alt: "peru map",
@@ -1397,6 +1398,7 @@ export const dataTravel = [
     {   
         id: 5,
         place: "Bolivia",
+        underConstruction: true,
         title: "The Height Way Road",
         img: "./images/maps/bolivia-map.png",
         alt: "bolivia map",
@@ -1426,6 +1428,7 @@ export const dataTravel = [
     {   
         id: 6,
         place: "Argentina",
+        underConstruction: true,
         title: "The whole way down",
         img: "./images/maps/argentina-map.png",
         alt: "argentina map",
@@ -1455,6 +1458,7 @@ export const dataTravel = [
     {   
         id: 7,
         place: "Uruguay",
+        underConstruction: true,
         title: "Almost Home",
         img: "./images/maps/uruguay-map.png",
         alt: "uruguay map",
@@ -1484,6 +1488,7 @@ export const dataTravel = [
     {   
         id: 8,
         place: "Brazil",
+        underConstruction: true,
         title: "Home sweat home",
         img: "./images/maps/brazil-map.png",
         alt: "brazil map",

@@ -1,10 +1,23 @@
 import { dataTravel } from "../infoToRender/placesCard.js"
 
+const underConstructionCard = (place) => `
+    <div class="under-construction">
+        <p class="under-construction-icon">🚧</p>
+        <p class="under-construction-title">${place} — coming soon</p>
+        <p class="under-construction-text">Photos for this leg of the trip are on their way.</p>
+    </div>
+`
+
 export function renderGallery(dataToRenderId = 0) {
     const gallery = document.querySelector('#gallery')
 
     const item = dataTravel.find((place) => place.id == dataToRenderId)
-    if (!item || !item.gallery) return
+    if (!item) return
+
+    if (item.underConstruction || !item.gallery) {
+        gallery.innerHTML = underConstructionCard(item.place)
+        return
+    }
 
     gallery.innerHTML = item.gallery.map((place, index) => {
         const { imgSmall, imgLarge, imgPlace, alt } = place
