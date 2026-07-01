@@ -1,25 +1,31 @@
 import { dataTravel } from "../infoToRender/placesCard.js"
 
-export function renderGallery(dataToRenderId = 0){
+export function renderGallery(dataToRenderId = 0) {
     const gallery = document.querySelector('#gallery')
 
-    Object.values(dataTravel).forEach((item) =>{
-        if(item.id == dataToRenderId){
+    const item = dataTravel.find((place) => place.id == dataToRenderId)
+    if (!item || !item.gallery) return
 
-            gallery.innerHTML = item.gallery.map((place, index) =>{
-                const {imgSmall, imagLarge,imgPlace, imgDateUs,imgDateBR, alt} = place
-                  
-                   return `
-                   <article class="gallery-image">
-                    <img src="${imgSmall}" data-image-id="${index}" data-place-id="${item.id}" alt="${alt}">
-                    <div class="image-info-wrapper"
+    gallery.innerHTML = item.gallery.map((place, index) => {
+        const { imgSmall, imgLarge, imgPlace, alt } = place
+
+        return `
+            <article class="gallery-image">
+                <img
+                    srcset="${imgSmall} 650w, ${imgLarge} 1500w"
+                    sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw"
+                    src="${imgSmall}"
+                    data-image-id="${index}"
+                    data-place-id="${item.id}"
+                    alt="${alt}"
+                    loading="lazy"
+                    decoding="async"
+                >
+                <div class="image-info-wrapper">
                     <p class="photo-place">${imgPlace}</p>
-                    <p class="photo-number">${index+1}/${item.gallery.length}</p>
-                    </div>
-                    </article>
-                   ` 
-             
-            }).join('')
-        }
-    })
+                    <p class="photo-number">${index + 1}/${item.gallery.length}</p>
+                </div>
+            </article>
+        `
+    }).join('')
 }

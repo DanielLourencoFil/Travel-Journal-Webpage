@@ -1,0 +1,14 @@
+{
+  "name": "travel-journal-webpage",
+  "version": "1.0.0",
+  "description": "Commemorative bike-trip travel journal (Latin America)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "images:inspect": "node tools/inspect-images.mjs",
+    "images:optimize": "node tools/optimize-images.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.2"
+  }
+}
