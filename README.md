@@ -1,6 +1,6 @@
 ## Travel Journal webpage
 
-It is a commemorative web page.
+It is a commemorative web page. My first project ever!
 This is a long due project that shows up a bike trip my wife and I have done a long time ago.
 
 ## Authors
