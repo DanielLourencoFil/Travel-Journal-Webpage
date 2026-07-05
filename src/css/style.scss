@@ -1768,3 +1768,41 @@ video {
 		max-width: 32ch;
 	}
 }
+
+// seletor de idioma (i18n) — pílula fixa no canto superior direito
+.lang-switcher {
+	position: fixed;
+	top: 0.9rem;
+	right: 0.9rem;
+	z-index: 9999;
+	display: flex;
+	gap: 0.15rem;
+	padding: 0.2rem;
+	background: rgba(0, 0, 0, 0.4);
+	border-radius: 999px;
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+
+	button {
+		border: none;
+		background: transparent;
+		color: #f4f4f4;
+		font-family: system-ui, -apple-system, sans-serif;
+		font-size: 0.8rem;
+		font-weight: 700;
+		letter-spacing: 0.03em;
+		line-height: 1;
+		padding: 0.3rem 0.6rem;
+		border-radius: 999px;
+		cursor: pointer;
+		transition: background 0.2s, color 0.2s;
+
+		&:hover {
+			background: rgba(255, 255, 255, 0.15);
+		}
+		&.active {
+			background: #f4f4f4;
+			color: #373737;
+		}
+	}
+}

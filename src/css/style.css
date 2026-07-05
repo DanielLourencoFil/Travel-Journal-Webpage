@@ -286,11 +286,12 @@ video {
           flex-direction: column;
 }
 
+.main-title span {
+  text-align: left;
+}
+
 .main-title span:last-child {
   font-size: clamp(2.5rem, 8vw, 6rem);
-  -webkit-align-self: center;
-      -ms-flex-item-align: center;
-          align-self: center;
   min-height: 1.2em;
 }
 
@@ -2188,16 +2189,22 @@ video {
             transform: translateY(0);
   }
 }
-.typing-caret {
-  border-right: 0.06em solid currentColor;
-  animation: caret-blink 0.8s step-end infinite;
+.typing-caret::after {
+  content: "";
+  display: inline-block;
+  width: 0.05em;
+  height: 0.7em;
+  margin-left: 0.15em;
+  background-color: currentColor;
+  vertical-align: -0.05em;
+  animation: caret-blink 1.1s step-end infinite;
 }
 @keyframes caret-blink {
   from, to {
-    border-color: transparent;
+    background-color: transparent;
   }
   50% {
-    border-color: currentColor;
+    background-color: currentColor;
   }
 }
 .under-construction {
@@ -2224,5 +2231,43 @@ video {
   font-size: 1rem;
   opacity: 0.7;
   max-width: 32ch;
+}
+
+.lang-switcher {
+  position: fixed;
+  top: 0.9rem;
+  right: 0.9rem;
+  z-index: 9999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.15rem;
+  padding: 0.2rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 999px;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+}
+.lang-switcher button {
+  border: none;
+  background: transparent;
+  color: #f4f4f4;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  cursor: pointer;
+  -webkit-transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s;
+}
+.lang-switcher button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+.lang-switcher button.active {
+  background: #f4f4f4;
+  color: #373737;
 }
 /*# sourceMappingURL=style.css.map */

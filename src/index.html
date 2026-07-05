@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,6 +17,12 @@
 		<link rel="stylesheet" href="css/minireset.css" />
 	</head>
 	<body>
+		<!-- ************ LANGUAGE SWITCHER ************ -->
+		<nav class="lang-switcher" aria-label="Language / Idioma / Sprache">
+			<button type="button" data-lang="pt">PT</button>
+			<button type="button" data-lang="en">EN</button>
+			<button type="button" data-lang="de">DE</button>
+		</nav>
 		<!-- ************ LOADING SECTION ************ -->
 		<div class="loading">
 			<img src="images/icon-bicycle.png" alt="">
@@ -44,7 +50,7 @@
 
 				<!-- travel objects -->
 				<article class="bussola-wrapper">
-					<button class="bussola-btn">ROUTE</button>
+					<button class="bussola-btn" data-i18n="nav.route">ROUTE</button>
 					<img
 						class="bussola"
 						src="images/bussola-img.png"
@@ -65,7 +71,7 @@
 
 				<!-- CAROUSEL HERO 2 -->
 				<article class="carousel-about-wrapper">
-					<a href="#header-wrapper"><button class="about-btn">About</button></a>
+					<a href="#header-wrapper"><button class="about-btn" data-i18n="nav.about">About</button></a>
 					<div class="hero-picture-wrapper">
 						<div id="hero-slider-2-wrapper">
 							<!-- images injected by JS -->
@@ -77,7 +83,7 @@
 				<!-- CARD -->
 				<article class="hero-contact-wrapper"></article>
 				<a href="#header-wrapper"
-					><button class="contact-btn">Contact</button></a
+					><button class="contact-btn" data-i18n="nav.contact">Contact</button></a
 				>
 				<!-- end of CARD -->
 
@@ -90,9 +96,9 @@
 			<i class="fa-solid fa-xmark about-close-btn"></i>
 			<div class="about-wrapper center-wrapper">
 				<article class="about-header-text">
-					<h1 class="about-main-title">Once upon a Time...</h1>
+					<h1 class="about-main-title" data-i18n="about.title">Once upon a Time...</h1>
 					<div class="underline"></div>
-					<h2 class="about-second-title">
+					<h2 class="about-second-title" data-i18n="about.subtitle">
 						On how this idea came up to our souls.
 					</h2>
 					<p class="about-text">
@@ -122,7 +128,7 @@
 					</p>
 				</article>
 				<div class="about-us-wrapper">
-					<h1 class="about-us-main-title">Who are we</h1>
+					<h1 class="about-us-main-title" data-i18n="about.whoAreWe">Who are we</h1>
 					<article class="about-us person-1">
 						<div class="image-text-wrapper">
 							<div class="img-name-wrapper">
@@ -135,7 +141,7 @@
 							</div>
 							<div class="about-after-before-info-person">
 								<div class="after-info">
-									<h1>What about me on that time:</h1>
+									<h1 data-i18n="about.meThen">What about me on that time:</h1>
 									<p>
 										Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Minus culpa consectetur cum est voluptates aut ab ipsum
@@ -144,7 +150,7 @@
 									</p>
 								</div>
 								<div class="before-info">
-									<h1>What about me now:</h1>
+									<h1 data-i18n="about.meNow">What about me now:</h1>
 									<p>
 										Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Minus culpa consectetur cum est voluptates aut ab ipsum
@@ -155,7 +161,7 @@
 							</div>
 						</div>
 						<div class="about-info-person">
-							<h1 class="about-title">Just a ordinary guy...</h1>
+							<h1 class="about-title" data-i18n="about.tagline1">Just a ordinary guy...</h1>
 							<p class="about-text">
 								Lorem ipsum dolor sit amet consectetur adipisicing elit.
 								Similique earum consectetur, iste facilis cumque aliquam
@@ -202,7 +208,7 @@
 							</div>
 							<div class="about-after-before-info-person">
 								<div class="after-info">
-									<h1>What about me on that time</h1>
+									<h1 data-i18n="about.meThen">What about me on that time</h1>
 									<p>
 										Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Minus culpa consectetur cum est voluptates aut ab ipsum
@@ -211,7 +217,7 @@
 									</p>
 								</div>
 								<div class="before-info">
-									<h1>What about me now</h1>
+									<h1 data-i18n="about.meNow">What about me now</h1>
 									<p>
 										Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Minus culpa consectetur cum est voluptates aut ab ipsum
@@ -222,7 +228,7 @@
 							</div>
 						</div>
 						<div class="about-info-person">
-							<h1 class="about-title">Just my sweat heart...</h1>
+							<h1 class="about-title" data-i18n="about.tagline2">Just my sweat heart...</h1>
 							<p class="about-text">
 								Lorem ipsum dolor sit amet consectetur adipisicing elit.
 								Similique earum consectetur, iste facilis cumque aliquam
@@ -263,7 +269,7 @@
 		<section class="travel-route-wrapper scroll-y-section hide-scroll-bar">
 			<i class="fa-solid fa-xmark travel-close-btn"></i>
 			<div class="center-wrapper travel-route-header">
-				<h1>TRAVEL ROUTE</h1>
+				<h1 data-i18n="route.title">TRAVEL ROUTE</h1>
 
 				<div class="embed-wrapper" id="iframe-map">
 					<!-- <div class="hide-header"></div>
@@ -274,18 +280,18 @@
 					<!-- iframe js inserted -->
 				</div>
 			</div>
-			<button class="timeline-open-small-screen">Timeline</button>
+			<button class="timeline-open-small-screen" data-i18n="nav.timeline">Timeline</button>
 		</section>
 		<!--************ TIMELINE SECTION ************-->
 		<section class="timeline-wrapper scroll-y-section hide-scroll-bar">
-			<button class="timeline-btn timeline-open-btn">OPEN</button>
+			<button class="timeline-btn timeline-open-btn" data-i18n="btn.open">OPEN</button>
 			<button class="timeline-btn timeline-close-btn">
-				CLOSE
+				<span data-i18n="btn.close">CLOSE</span>
 				<i class="fa-solid fa-xmark"></i>
 			</button>
-			<h2 class="timeline-label">TIMELINE</h2>
+			<h2 class="timeline-label" data-i18n="timeline.title">TIMELINE</h2>
 			<div class="center-wrapper timeline-title">
-				<h1>TIMELINE</h1>
+				<h1 data-i18n="timeline.title">TIMELINE</h1>
 				<div class="table-wrapper">
 					<ul class="timeline" id="timeline">
 						<!-- insert by js -->
@@ -300,17 +306,18 @@
 			<form class="contact-form" action="https://formspree.io/f/xvolraog"
   method="POST">
 				<label for=""></label>
-				<input type="text" name="name" placeholder="Name" />
+				<input type="text" name="name" placeholder="Name" data-i18n-placeholder="form.name" />
 				<label for="email"></label>
-				<input type="email" name="email" placeholder="Email" />
+				<input type="email" name="email" placeholder="Email" data-i18n-placeholder="form.email" />
 				<label for="message"></label>
 				<textarea
 					type="text"
 					name="message"
 					placeholder="Write here your message"
+						data-i18n-placeholder="form.message"
 					rows="10"
 				></textarea>
-				<button type="submit">Send</button>
+				<button type="submit" data-i18n="btn.send">Send</button>
 			</form>
 		</section>
 		<!--************ PLACES SECTION ************-->
@@ -335,7 +342,7 @@
 		<main class="main-wrapper scroll-section" data-scroll="100">
 			
 
-			<h1 class="main-section-title">GALLERY</h1>
+			<h1 class="main-section-title" data-i18n="gallery.title">GALLERY</h1>
 			<section class="center-wrapper section-wrapper gallery" id="gallery">
 				<!-- ************ LOADING SECTION ************
 				<div class="loading">
@@ -364,8 +371,8 @@
 		<!--************ JOURNAL SECTION ************-->
 		<section class="scroll-section" id="journal">
 			<div class="journal-header">
-				<h1 class="journal-banner-title">Journey Jornal</h1>
-				<p class="journal-banner-text">When words say more then pictures</p>
+				<h1 class="journal-banner-title" data-i18n="journal.title">Journey Jornal</h1>
+				<p class="journal-banner-text" data-i18n="journal.subtitle">When words say more then pictures</p>
 			</div>
 			<div class="center-wrapper">
 				<div class="journal-wrapper" id="journal-wrapper">
@@ -379,7 +386,7 @@
 
 		<!--************ FOOTER SECTION ************-->
 		<footer class="footer scroll-section">
-			<p>Copyrigth &copy; CodeErgoSum <span id="current-year"></span></p>
+			<p><span data-i18n="footer.copyright">Copyright</span> &copy; CodeErgoSum <span id="current-year"></span></p>
 		</footer>
 
 		<script src="js/app.js" type="module"></script>

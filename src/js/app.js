@@ -22,6 +22,14 @@ import { typingEffect } from "./utils/typingEffect.js";
 import {getFullYear} from "./utils/getFullYear.js"
 import { backToTopBtn } from "./utils/backToTopBtn.js"
 
+//i18n
+import { initI18n } from "./i18n/i18n.js"
+
+//===== INTERNATIONALIZATION (i18n) ===== //
+// define o idioma (localStorage -> navegador -> padrão pt-BR) e traduz o
+// conteúdo estático o quanto antes, antes do resto da UI ser montada.
+initI18n()
+
 
 
 //===== LOADING SCREEN ===== //
