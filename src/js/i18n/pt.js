@@ -9,6 +9,9 @@ export default {
     "btn.close": "FECHAR",
     "btn.send": "Enviar",
 
+    "card.gallery": "Galeria",
+    "card.diary": "Diário",
+
     "hero.line1": "Era uma vez um sonho chamado",
     "hero.phrases": ["América Latina", "Viagem de Bike", "Volta ao Mundo"],
 

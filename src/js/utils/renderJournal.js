@@ -1,4 +1,5 @@
 import { dataTravel } from "../infoToRender/placesCard.js";
+import { L } from "../i18n/i18n.js"
 
 const underConstructionCard = (place) => `
     <article class="journal-text-wrapper under-construction">
@@ -8,8 +9,10 @@ const underConstructionCard = (place) => `
     </article>
 `
 
-let dataId;
-export function renderJournal(dataToRenderId = 0, pageToRender = 0){
+let dataId = 0; // país atual (para re-render ao trocar de idioma)
+export function renderJournal(dataToRenderId, pageToRender = 0){
+    // sem argumento (ex.: re-render ao trocar idioma) reusa o país atual
+    if (dataToRenderId === undefined) dataToRenderId = dataId
     const journalWrapper = document.getElementById('journal-wrapper')
     const journalPages = document.getElementById('journal-pages')
     dataId = dataToRenderId
@@ -37,13 +40,13 @@ export function renderJournal(dataToRenderId = 0, pageToRender = 0){
         if (index >= (pageToRender * 2) && index <= ((pageToRender * 2) + 1)) {
             return `
                 <article class="journal-text-wrapper" data-id=${index}>
-                    <h3 class="journal-title">${title}</h3>
+                    <h3 class="journal-title">${L(title)}</h3>
                     <div class="journal-info">
                         <p class="journal-data">${date}</p>
-                        <p class="journal-location">${place}</p>
+                        <p class="journal-location">${L(place)}</p>
                         <p class="journal-distance">${distance}</p>
                     </div>
-                    <p class="journal-text"><img class="journal-image" src="${img}" alt="${alt}" loading="lazy" decoding="async">${text}</p>
+                    <p class="journal-text"><img class="journal-image" src="${img}" alt="${L(alt)}" loading="lazy" decoding="async">${L(text)}</p>
                 </article>
             `
         }

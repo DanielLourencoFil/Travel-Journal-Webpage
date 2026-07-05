@@ -261,12 +261,19 @@ video {
 	color: $color-dark-500;
 	display: flex;
 	flex-direction: column;
+	// cada linha ocupa a largura toda e serve de referência para o cursor
+	// absoluto; o texto é renderizado inteiro e revelado via clip-path
+	span {
+		position: relative;
+		display: block;
+		width: 100%;
+	}
 	span:last-child {
 		font-size: clamp(2.5rem, 8vw, 6rem);
-		// encolhe no texto pra o cursor grudar no fim; reserva a altura
-		// da linha mesmo vazia (evita o "salto" ao apagar tudo)
-		align-self: center;
 		min-height: 1.2em;
+	}
+	.type-text {
+		display: block;
 	}
 }
 //**** travel objects
@@ -1728,17 +1735,21 @@ video {
 }
 //test
 
-.typing-caret {
-	border-right: 0.06em solid currentColor;
-	animation: caret-blink 0.8s step-end infinite;
+.type-caret {
+	position: absolute;
+	width: 0.05em;
+	background-color: currentColor;
+	border-radius: 2px;
+	pointer-events: none;
+	animation: caret-blink 1.1s step-end infinite;
 }
 @keyframes caret-blink {
 	from,
 	to {
-		border-color: transparent;
+		opacity: 0;
 	}
 	50% {
-		border-color: currentColor;
+		opacity: 1;
 	}
 }
 

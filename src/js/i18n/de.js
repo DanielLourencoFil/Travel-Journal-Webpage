@@ -9,6 +9,9 @@ export default {
     "btn.close": "SCHLIESSEN",
     "btn.send": "Senden",
 
+    "card.gallery": "Galerie",
+    "card.diary": "Tagebuch",
+
     "hero.line1": "Es war einmal ein Traum namens",
     "hero.phrases": ["Lateinamerika", "Fahrradreise", "Weltreise"],
 

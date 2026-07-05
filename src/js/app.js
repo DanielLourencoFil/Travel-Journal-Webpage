@@ -237,3 +237,12 @@ contactBtn.addEventListener('click', (e)=>{
 typingEffect()
 backToTopBtn()
 getFullYear()
+
+//************** RE-RENDER CONTEÚDO AO TROCAR DE IDIOMA ***************/
+// registrado aqui (depois do setup) para não disparar no init do i18n.
+// re-renderiza a galeria e o diário do país atual e re-traduz os place-cards.
+document.addEventListener('localechange', () => {
+    renderGallery()
+    renderJournal()
+    carouselPlacesCard.localize()
+})

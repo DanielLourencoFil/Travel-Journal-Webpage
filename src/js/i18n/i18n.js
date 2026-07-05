@@ -30,6 +30,17 @@ export function t(key) {
     return dict[key] ?? DICTS[DEFAULT][key] ?? key
 }
 
+// Resolve um valor de CONTEÚDO traduzível (dados em travel-data.js).
+// Aceita tanto um objeto { pt, en, de } quanto uma string simples — assim o
+// conteúdo pode ser migrado aos poucos: enquanto for string, aparece igual em
+// todos os idiomas; quando virar objeto, passa a respeitar o idioma atual.
+export function L(value) {
+    if (value && typeof value === "object" && !Array.isArray(value)) {
+        return value[current] ?? value[DEFAULT] ?? ""
+    }
+    return value ?? ""
+}
+
 function detectLocale() {
     try {
         const stored = localStorage.getItem(STORAGE_KEY)

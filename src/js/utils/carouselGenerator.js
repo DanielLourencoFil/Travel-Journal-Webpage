@@ -1,5 +1,6 @@
 import { renderJournal } from "./renderJournal.js"
 import { renderGallery } from "./renderGallery.js"
+import { t, L } from "../i18n/i18n.js"
 
 export class CarouselGenerator {
     constructor(sliderId, slidesData, interval=0){
@@ -78,16 +79,33 @@ export class CarouselGenerator {
 
             return `
              <article class="${!this.hasBtn? "onSlide": ''} ${this.slideCSS} ${position} ${hideSlide}" data-id="${id}">
-                <p class="country-name">${place}</p>
-                <img src="${img}" alt="${alt}" class="country-map">
-                <h2 class="country-title">${title}</h2>
-                <a href="#gallery"><p class="gallery-card"><i class="far fa-images gallery-card-icon"></i>Gallery</p></a>
+                <p class="country-name">${L(place)}</p>
+                <img src="${img}" alt="${L(alt)}" class="country-map">
+                <h2 class="country-title">${L(title)}</h2>
+                <a href="#gallery"><p class="gallery-card"><i class="far fa-images gallery-card-icon"></i><span class="card-label">${t("card.gallery")}</span></p></a>
                 <div class="underline"></div>
-                <a href="#journal"><p class="journal-card" ><i class="fas fa-book diary-card-icon"></i>Diary</p></a>
+                <a href="#journal"><p class="journal-card" ><i class="fas fa-book diary-card-icon"></i><span class="card-label">${t("card.diary")}</span></p></a>
             </article>
             `
     }).join('')
 
+    }
+    // re-traduz os textos dos place-cards in-place (sem reconstruir o carrossel,
+    // o que perderia posição/listeners). Chamado no evento `localechange`.
+    localize = () =>{
+        if(this.renderType !== 1 || !this.slider) return
+        this.slider.querySelectorAll('[data-id]').forEach((card)=>{
+            const item = this.slides.find((s)=> String(s.id) === card.dataset.id)
+            if(!item) return
+            const name = card.querySelector('.country-name')
+            if(name) name.textContent = L(item.place)
+            const title = card.querySelector('.country-title')
+            if(title) title.textContent = L(item.title)
+            const gLabel = card.querySelector('.gallery-card .card-label')
+            if(gLabel) gLabel.textContent = t('card.gallery')
+            const dLabel = card.querySelector('.journal-card .card-label')
+            if(dLabel) dLabel.textContent = t('card.diary')
+        })
     }
     renderType2 = ()=>{
         let tempItem;

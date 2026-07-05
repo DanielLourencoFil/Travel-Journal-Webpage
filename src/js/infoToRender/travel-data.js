@@ -7,55 +7,87 @@ export const countries = [
     "id": 0,
     "place": "México",
     "slug": "mexico",
-    "title": "Every journey has a beggining",
+    "title": {
+      "pt": "Toda jornada tem um começo",
+      "en": "Every journey has a beginning",
+      "de": "Jede Reise hat einen Anfang"
+    },
     "img": "./images/maps/mexico-map.png",
     "alt": "mexico map",
     "gallery": [
       {
         "n": 1,
-        "place": "Mexico City",
+        "place": {
+          "pt": "Cidade do México",
+          "en": "Mexico City",
+          "de": "Mexiko-Stadt"
+        },
         "dateUS": "09/12/2006",
         "dateBR": "12/09/2006",
         "alt": "mexico-city-airplane-view"
       },
       {
         "n": 2,
-        "place": "Mexico City",
+        "place": {
+          "pt": "Cidade do México",
+          "en": "Mexico City",
+          "de": "Mexiko-Stadt"
+        },
         "dateUS": "09/12/2006",
         "dateBR": "12/09/2006",
         "alt": "mexico-city-center"
       },
       {
         "n": 3,
-        "place": "Mexico City",
+        "place": {
+          "pt": "Cidade do México",
+          "en": "Mexico City",
+          "de": "Mexiko-Stadt"
+        },
         "dateUS": "09/13/2006",
         "dateBR": "13/09/2006",
         "alt": "mexico-city-archeological-museum"
       },
       {
         "n": 4,
-        "place": "Mexico City",
+        "place": {
+          "pt": "Cidade do México",
+          "en": "Mexico City",
+          "de": "Mexiko-Stadt"
+        },
         "dateUS": "09/14/2006",
         "dateBR": "14/09/2006",
         "alt": "woman-with-teotihuacan-archeological-site-as-background"
       },
       {
         "n": 5,
-        "place": "Mexico City",
+        "place": {
+          "pt": "Cidade do México",
+          "en": "Mexico City",
+          "de": "Mexiko-Stadt"
+        },
         "dateUS": "09/14/2006",
         "dateBR": "14/09/2006",
         "alt": "woman-with-teotihuacan-archeological-site-as-background"
       },
       {
         "n": 6,
-        "place": "Mexico City",
+        "place": {
+          "pt": "Cidade do México",
+          "en": "Mexico City",
+          "de": "Mexiko-Stadt"
+        },
         "dateUS": "09/14/2006",
         "dateBR": "14/09/2006",
         "alt": "couple-with-teotihuacan-archeological-site-as-background"
       },
       {
         "n": 7,
-        "place": "Mexico City",
+        "place": {
+          "pt": "Cidade do México",
+          "en": "Mexico City",
+          "de": "Mexiko-Stadt"
+        },
         "dateUS": "09/17/2006",
         "dateBR": "17/09/2006",
         "alt": "couple-with-bikes-hotel-room"
@@ -323,13 +355,21 @@ export const countries = [
     "journal": [
       {
         "id": "mj01",
-        "title": "A small step to humanity, but a huge step for us",
+        "title": {
+          "pt": "Um pequeno passo para a humanidade, mas um grande passo para nós",
+          "en": "A small step for humanity, but a huge step for us",
+          "de": "Ein kleiner Schritt für die Menschheit, aber ein großer Schritt für uns"
+        },
         "place": "México city to Puebla",
         "date": "09/17 - 09/18/2006",
         "distance": "180km",
         "img": "./images/mexico/diary/mexico-diary-01.avif",
         "alt": "person biking along the road to Puebla",
-        "text": "<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices tincidunt arcu non sodales. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae. Amet venenatis urna cursus eget nunc scelerisque viverra mauris. Amet consectetur adipiscing elit ut aliquam purus sit amet luctus. Dignissim cras tincidunt lobortis feugiat vivamus at augue eget. Et malesuada fames ac turpis egestas sed tempus urna. Mi quis hendrerit dolor magna eget est lorem ipsum dolor. Vitae sapien pellentesque habitant morbi tristique senectus. Ut porttitor leo a diam sollicitudin tempor id eu nisl. Vitae tortor condimentum lacinia quis vel. Risus in hendrerit gravida rutrum.Tincidunt ornare massa eget egestas. Neque egestas congue quisque egestas diam in. Bibendum est ultricies integer quis. Augue interdum velit euismod in pellentesque massa placerat duis. Duis at tellus at urna condimentum mattis pellentesque id nibh.</span><span> Sed felis eget velit aliquet. Aliquam nulla facilisi cras fermentum odio. Id nibh tortor id aliquet lectus proin. Sit amet commodo nulla facilisi nullam vehicula ipsum. Orci dapibus ultrices in iaculis nunc sed augue. Blandit turpis cursus in hac habitasse platea dictumst quisque sagittis. Ante in nibh mauris cursus mattis molestie. At augue eget arcu dictum varius. Sit amet volutpat consequat mauris. Varius vel pharetra vel turpis nunc eget lorem dolor sed. Mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Viverra adipiscing at in tellus integer feugiat. </span><span> Diam in arcu cursus euismod. Et ultrices neque ornare aenean euismod elementum nisi quis eleifend. Faucibus et molestie ac feugiat sed lectus vestibulum mattis. Cursus turpis massa tincidunt dui ut ornare. Quam vulputate dignissim suspendisse in est ante in nibh. Turpis egestas sed tempus urna et pharetra. Blandit turpis cursus in hac habitasse. Quisque non tellus orci ac auctor augue mauris augue neque. Non quam lacus suspendisse faucibus interdum posuere lorem ipsum. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque. Nunc aliquet bibendum enim facilisis gravida neque convallis a cras. Tincidunt praesent semper feugiat nibh. Vulputate ut pharetra sit amet aliquam. Vestibulum morbi blandit cursus risus at ultrices mi. Ac turpis egestas maecenas pharetra convallis posuere morbi leo urna. Posuere lorem ipsum dolor sit amet. Et egestas quis ipsum suspendisse ultrices gravida dictum fusce. Ut porttitor leo a diam sollicitudin tempor id eu nisl.<br>Viverra justo nec ultrices dui sapien eget. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin. Tincidunt id aliquet risus feugiat in ante. Morbi tristique senectus et netus et malesuada fames. Pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices. Urna cursus eget nunc scelerisque viverra mauris in aliquam sem. Est sit amet facilisis magna etiam. Tincidunt praesent semper feugiat nibh sed pulvinar proin gravida.</span><span> Consequat interdum varius sit amet mattis vulputate. Ornare quam viverra orci sagittis eu volutpat odio. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus. Amet risus nullam eget felis. Quis varius quam quisque id. Senectus et netus et malesuada fames ac turpis egestas. Praesent tristique magna sit amet. Turpis egestas pretium aenean pharetra magna ac. Sem viverra aliquet eget sit amet tellus cras adipiscing. Volutpat diam ut venenatis tellus in metus vulputate. Non tellus orci ac auctor augue mauris augue.Amet justo donec enim diam. Vulputate dignissim suspendisse in est ante. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam. Massa ultricies mi quis hendrerit dolor. Laoreet id donec ultrices tincidunt. Convallis tellus id interdum velit laoreet id donec. Cras semper auctor neque vitae tempus quam. Vitae et leo duis ut diam quam nulla porttitor. Nullam non nisi est sit amet facilisis magna etiam tempor. Ut faucibus pulvinar elementum integer enim neque. Urna neque viverra justo nec ultrices dui sapien eget mi.</span>"
+        "text": {
+          "pt": "<span>(Texto do diário em português — substitua pela sua narrativa real.)</span>",
+          "en": "<span>(Journal text in English — replace with your real narrative.)</span>",
+          "de": "<span>(Tagebuchtext auf Deutsch — durch deine echte Erzählung ersetzen.)</span>"
+        }
       },
       {
         "id": "mj02",
