@@ -2184,6 +2184,18 @@ video {
             transform: translateY(0);
   }
 }
+.typing-caret {
+  border-right: 0.06em solid currentColor;
+  animation: caret-blink 0.8s step-end infinite;
+}
+@keyframes caret-blink {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: currentColor;
+  }
+}
 .under-construction {
   display: flex;
   flex-direction: column;

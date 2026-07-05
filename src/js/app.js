@@ -18,7 +18,7 @@ import {timelineInfo} from "./infoToRender/timelineInfo.js"
 import { iframeMapRender } from "./utils/iframeMapRender.js"
 
 //utils
-import { typingEffect } from "./utils/typingEffect.js"; // needs implementation
+import { typingEffect } from "./utils/typingEffect.js";
 import {getFullYear} from "./utils/getFullYear.js"
 import { backToTopBtn } from "./utils/backToTopBtn.js"
 
@@ -226,6 +226,6 @@ contactBtn.addEventListener('click', (e)=>{
 
 
 //************** SECONDARY FEATURES ***************/
-// typingEffect()
+typingEffect()
 backToTopBtn()
 getFullYear()
