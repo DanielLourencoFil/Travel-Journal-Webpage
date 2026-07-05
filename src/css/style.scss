@@ -250,9 +250,9 @@ video {
 	position: absolute;
 	min-width: 75%;
 	max-width: 850px;
-	top: 40%;
+	top: 8%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translateX(-50%);
 	font-family: $font-primary;
 	font-size: clamp(2rem, 8vw, 5rem);
 	text-align: center;
@@ -263,6 +263,10 @@ video {
 	flex-direction: column;
 	span:last-child {
 		font-size: clamp(2.5rem, 8vw, 6rem);
+		// encolhe no texto pra o cursor grudar no fim; reserva a altura
+		// da linha mesmo vazia (evita o "salto" ao apagar tudo)
+		align-self: center;
+		min-height: 1.2em;
 	}
 }
 //**** travel objects

@@ -267,10 +267,10 @@ video {
   position: absolute;
   min-width: 75%;
   max-width: 850px;
-  top: 40%;
+  top: 8%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   font-family: "Freehand", cursive;
   font-size: clamp(2rem, 8vw, 5rem);
   text-align: center;
@@ -288,6 +288,10 @@ video {
 
 .main-title span:last-child {
   font-size: clamp(2.5rem, 8vw, 6rem);
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  min-height: 1.2em;
 }
 
 .bussola-wrapper {
