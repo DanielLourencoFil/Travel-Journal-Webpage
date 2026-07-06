@@ -211,7 +211,7 @@ video {
   top: 8%;
   left: 50%;
   transform: translateX(-50%);
-  font-family: "Freehand", cursive;
+  font-family: "Gochi Hand", cursive;
   font-size: clamp(2rem, 8vw, 5rem);
   text-align: center;
   line-height: 1.2;
@@ -227,7 +227,7 @@ video {
   display: block;
 }
 .main-title #main-title-2 {
-  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-size: clamp(2rem, 6vw, 4.5rem);
   min-height: 1.2em;
   text-align: left;
   padding-left: 12%;
@@ -1739,3 +1739,5 @@ video {
   background: #f4f4f4;
   color: #373737;
 }
+
+/*# sourceMappingURL=style.css.map */

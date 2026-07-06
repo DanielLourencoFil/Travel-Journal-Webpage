@@ -13,7 +13,7 @@ export default {
     "card.diary": "Diary",
 
     "hero.line1": "Once upon a Time a Dream Called",
-    "hero.phrases": ["Latin America", "Bike Trip", "Traveling Around"],
+    "hero.phrases": ["Latin America", "Bike Trip", "Exploring the World"],
 
     "about.title": "Once upon a Time...",
     "about.subtitle": "On how this idea came up to our souls.",

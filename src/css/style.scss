@@ -2,7 +2,7 @@
 
 // ********* VARIABLES ********* //
 
-$font-primary: "Freehand", cursive;
+$font-primary: "Gochi Hand", cursive;
 $font-secondary: "Gochi Hand", cursive;
 $letter-spacing-100: 1px;
 $letter-spacing-200: 2px;
@@ -278,7 +278,7 @@ video {
 		display: block;
 	}
 	#main-title-2 {
-		font-size: clamp(2.5rem, 8vw, 6rem);
+		font-size: clamp(2rem, 6vw, 4.5rem);
 		min-height: 1.2em;
 		// alinhado à esquerda: com "center", cada frase de tamanho diferente
 		// recentraliza o bloco a cada tecla digitada/apagada = efeito deslizante.
