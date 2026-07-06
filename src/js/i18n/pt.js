@@ -13,7 +13,7 @@ export default {
     "card.diary": "Diário",
 
     "hero.line1": "Era uma vez um sonho chamado",
-    "hero.phrases": ["América Latina", "Viagem de Bike", "Volta ao Mundo"],
+    "hero.phrases": ["América Latina", "Viagem de Bike", "Viajar por aí"],
 
     "about.title": "Era uma vez...",
     "about.subtitle": "Sobre como essa ideia surgiu em nossas almas.",

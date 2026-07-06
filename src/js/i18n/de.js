@@ -13,7 +13,7 @@ export default {
     "card.diary": "Tagebuch",
 
     "hero.line1": "Es war einmal ein Traum namens",
-    "hero.phrases": ["Lateinamerika", "Fahrradreise", "Weltreise"],
+    "hero.phrases": ["Lateinamerika", "Fahrradreise", "Herumreisen"],
 
     "about.title": "Es war einmal...",
     "about.subtitle": "Wie diese Idee in unseren Seelen entstand.",

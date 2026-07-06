@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Freehand&family=Gochi+Hand&family=Libre+Baskerville&display=swap");
+// google fonts agora vêm por <link> no <head> do index.html (carregam mais cedo)
 
 // ********* VARIABLES ********* //
 
@@ -105,7 +105,7 @@ video {
 	width: 100vw;
 	margin: 0 auto;
 }
-@media screen and(min-width: 660px) {
+@media screen and (min-width: 660px) {
 	.center-wrapper {
 		width: 85vw;
 		max-width: 1600px;
@@ -248,8 +248,10 @@ video {
 }
 .main-title {
 	position: absolute;
-	min-width: 75%;
-	max-width: 850px;
+	// largura FIXA (não depende do conteúdo): senão o container faz shrink-to-fit
+	// e muda de largura enquanto digita, e como é centralizado com translateX,
+	// recentraliza o bloco todo a cada tecla = deslize horizontal
+	width: min(75%, 850px);
 	top: 8%;
 	left: 50%;
 	transform: translateX(-50%);
@@ -259,21 +261,31 @@ video {
 	line-height: 1.2;
 	font-weight: bold;
 	color: $color-dark-500;
+	// largura de cada letra fixa e independente das vizinhas: sem isto, o corte
+	// do texto no efeito de digitação muda o kerning e o texto centralizado
+	// "desliza" horizontalmente a cada tecla
+	font-kerning: none;
+	font-variant-ligatures: none;
+	text-rendering: optimizeSpeed;
 	display: flex;
 	flex-direction: column;
-	// cada linha ocupa a largura toda e serve de referência para o cursor
-	// absoluto; o texto é renderizado inteiro e revelado via clip-path
-	span {
-		position: relative;
+	// cada linha lógica numa row própria: só os dois spans de topo (line1 e a
+	// linha da frase). Usa ">" para não pegar os spans internos do efeito de
+	// digitação (visible/caret/hidden) — se eles também virarem block, o caret
+	// e o texto invisível caem numa linha própria em vez de ficarem lado a
+	// lado com o texto digitado.
+	> span {
 		display: block;
-		width: 100%;
 	}
-	span:last-child {
+	#main-title-2 {
 		font-size: clamp(2.5rem, 8vw, 6rem);
 		min-height: 1.2em;
-	}
-	.type-text {
-		display: block;
+		// alinhado à esquerda: com "center", cada frase de tamanho diferente
+		// recentraliza o bloco a cada tecla digitada/apagada = efeito deslizante.
+		// À esquerda o ponto de partida é fixo; o padding-left aproxima o texto
+		// do centro visual do papel.
+		text-align: left;
+		padding-left: 12%;
 	}
 }
 //**** travel objects
@@ -452,7 +464,7 @@ video {
 	overflow: hidden;
 }
 
-@media screen and(min-width: 660px) {
+@media screen and (min-width: 660px) {
 	.pen {
 		right: -5%;
 	}
@@ -469,16 +481,16 @@ video {
 		bottom: -10%;
 	}
 }
-@media screen and(max-height: 550px) {
+@media screen and (max-height: 550px) {
 	.about-btn {
 		top: 35%;
 		left: -35%;
 	}
 }
-@media screen and(max-height: 450px) and(min-width:600px) {
+@media screen and (max-height: 450px) and (min-width:600px) {
 	.main-title {
 		font-size: 2.5rem;
-		span:last-child {
+		#main-title-2 {
 			font-size: 3rem;
 		}
 	}
@@ -680,7 +692,7 @@ video {
 		}
 	}
 }
-@media screen and(min-width: 830px) {
+@media screen and (min-width: 830px) {
 	.image-text-wrapper {
 		flex-direction: row;
 		align-items: flex-start;
@@ -811,7 +823,7 @@ video {
 		z-index: 9;
 	}
 }
-@media screen and(min-width:660px) {
+@media screen and (min-width:660px) {
 	.timeline-open-small-screen {
 		display: none;
 	}
@@ -916,7 +928,7 @@ video {
 	left: 0;
 }
 
-@media screen and(min-width:660px) {
+@media screen and (min-width:660px) {
 	.show-timeline {
 		left: calc(-100vw + 50px);
 	}
@@ -996,7 +1008,7 @@ video {
 }
 /////************************
 
-@media screen and(min-width:660px) {
+@media screen and (min-width:660px) {
 	.timeline {
 		.waypoint {
 			padding-left: 6rem;
@@ -1255,7 +1267,7 @@ video {
 		margin: 0 0.75%;
 	}
 }
-@media screen and(max-height: 450px) and(min-width:600px) {
+@media screen and (max-height: 450px) and (min-width:600px) {
 	#places-card-carrousel {
 		height: 90vh;
 	}
@@ -1471,33 +1483,33 @@ video {
 }
 
 //***********screens < 700px height - small notebooks and tablets
-@media screen and(min-width:800px) and(min-height:600px) {
+@media screen and (min-width:800px) and (min-height:600px) {
 	.full-carousel-image {
 		width: 85% !important;
 	}
 }
-@media screen and(min-width:1100px) and(min-height:600px) {
+@media screen and (min-width:1100px) and (min-height:600px) {
 	.full-carousel-image {
 		width: 70% !important;
 	}
 }
 //***********screens > 700px height
-@media screen and(min-width:660px) {
+@media screen and (min-width:660px) {
 	#gallery-full-carousel-wrapper {
 		display: flex;
 	}
 }
-@media screen and(min-width:1000px) {
+@media screen and (min-width:1000px) {
 	.full-carousel-image {
 		width: 95%;
 	}
 }
-@media screen and(min-width:1200px) {
+@media screen and (min-width:1200px) {
 	.full-carousel-image {
 		width: 90%;
 	}
 }
-@media screen and(min-width:1500px) {
+@media screen and (min-width:1500px) {
 	.full-carousel-image {
 		width: 85%;
 	}
@@ -1639,7 +1651,7 @@ video {
 		}
 	}
 }
-@media screen and(min-width: 660px) {
+@media screen and (min-width: 660px) {
 	.journal-text-wrapper {
 		width: 90%;
 		.journal-image {
@@ -1647,7 +1659,7 @@ video {
 		}
 	}
 }
-@media screen and(min-width: 800px) {
+@media screen and (min-width: 800px) {
 	.journal-text-wrapper {
 		width: 85%;
 		.journal-image {
@@ -1655,7 +1667,7 @@ video {
 		}
 	}
 }
-@media screen and(min-width: 1000px) {
+@media screen and (min-width: 1000px) {
 	.journal-text-wrapper {
 		width: 80%;
 		.journal-image {
@@ -1684,7 +1696,7 @@ video {
 		gap: 0.5rem;
 	}
 }
-@media screen and(min-width:660px) {
+@media screen and (min-width:660px) {
 	.footer {
 		& p {
 			flex-direction: row;
@@ -1736,11 +1748,15 @@ video {
 //test
 
 .type-caret {
-	position: absolute;
-	width: 0.05em;
+	display: inline-block;
+	width: 0.06em;
+	height: 0.7em;
+	// footprint horizontal líquido = 0 (0.04 + 0.06 - 0.10): o cursor não muda a
+	// largura total do texto, então nada "recentraliza"/desliza ao digitar
+	margin-left: 0.04em;
+	margin-right: -0.1em;
+	vertical-align: -0.06em;
 	background-color: currentColor;
-	border-radius: 2px;
-	pointer-events: none;
 	animation: caret-blink 1.1s step-end infinite;
 }
 @keyframes caret-blink {
@@ -1751,6 +1767,9 @@ video {
 	50% {
 		opacity: 1;
 	}
+}
+.type-hidden {
+	visibility: hidden;
 }
 
 .under-construction {
